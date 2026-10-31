@@ -44,9 +44,9 @@ daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem"):
         dreidim_plotten("Video 4 Koordinaten.csv")
-    if st.checkbox("Sprungparameter"):
+    #if st.checkbox("Sprungparameter"):
 
-    if st.checkbox("
+    #if st.checkbox("
     
 #elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     #dreidim_plotten("Video 5 Koordinaten.csv")
