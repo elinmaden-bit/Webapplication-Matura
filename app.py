@@ -38,7 +38,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Einfacher Axel")
 with col2:
-    st.button("ℹ️",help="Hier werden die rekonstruierten 3D-Positionen der Tracking-Punkte dargestellt.")
+    st.button("ℹ️",help="Der Axel ist einer der sechs Sprungtypen, die es im Eiskunstlauf gibt. Er ist der einzige Sprung, der vorwärts abgesprungen wird. Dadurch erhält er eine halbe Rotation mehr als die anderen Sprünge, was ihn auch zum schwersten Sprung macht.")
 
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -48,7 +48,12 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
 #elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     #dreidim_plotten("Video 6 Koordinaten.csv")
 
-st.subheader("Doppelter Salchow")
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Doppelter Salchow")
+with col2:
+    st.button("ℹ️",help="Der Salchow kann mit dem Axel und dem Toeloop verglichen werden, da er ein ähnlichen Absprung hat. Beim Salchow beginnt der Sprung auf einer rückwärts-einwärts Kante und wird durch eine Drehung nach vorne abgesprungen.")
+
 daten2=st.selectbox(label="2",options=doppelter_salchow,label_visibility="collapsed")
 
 #if daten2=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -58,7 +63,13 @@ daten2=st.selectbox(label="2",options=doppelter_salchow,label_visibility="collap
 #elif daten2=="Beispieldaten 3, Videomodus: Slowmotion":
     #dreidim_plotten("Video 9 Koordinaten.csv")
 
-st.subheader("Doppelter Toeloop")
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Doppelter Toeloop")
+with col2:
+    st.button("ℹ️",help="Der Toeloop wird rückwärts von einer Auswärtskante abgesprungen, wobei der Absprung durch das Einstecken der Zacke mit dem Spielbein erfolgt.")
+
+
 daten3=st.selectbox(label="3",options=doppelter_toeloop,label_visibility="collapsed")
 
 #if daten3=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -68,7 +79,14 @@ daten3=st.selectbox(label="3",options=doppelter_toeloop,label_visibility="collap
 #elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     #dreidim_plotten("Video 9 Koordinaten.csv")
 
-st.subheader("Doppelter Rittberger")
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Doppelter Rittberger")
+with col2:
+    st.button("ℹ️",help="Der Rittberger hat einen individuellen Absprung, der mit keinen der anderen Sprüngen zu vergleichen ist. Er wird rückwärts von der Auswärtskante abgesprungen, wobei das Spielbein während des Absprungs vorne über dem anderen Bein gekreuzt bleibt.")
+
+
+
 daten4=st.selectbox(label="4",options=doppelter_loop,label_visibility="collapsed")
 
 #if daten4=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -76,7 +94,11 @@ daten4=st.selectbox(label="4",options=doppelter_loop,label_visibility="collapsed
 #elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
     #dreidim_plotten("Video 8 Koordinaten.csv")
 
-st.subheader("Doppelter Lutz")
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Doppelter Lutz")
+with col2:
+    st.button("ℹ️",help="Der Lutz wird von der rückwärts Auswärtskante abgesprungen. Dabei wird der Absprung durch das Einstecken der Zacke des Spielbeins ausgelöst. Der Unterschied zum Toeloop ist, dass das Spielbein beim Lutz das rechte Bein ist, und beim Toeloop ist es das Linke.")
 daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed")
 
 #if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
