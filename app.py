@@ -5,13 +5,13 @@ from PIL import Image
 import plotly.express as px
 st.markdown("Vom Eis in die dritte Dimension")
 st.markdown("Entwicklung einer computergestützten Bewegungsanalyse von Eiskunstlaufsprüngen aus zwei Kameraperspektiven mit Farberkennung und Bildverarbeitung")
-image1=Image.open("main/Bild titel.png")
+image1=Image.open("Bild titel.png")
 st.image(image1, width=400)
 
 st.write("Resultate & Analysen")
 st.write("Video 4:")
 st.write("Sprungart: einfacher Axel, Videomodus: Normalgeschwindigkeit")
-daten = pd.read_csv("main/Video 4 Koordinaten.csv", sep=";")
+daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
 
