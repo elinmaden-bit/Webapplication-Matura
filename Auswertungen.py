@@ -5,6 +5,9 @@ from PIL import Image
 import plotly.express as px
 import gdown
 
+
+st.sidebar.markdown("Resultate & Analysen")
+
 st.title("Vom Eis in die dritte Dimension")
 st.header("Zusammenfassung der Resultate und Analysen")
 
