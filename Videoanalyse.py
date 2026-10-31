@@ -14,8 +14,12 @@ stopp_segmentation2=None
 
 
 if video_nummer==4:
-    gdown.download(video_path1, "A Axel normalspeed.mp4", quiet=False)
-    gdown.download(video_path1, "A Axel normalspeed.mp4", quiet=False)
+    url1="https://drive.google.com/file/d/1aOjvR1bF0PNR5lL5oG_PZaA6VmSV4rnt/view?usp=drive_link"
+    url2="https://drive.google.com/file/d/1Neae1Sc5-wCV-W9VN78X-Y9srm80QtJn/view?usp=drive_link"
+    video1=gdown.download(url1, "A Axel normalspeed.mp4", quiet=False)
+    video2=gdown.download(url2, "B Axel normalspeed.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -46,8 +50,12 @@ if video_nummer==4:
     take_off_plane_red=None
 
 elif video_nummer==5:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Axel slowmotion 1.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Axel slowmotion 1.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
+    video1=gdown.download(url1, "A Axel slowmotion 1.mp4", quiet=False)
+    video2=gdown.download(url2, "B Axel slowmotion 1.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -78,8 +86,12 @@ elif video_nummer==5:
     take_off_plane_red=-0.476
 
 elif video_nummer==6:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Axel slowmotion 2.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Axel slowmotion 2.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1IIPPaAremVEh_QuEfkQ7aMbf6kSK_TX3/view?usp=drive_link"
+    video1=gdown.download(url1, "A Axel slowmotion 2.mp4", quiet=False)
+    video2=gdown.download(url2, "B Axel slowmotion 2.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -111,8 +123,12 @@ elif video_nummer==6:
 
 
 elif video_nummer==7:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Salchow normalspeed.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Salchow normalspeed.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1UBVQxoZNyKT227yXiq1Bya5HzTrUuOU7/view?usp=drive_link"
+    video1=gdown.download(url1, "A Salchow normalspeed.mp4", quiet=False)
+    video2=gdown.download(url2, "B Salchow normalspeed.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -142,8 +158,12 @@ elif video_nummer==7:
 
 
 elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss noch angepasst werden, dass es das ausgibt
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Salchow slowmotion 1.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Salchow slowmotion 1.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/138CL2K2JqPQME5nhYWvFiJopBteVVeLt/view?usp=drive_link"
+    video1=gdown.download(url1, "A Salchow slowmotion 1.mp4", quiet=False)
+    video2=gdown.download(url2, "B Salchow slowmotion 1.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -174,8 +194,12 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     take_off_plane_red=None
 
 elif video_nummer==9:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Salchow slowmotion 2.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Salchow slowmotion 2.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1SyVeKq6DPRC3Mx6uz3LsyMkb-o91wajI/view?usp=drive_link"
+    video1=gdown.download(url1, "A Salchow slowmotion 2.mp4", quiet=False)
+    video2=gdown.download(url2, "B Salchow slowmotion 2.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -206,8 +230,12 @@ elif video_nummer==9:
     take_off_plane_red=-0.764
 
 elif video_nummer==10:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Toeloop normalspeed.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Toeloop normalspeed.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1RS84ENZtY34UCNnr7KOhU39FLMwM74RS/view?usp=drive_link"
+    video1=gdown.download(url1, "A Toeloop normalspeed.mp4", quiet=False)
+    video2=gdown.download(url2, "B Toeloop normalspeed.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -237,9 +265,12 @@ elif video_nummer==10:
 
 
 elif video_nummer==11:
-
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Toeloop slowmotion 1.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Toeloop slowmotion 1.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1yER3MJyAmZIhVRm6cJtPN1Mjko6VxTrZ/view?usp=drive_link"
+    video1=gdown.download(url1, "A Toeloop slowmotion 1.mp4", quiet=False)
+    video2=gdown.download(url2, "B Toeloop slowmotion 1.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -270,8 +301,12 @@ elif video_nummer==11:
     take_off_plane_red=None
 
 elif video_nummer==12:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Toeloop slowmotion 2.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Toeloop slowmotion 2.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1aOCFxcflr2IZ0SImmKhX5Wu4hFife3U3/view?usp=drive_link"
+    video1=gdown.download(url1, "A Toeloop slowmotion 2.mp4", quiet=False)
+    video2=gdown.download(url2, "B Toeloop slowmotion 2.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -302,8 +337,12 @@ elif video_nummer==12:
     take_off_plane_red=None
 
 elif video_nummer==13:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Loop normalspeed.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Loop normalspeed.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1FieweKFFcJvva8rUmPxTkr2Wn7h70Bhv/view?usp=drive_link"
+    video1=gdown.download(url1, "A Loop normalspeed.mp4", quiet=False)
+    video2=gdown.download(url2, "B Loop normalspeed.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -333,8 +372,12 @@ elif video_nummer==13:
 
 
 elif video_nummer==14:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Loop slowmotion.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Loop slowmotion.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/13q0tonpxMpHVZLzM9C4D8PP33FIOm4k7/view?usp=drive_link"
+    video1=gdown.download(url1, "A Loop slowmotion.mp4", quiet=False)
+    video2=gdown.download(url2, "B Loop slowmotion.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -365,8 +408,12 @@ elif video_nummer==14:
     take_off_plane_red=-0.675
 
 elif video_nummer==15:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Lutz normalspeed.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Lutz normalspeed.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1_mjvKFBzpzEqvd3IfJXLGx6WmPE-Icni/view?usp=drive_link"
+    video1=gdown.download(url1, "A Lutz normalspeed.mp4", quiet=False)
+    video2=gdown.download(url2, "B Lutz normalspeed.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -395,8 +442,12 @@ elif video_nummer==15:
     take_off_plane_red=-0.4
 
 elif video_nummer==16:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Lutz slowmotion 1.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Lutz slowmotion 1.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1YkPucZJPSFw3cf02jpxzNqjoyecac8NQ/view?usp=drive_link"
+    video1=gdown.download(url1, "A Lutz slowmotion 1.mp4", quiet=False)
+    video2=gdown.download(url2, "B Lutz slowmotion 1.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -427,8 +478,12 @@ elif video_nummer==16:
     take_off_plane_red=None
 
 elif video_nummer==17:
-    video_path1 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Elin/A Lutz slowmotion 2.mp4"
-    video_path2 = "C:/Users/elinm/Documents/Maturaarbeit/Videos 2/Handy Mirjam/B Lutz slowmotion 2.mp4"
+    url1=""
+    url2="https://drive.google.com/file/d/1pFrxpMGDurdWYlfUVCqvAUFwsimzWIru/view?usp=drive_link"
+    video1=gdown.download(url1, "A Lutz slowmotion 2.mp4", quiet=False)
+    video2=gdown.download(url2, "B Lutz slowmotion 2.mp4", quiet=False)
+    st.video(video1, width=400)
+    st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
