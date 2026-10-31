@@ -34,7 +34,12 @@ def dreidim_plotten(dateiname):
     st.plotly_chart(fig, use_container_width=True)
 
 
-st.subheader("Einfacher Axel")
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Einfacher Axel")
+with col2:
+    st.button("ℹ️",help="Hier werden die rekonstruierten 3D-Positionen der Tracking-Punkte dargestellt.")
+
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     dreidim_plotten("Video 4 Koordinaten.csv")    
