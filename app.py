@@ -11,7 +11,7 @@ st.image(image1, width=400)
 st.write("Resultate & Analysen")
 st.write("Video 4:")
 st.write("Sprungart: einfacher Axel, Videomodus: Normalgeschwindigkeit")
-daten = pd.read_csv("C:/Users/elinm/Video 4 Koordinaten.csv", sep=";")
+daten = pd.read_csv("main/Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
 
