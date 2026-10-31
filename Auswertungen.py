@@ -15,10 +15,7 @@ st.header("Zusammenfassung der Resultate und Analysen")
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
 
-url = "https://drive.google.com/file/d/1aOjvR1bF0PNR5lL5oG_PZaA6VmSV4rnt/view?usp=drive_link"
 
-video=gdown.download(url, "A Axel normalspeed.mp4", quiet=False)
-st.video(video, width=400)
 
 einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
 doppelter_salchow=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
