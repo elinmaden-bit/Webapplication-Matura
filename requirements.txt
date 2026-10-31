@@ -7,6 +7,4 @@ Pillow
 opencv-python-headless
 gdown
 sympy
-math
-csv
-cv2
+
