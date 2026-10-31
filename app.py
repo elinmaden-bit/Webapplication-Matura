@@ -20,7 +20,7 @@ doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispielda
 
 
 st.subheader("Einfacher Axel")
-st.selectbox(label="",options=einfacher_axel,label_visibility="collapsed")
+st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
@@ -39,13 +39,13 @@ st.plotly_chart(fig, use_container_width=True)
 
 
 st.subheader("Doppelter Salchow")
-st.selectbox(label="",options=doppelter_salchow,label_visibility="collapsed")
+st.selectbox(label="2",options=doppelter_salchow,label_visibility="collapsed")
 st.subheader("Doppelter Toeloop")
-st.selectbox(label="",options=doppelter_toeloop,label_visibility="collapsed")
+st.selectbox(label="3",options=doppelter_toeloop,label_visibility="collapsed")
 
 st.subheader("Doppelter Rittberger")
-st.selectbox(label="",options=doppelter_loop,label_visibility="collapsed")
+st.selectbox(label="4",options=doppelter_loop,label_visibility="collapsed")
 
 st.subheader("Doppelter Lutz")
-st.selectbox(label="",options=doppelter_lutz,label_visibility="collapsed")
+st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed")
 
