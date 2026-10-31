@@ -6,5 +6,7 @@ numpy
 Pillow
 opencv-python-headless
 gdown
+sympy
+math
 
 
