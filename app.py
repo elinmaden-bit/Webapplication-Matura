@@ -5,7 +5,7 @@ from PIL import Image
 import plotly.express as px
 st.title("Vom Eis in die dritte Dimension")
 st.header("Rekonstruktion und Auswertung von Sprungbewegungen anhand zweier Kameraperspektiven mittels Farbsegmentation")
-image1=Image.open("Bild titel.png")
+image1=Image.open("Titel Bild final.png")
 st.image(image1, width=400)
 
 st.subheader("Video 4")
