@@ -38,7 +38,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Einfacher Axel")
 with col2:
-    st.button("ℹ️",help="Der Axel ist einer der sechs Sprungtypen, die es im Eiskunstlauf gibt. Er ist der einzige Sprung, der vorwärts abgesprungen wird. Dadurch erhält er eine halbe Rotation mehr als die anderen Sprünge, was ihn auch zum schwersten Sprung macht.")
+    st.button("ℹ️",help="Der Axel ist der einzige der sechs Sprungtypen, bei dem der Absprung vorwärts erfolgt. Dadurch muss bei einem Axel eine halbe Drehung mehr ausgeführt werden als bei den anderen Sprüngen. Das macht ihn besonders anspruchsvoll. Er gehört ausserdem zu den Kantensprüngen.")
 
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -52,7 +52,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Salchow")
 with col2:
-    st.button("ℹ️",help="Der Salchow kann mit dem Axel und dem Toeloop verglichen werden, da er ein ähnlichen Absprung hat. Beim Salchow beginnt der Sprung auf einer rückwärts-einwärts Kante und wird durch eine Drehung nach vorne abgesprungen.")
+    st.button("ℹ️",help="Beim Salchow erfolgt der Absprung rückwärts von der Innenkante des Schlittschuhs. Das freie Bein schwingt dabei nach vorne und unterstützt den Absprung. Der Salchow gehört zu den Kantensprüngen.")
 
 daten2=st.selectbox(label="2",options=doppelter_salchow,label_visibility="collapsed")
 
@@ -67,7 +67,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Toeloop")
 with col2:
-    st.button("ℹ️",help="Der Toeloop wird rückwärts von einer Auswärtskante abgesprungen, wobei der Absprung durch das Einstecken der Zacke mit dem Spielbein erfolgt.")
+    st.button("ℹ️",help="Der Toeloop wird rückwärts von der Aussenkante eines Schlittschuhs abgesprungen. Dabei wird die Zacke des anderen Schlittschuhs ins Eis gesetzt, um den Absprung zu unterstützen. Er gehört zu den Zackensprüngen.")
 
 
 daten3=st.selectbox(label="3",options=doppelter_toeloop,label_visibility="collapsed")
@@ -83,7 +83,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Rittberger")
 with col2:
-    st.button("ℹ️",help="Der Rittberger hat einen individuellen Absprung, der mit keinen der anderen Sprüngen zu vergleichen ist. Er wird rückwärts von der Auswärtskante abgesprungen, wobei das Spielbein während des Absprungs vorne über dem anderen Bein gekreuzt bleibt.")
+    st.button("ℹ️",help="Der Rittberger wird rückwärts von der Aussenkante eines Schlittschuhs abgesprungen. Anders als beim Toeloop wird dabei keine Zacke eingesetzt. Das freie Bein bleibt während des Absprungs vor dem Körper gekreuzt. Er gehört zu den Kantensprüngen.")
 
 
 
@@ -98,7 +98,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Lutz")
 with col2:
-    st.button("ℹ️",help="Der Lutz wird von der rückwärts Auswärtskante abgesprungen. Dabei wird der Absprung durch das Einstecken der Zacke des Spielbeins ausgelöst. Der Unterschied zum Toeloop ist, dass das Spielbein beim Lutz das rechte Bein ist, und beim Toeloop ist es das Linke.")
+    st.button("ℹ️",help="Der Lutz wird rückwärts von der Aussenkante des Schlittschuhs abgesprungen. Zur Unterstützung des Absprungs wird die Zacke des anderen Schlittschuhs ins Eis gesetzt. Im Gegensatz zum Toeloop erfolgt der Absprung vom anderen Bein. Er gehört zu den Zackensprüngen. Wie beim Lutz wird auch beim Flip die Zacke des anderen Schlittschuhs zur Unterstützung des Absprungs ins Eis gesetzt. Der entscheidende Unterschied zwischen Flip und Lutz liegt in der verwendeten Absprungkante. Flip wird von der Einwärtskante abgesprungen. Jedoch für den Flip sind keine Datensätze vorhanden.")
 daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed")
 
 #if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
