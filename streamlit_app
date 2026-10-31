@@ -1,0 +1,8 @@
+import streamlit as st
+
+main_page=st.Page("Resultate", title="Analyse & Berechnungen", icon="📊")
+#page_2=st.Page("Videoanalyse", title="Videosegmentierung", icon="🎥")
+
+#pg=st.navigation([main_page, page_2])
+
+pg.run()
