@@ -5,7 +5,7 @@ import numpy as np
 import math
 import sympy as sp
 from PIL import Image
-import pyvista as pv
+#import pyvista as pv
 import csv
 
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?"))
@@ -1665,37 +1665,37 @@ if take_off_plane_red is not None:
 elif landingplane_red is not None:
     red_points[:, 2] -= landingplane_red
 
-green_cloud = pv.PolyData(green_points)
-red_cloud = pv.PolyData(red_points)
+#green_cloud = pv.PolyData(green_points)
+#red_cloud = pv.PolyData(red_points)
 
 # Kugel-Geometrie definieren
-sphere = pv.Sphere(radius=0.02,phi_resolution=16,theta_resolution=16)
+#sphere = pv.Sphere(radius=0.02,phi_resolution=16,theta_resolution=16)
 
 # Für jeden Punkt eine Kugel erzeugen
-green_spheres = green_cloud.glyph(geom=sphere,scale=False)
+#green_spheres = green_cloud.glyph(geom=sphere,scale=False)
 
-red_spheres = red_cloud.glyph(geom=sphere,scale=False)
+#red_spheres = red_cloud.glyph(geom=sphere,scale=False)
 
 # Darstellung
-plotter = pv.Plotter()
+#plotter = pv.Plotter()
 
-plotter.add_mesh(green_spheres,color="green",smooth_shading=True,label="Grüne Punkte")
+#plotter.add_mesh(green_spheres,color="green",smooth_shading=True,label="Grüne Punkte")
 
-plotter.add_mesh(red_spheres,color="red",smooth_shading=True,label="Rote Punkte")
+#plotter.add_mesh(red_spheres,color="red",smooth_shading=True,label="Rote Punkte")
 
-plotter.add_axes()
-plotter.show_grid()
-plotter.add_legend()
-plotter.show()
+#plotter.add_axes()
+#plotter.show_grid()
+#plotter.add_legend()
+#plotter.show()
 
-green_cloud = pv.PolyData(green_points)
-red_cloud = pv.PolyData(red_points)
+#green_cloud = pv.PolyData(green_points)
+#red_cloud = pv.PolyData(red_points)
 
-plotter = pv.Plotter()
+#plotter = pv.Plotter()
 
-plotter.add_points(green_cloud,color="green",point_size=8,render_points_as_spheres=True,label="Green points")
+#plotter.add_points(green_cloud,color="green",point_size=8,render_points_as_spheres=True,label="Green points")
 
-plotter.add_points(red_cloud,color="red",point_size=8,render_points_as_spheres=True,label="Red points")
+#plotter.add_points(red_cloud,color="red",point_size=8,render_points_as_spheres=True,label="Red points")
 
 cap2.release()
 cv2.destroyAllWindows()
