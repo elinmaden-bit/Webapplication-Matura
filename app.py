@@ -5,7 +5,7 @@ from PIL import Image
 import plotly.express as px
 
 st.title("Vom Eis in die dritte Dimension")
-st.header("Rekonstruktion und Auswertung von Sprungbewegungen anhand zweier Kameraperspektiven mittels Farbsegmentation")
+st.header("Zusammenfassung der Resultate und Analysen")
 
 
 image1=Image.open("Titel Bild final.webp")
@@ -42,7 +42,12 @@ with col2:
 
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
-    dreidim_plotten("Video 4 Koordinaten.csv")    
+    if st.checkbox("3D-Koordinatensystem"):
+        dreidim_plotten("Video 4 Koordinaten.csv")
+    if st.checkbox("Sprungparameter"):
+
+    if st.checkbox("
+    
 #elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     #dreidim_plotten("Video 5 Koordinaten.csv")
 #elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
@@ -94,11 +99,12 @@ daten4=st.selectbox(label="4",options=doppelter_loop,label_visibility="collapsed
 #elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
     #dreidim_plotten("Video 8 Koordinaten.csv")
 
+
 col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Lutz")
 with col2:
-    st.button("ℹ️",help="Der Lutz wird rückwärts von der Aussenkante des Schlittschuhs abgesprungen. Zur Unterstützung des Absprungs wird die Zacke des anderen Schlittschuhs ins Eis gesetzt. Im Gegensatz zum Toeloop erfolgt der Absprung vom anderen Bein. Er gehört zu den Zackensprüngen. Ein weiterer Sprung, von dem jedoch keine Daten vorhanden sind, ist der Flip. Wie beim Lutz wird auch beim Flip die Zacke des anderen Schlittschuhs zur Unterstützung des Absprungs ins Eis gesetzt. Der entscheidende Unterschied zwischen Flip und Lutz liegt in der verwendeten Absprungkante. Der Flip wird von der Einwärtskante abgesprungen. Ansonsten sind die beiden Sprünge beinahe identisch.")
+    st.button("ℹ️",help="Der Lutz wird rückwärts von der Aussenkante des Schlittschuhs abgesprungen. Zur Unterstützung des Absprungs wird die Zacke des anderen Schlittschuhs ins Eis gesetzt. Im Gegensatz zum Toeloop erfolgt der Absprung vom anderen Bein. Er gehört zu den Zackensprüngen.")
 daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed")
 
 #if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
@@ -107,4 +113,13 @@ daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed
     #dreidim_plotten("Video 8 Koordinaten.csv")
 #elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     #dreidim_plotten("Video 9 Koordinaten.csv")
+
+col1, col2 = st.columns([10, 1])
+with col1:
+    st.subheader("Doppelter Flip")
+with col2:
+    st.button("ℹ️",help="Der Flip wird rückwärts von der Innenkante des Schlittschuhs abgesprungen. Wie beim Lutz wird die Zacke des anderen Schlittschuhs zur Unterstützung des Absprungs ins Eis gesetzt. Der entscheidende Unterschied zwischen Flip und Lutz liegt somit in der verwendeten Absprungkante.")
+    
+st.write("Nicht in dieser Arbeit analysiert")
+
 
