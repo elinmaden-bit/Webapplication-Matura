@@ -8,8 +8,12 @@ st.header("Rekonstruktion und Auswertung von Sprungbewegungen anhand zweier Kame
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
 einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
-st.subheader("einfacher Axel")
-st.selectbox("einfacher Axel",
+doppelter_salchow=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
+doppelter_toeloop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
+doppelter_loop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion"]
+doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
+st.subheader("Einfacher Axel")
+st.selectbox("Daten auswählen",einfacher_axel)
 daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
@@ -28,21 +32,14 @@ fig.update_layout(title="Rekonstruierte 3D-Positionen",scene=dict(xaxis_title="X
 st.plotly_chart(fig, use_container_width=True)
 
 
-st.subheader("doppelter Salchow")
-st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
-st.write("Beispieldaten 2, Videomodus: Slowmotion")
-st.write("Beispieldaten 3, Videomodus: Slowmotion")
+st.subheader("Doppelter Salchow")
+st.selectbox("Daten auswählen",doppelter_salchow)
+st.subheader("Doppelter Toeloop")
+st.selectbox("Daten auswählen",doppelter_toeloop)
 
-st.subheader("doppelter Toeloop")
-st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
-st.write("Beispieldaten 2, Videomodus: Slowmotion")
-st.write("Beisplieldaten 3, Videomodus: Slowmotion")
-
-st.subheader("doppelter Rittberger")
-st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
-st.write("Beispieldaten 2, Videomodus: Slowmotion")
+st.subheader("Doppelter Rittberger")
+st.selectbox("Daten auswählen",doppelter_loop)
 
 st.subheader("Doppelter Lutz")
-st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
-st.write("Beispieldaten 2, Videomodus: Slowmotion")
-st.write("Beispieldaten 3, Videomodus: slowmotion")
+st.selectbox("Daten auswählen",doppelter_lutz)
+
