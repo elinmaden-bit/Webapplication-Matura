@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from PIL import Image
 import plotly.express as px
 st.title("Vom Eis in die dritte Dimension")
-st.header("Zusammenfassung Resultate und Analysen einzelner Sprünge")
+st.header("Rekonstruktion und Auswertung von Sprungbewegungen anhand zweier Kameraperspektiven mittels Farbsegmentation")
 image1=Image.open("Bild titel.png")
 st.image(image1, width=400)
 
