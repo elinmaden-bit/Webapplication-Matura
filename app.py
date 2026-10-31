@@ -13,7 +13,7 @@ doppelter_toeloop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispie
 doppelter_loop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion"]
 doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
 st.subheader("Einfacher Axel")
-st.selectbox(" ",einfacher_axel)
+st.selectbox(label="",einfacher_axel,label_visibility="hidden")
 daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
