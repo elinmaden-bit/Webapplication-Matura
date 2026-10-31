@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from PIL import Image
 import plotly.express as px
+import gdown
 
 st.title("Vom Eis in die dritte Dimension")
 st.header("Zusammenfassung der Resultate und Analysen")
