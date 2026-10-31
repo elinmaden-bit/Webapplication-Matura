@@ -50,7 +50,7 @@ if video_nummer==4:
     take_off_plane_red=None
 
 elif video_nummer==5:
-    url1=""
+    url1="https://drive.google.com/file/d/1eTJMw48dRoMXxCFv5mdxYXIrUWDaFqMs/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
     video1=gdown.download(url1, "A Axel slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Axel slowmotion 1.mp4", quiet=False)
@@ -86,7 +86,7 @@ elif video_nummer==5:
     take_off_plane_red=-0.476
 
 elif video_nummer==6:
-    url1=""
+    url1="https://drive.google.com/file/d/1x4LKsktIsWw6jQcmKPtizQE8biV_waW2/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1IIPPaAremVEh_QuEfkQ7aMbf6kSK_TX3/view?usp=drive_link"
     video1=gdown.download(url1, "A Axel slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Axel slowmotion 2.mp4", quiet=False)
@@ -123,7 +123,7 @@ elif video_nummer==6:
 
 
 elif video_nummer==7:
-    url1=""
+    url1="https://drive.google.com/file/d/1yIwtgK2pn3v3QIV-ZBCk45dK6X1bWctr/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1UBVQxoZNyKT227yXiq1Bya5HzTrUuOU7/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow normalspeed.mp4", quiet=False)
@@ -158,7 +158,7 @@ elif video_nummer==7:
 
 
 elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss noch angepasst werden, dass es das ausgibt
-    url1=""
+    url1="https://drive.google.com/file/d/1HT-3bK7T-4z6eP0DeOdpETPjBoZiJ35s/view?usp=drive_link"
     url2="https://drive.google.com/file/d/138CL2K2JqPQME5nhYWvFiJopBteVVeLt/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow slowmotion 1.mp4", quiet=False)
@@ -194,7 +194,7 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     take_off_plane_red=None
 
 elif video_nummer==9:
-    url1=""
+    url1="https://drive.google.com/file/d/1yfCuWxciPkKVeD29ufZSb9EdPovEczfV/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1SyVeKq6DPRC3Mx6uz3LsyMkb-o91wajI/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow slowmotion 2.mp4", quiet=False)
@@ -230,7 +230,7 @@ elif video_nummer==9:
     take_off_plane_red=-0.764
 
 elif video_nummer==10:
-    url1=""
+    url1="https://drive.google.com/file/d/14JqYIJSUqee-pM--Vo0jOIiu_fefTcmx/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1RS84ENZtY34UCNnr7KOhU39FLMwM74RS/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop normalspeed.mp4", quiet=False)
@@ -265,7 +265,7 @@ elif video_nummer==10:
 
 
 elif video_nummer==11:
-    url1=""
+    url1="https://drive.google.com/file/d/1lY6DRW58_lAJHcpfIJXxZqLzvFm3FCs1/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1yER3MJyAmZIhVRm6cJtPN1Mjko6VxTrZ/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop slowmotion 1.mp4", quiet=False)
@@ -301,7 +301,7 @@ elif video_nummer==11:
     take_off_plane_red=None
 
 elif video_nummer==12:
-    url1=""
+    url1="https://drive.google.com/file/d/1EOG1zCgoANUkaureK2LN5syzjbytcfk-/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1aOCFxcflr2IZ0SImmKhX5Wu4hFife3U3/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop slowmotion 2.mp4", quiet=False)
@@ -337,7 +337,7 @@ elif video_nummer==12:
     take_off_plane_red=None
 
 elif video_nummer==13:
-    url1=""
+    url1="https://drive.google.com/file/d/1Kvxsz7ERA_HbBvetP55aUUw9bxv615Pm/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1FieweKFFcJvva8rUmPxTkr2Wn7h70Bhv/view?usp=drive_link"
     video1=gdown.download(url1, "A Loop normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Loop normalspeed.mp4", quiet=False)
@@ -372,7 +372,7 @@ elif video_nummer==13:
 
 
 elif video_nummer==14:
-    url1=""
+    url1="https://drive.google.com/file/d/1bLorzlGqHflEwQfdSK1HCYR5QlLAA6ag/view?usp=drive_link"
     url2="https://drive.google.com/file/d/13q0tonpxMpHVZLzM9C4D8PP33FIOm4k7/view?usp=drive_link"
     video1=gdown.download(url1, "A Loop slowmotion.mp4", quiet=False)
     video2=gdown.download(url2, "B Loop slowmotion.mp4", quiet=False)
@@ -408,7 +408,7 @@ elif video_nummer==14:
     take_off_plane_red=-0.675
 
 elif video_nummer==15:
-    url1=""
+    url1="https://drive.google.com/file/d/1tVjhmdRTG6gUgbvrgCX4kU-qa8w40xGZ/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1_mjvKFBzpzEqvd3IfJXLGx6WmPE-Icni/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz normalspeed.mp4", quiet=False)
@@ -442,7 +442,7 @@ elif video_nummer==15:
     take_off_plane_red=-0.4
 
 elif video_nummer==16:
-    url1=""
+    url1="https://drive.google.com/file/d/1iSmq3-gpwOmSz-eGc8PmwRuHiGspxW2d/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1YkPucZJPSFw3cf02jpxzNqjoyecac8NQ/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz slowmotion 1.mp4", quiet=False)
@@ -478,7 +478,7 @@ elif video_nummer==16:
     take_off_plane_red=None
 
 elif video_nummer==17:
-    url1=""
+    url1="https://drive.google.com/file/d/13QbLaVZXj9te37a__26Q3_hO-AihHj4y/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1pFrxpMGDurdWYlfUVCqvAUFwsimzWIru/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz slowmotion 2.mp4", quiet=False)
