@@ -98,7 +98,7 @@ col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Doppelter Lutz")
 with col2:
-    st.button("ℹ️",help="Der Lutz wird rückwärts von der Aussenkante des Schlittschuhs abgesprungen. Zur Unterstützung des Absprungs wird die Zacke des anderen Schlittschuhs ins Eis gesetzt. Im Gegensatz zum Toeloop erfolgt der Absprung vom anderen Bein. Er gehört zu den Zackensprüngen. Wie beim Lutz wird auch beim Flip die Zacke des anderen Schlittschuhs zur Unterstützung des Absprungs ins Eis gesetzt. Der entscheidende Unterschied zwischen Flip und Lutz liegt in der verwendeten Absprungkante. Flip wird von der Einwärtskante abgesprungen. Jedoch für den Flip sind keine Datensätze vorhanden.")
+    st.button("ℹ️",help="Der Lutz wird rückwärts von der Aussenkante des Schlittschuhs abgesprungen. Zur Unterstützung des Absprungs wird die Zacke des anderen Schlittschuhs ins Eis gesetzt. Im Gegensatz zum Toeloop erfolgt der Absprung vom anderen Bein. Er gehört zu den Zackensprüngen. Ein weiterer Sprung, von dem jedoch keine Daten vorhanden sind ist der Flip. Wie beim Lutz wird auch beim Flip die Zacke des anderen Schlittschuhs zur Unterstützung des Absprungs ins Eis gesetzt. Der entscheidende Unterschied zwischen Flip und Lutz liegt in der verwendeten Absprungkante. Der Flip wird von der Einwärtskante abgesprungen. Ansonsten sind die beidenen Sprügne fast gleich.")
 daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed")
 
 #if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
