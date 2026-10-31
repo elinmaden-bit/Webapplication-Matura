@@ -21,7 +21,7 @@ doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispielda
 
 st.subheader("Einfacher Axel")
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
-if daten1="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
+if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
     fig = go.Figure()
 
