@@ -7,9 +7,9 @@ st.title("Vom Eis in die dritte Dimension")
 st.header("Rekonstruktion und Auswertung von Sprungbewegungen anhand zweier Kameraperspektiven mittels Farbsegmentation")
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
-
+einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
 st.subheader("einfacher Axel")
-st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
+st.selectbox("einfacher Axel",
 daten = pd.read_csv("Video 4 Koordinaten.csv", sep=";")
 fig = go.Figure()
 
@@ -27,9 +27,6 @@ fig.update_layout(title="Rekonstruierte 3D-Positionen",scene=dict(xaxis_title="X
 # In Streamlit anzeigen
 st.plotly_chart(fig, use_container_width=True)
 
-
-st.write("Beispieldaten 2, Videomodus: Slowmotion")
-st.write("Beispieldaten 3, Videomodus: Slowmotion")
 
 st.subheader("doppelter Salchow")
 st.write("Beispieldaten 1, Videomodus: Normalgeschwindigkeit")
