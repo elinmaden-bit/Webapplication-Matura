@@ -41,7 +41,7 @@ def dreidim_plotten(dateiname):
 
     fig.update_layout(title="Rekonstruierte 3D-Positionen",scene=dict(xaxis_title="X-Koordinate",yaxis_title="Y-Koordinate",zaxis_title="Z-Koordinate",aspectmode="data"),height=700)
 
-    st.plotly_chart(fig, use_container_width=True)
+    return fig
 
 def interpolation(dateiname, glattung=0.01):
 
@@ -110,7 +110,7 @@ def interpolation(dateiname, glattung=0.01):
 
     fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="black", width=5)))
     
-    return geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
+    return fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -123,6 +123,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem"):
         dreidim_plotten("Video 4 Koordinaten.csv")
         interpolation("Video 4 Koordinaten.csv")
+        st.plotly_chart(fig, use_container_width=True)
     #if st.checkbox("Sprungparameter"):
 
     #if st.checkbox("
