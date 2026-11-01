@@ -114,8 +114,8 @@ def interpolation(dateiname, glattung=0.01):
 
 def sprungrichtung(dateiname):
     daten = pd.read_csv(dateiname, sep=";")
-    absprung = np.array([float(daten["Take-off X"].ilox[0]),float(daten["Take-off Y"].iloc[0])])
-    landung = np.array([float(daten["Landing X"].ilox[0]),float(daten["Landing Y"].iloc[0])])
+    absprung = np.array(ast.literal_eval(daten["Take-off Position"].iloc[0]))
+    landung = np.array(ast.literal_eval(daten["Landungs Position"].iloc[0]))
     
     sprungrichtung=landung-absprung
 
