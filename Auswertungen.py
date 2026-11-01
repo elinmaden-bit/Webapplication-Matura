@@ -65,7 +65,7 @@ def interpolation(dateiname, glattung=0.01):
     spline_y_red = UnivariateSpline(t_red, y_red, s=glattung)
     spline_z_red = UnivariateSpline(t_red, z_red, s=glattung)
 
-    t_neu_red = np.linspace(t[0], t[-1], 500)
+    t_neu_red = np.linspace(t_red[0], t_red[-1], 500)
     x_neu_red = spline_x_red(t_neu_red)
     y_neu_red = spline_y_red(t_neu_red)
     z_neu_red = spline_z_red(t_neu_red)
@@ -92,7 +92,7 @@ def interpolation(dateiname, glattung=0.01):
     spline_y_green = UnivariateSpline(t_green, y_green, s=glattung)
     spline_z_green = UnivariateSpline(t_green, z_green, s=glattung)
 
-    t_neu_green = np.linspace(t[0], t[-1], 500)
+    t_neu_green = np.linspace(t_green[0], t_green[-1], 500)
     x_neu_green = spline_x_green(t_neu_green)
     y_neu_green = spline_y_green(t_neu_green)
     z_neu_green = spline_z_green(t_neu_green)
