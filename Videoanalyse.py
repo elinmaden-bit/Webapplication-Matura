@@ -539,7 +539,7 @@ focal_position2=[-5-(0.127824/2)-math.sin(angle30)*focal_length2,0.073799-math.c
 frame_count1=0
 frame_count2=0
 
-
+@st.cache_data
 def get_position_in_space1_normal(position_on_screen):
     left,upper,right,lower=position_on_screen
     midpoint_position_pixel=[(left+right)/2,pixel_width-((upper+lower)/2)] #Mittelpunkt von der segmentierten Stelle nehmen
@@ -548,7 +548,7 @@ def get_position_in_space1_normal(position_on_screen):
     angle = math.radians(30)
     position_in_space=[math.cos(angle)*distance_from_left_side_m,math.sin(angle)*distance_from_left_side_m,height_on_screen_m]
     return(position_in_space)
-
+@st.cache_data
 def get_position_in_space2_normal(position_on_screen): 
     left,upper,right,lower=position_on_screen
     midpoint_position_pixel=[(left+right)/2,pixel_width-((upper+lower)/2)] #Mittelpunkt von der segmentierten Stelle nehmen
@@ -557,7 +557,7 @@ def get_position_in_space2_normal(position_on_screen):
     angle = math.radians(30)
     position_in_space=[-5-math.cos(angle)*distance_from_right_side_m,math.sin(angle)*distance_from_right_side_m,height_on_screen_m]
     return(position_in_space)
-
+@st.cache_data
 def get_linear_function_focalpoint1_normal(position_on_screenA):#define function, that goes through the Points, Returns that function with variablename function1
     position_on_screenA_vector=sp.Matrix(position_on_screenA)
     s = sp.symbols('s')
@@ -567,7 +567,7 @@ def get_linear_function_focalpoint1_normal(position_on_screenA):#define function
     print("FunctionA:", function1)
     return function1, direction_vector1
 
-
+@st.cache_data
 def get_linear_function_focalpoint2_normal(position_on_screenB):
     position_on_screenB_vector=sp.Matrix(position_on_screenB)
     t = sp.symbols('t')
