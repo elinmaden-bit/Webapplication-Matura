@@ -10,6 +10,8 @@ import csv
 import gdown
 
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?")
+st.slider(start_frame1)#Startframe hinauszögern
+st.slider(start_frame2)
 start_segmentation2=None
 stopp_segmentation2=None
 
@@ -578,6 +580,8 @@ def get_linear_function_focalpoint2_normal(position_on_screenB):
 
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
+cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
+cap2.set(cv2.CAP_PROP_POS_FRAMES, start_frame2)
 
 if not cap1.isOpened():
     print("Video konnte nicht geöffnet werden.")
