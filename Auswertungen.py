@@ -26,10 +26,10 @@ doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispielda
 
 
 fps=30
+#für plotten und interpolation
+fig = go.Figure()
 
 def dreidim_plotten(dateiname):
-
-    fig = go.Figure()
     
     daten = pd.read_csv(dateiname, sep=";")
     red = daten[daten["Farbe"] == "Red"].copy()
