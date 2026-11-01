@@ -23,16 +23,16 @@ doppelter_toeloop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispie
 doppelter_loop=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion"]
 doppelter_lutz=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
 
-#CSV Daten einlesen
-daten = pd.read_csv(dateiname, sep=";")
-red = daten[daten["Farbe"] == "Red"].copy()
-green = daten[daten["Farbe"] == "Green"].copy()
+
 fps=30
 
 def dreidim_plotten(dateiname):
 
     fig = go.Figure()
     
+    daten = pd.read_csv(dateiname, sep=";")
+    red = daten[daten["Farbe"] == "Red"].copy()
+    green = daten[daten["Farbe"] == "Green"].copy()
 
     fig.add_trace(go.Scatter3d(x=red["X"],y=red["Y"],z=red["Z"],mode="markers",name="Rote Punkte",marker=dict(size=3, color="red"),text=red["Frame"],hovertemplate="Frame: %{text}<br>X: %{x}<br>Y: %{y}<br>Z: %{z}<extra></extra>"))
 
@@ -44,6 +44,10 @@ def dreidim_plotten(dateiname):
 
 def interpolation(dateiname, glattung=0.01):
     fig=go.Figure()
+    daten = pd.read_csv(dateiname, sep=";")
+    red = daten[daten["Farbe"] == "Red"].copy()
+    green = daten[daten["Farbe"] == "Green"].copy()
+    
     t_red=red["Frame"].to_numpy()/fps
 
     x_red=red["X"].to_numpy()
