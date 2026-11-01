@@ -116,11 +116,12 @@ def sprungrichtung(dateiname):
     daten = pd.read_csv(dateiname, sep=";")
     absprung = daten["Take-off Position"].to_numpy()
     landung = daten["Landungs Position"].to_numpy()
-    
-    sprungrichtung = landung-absprung
-    laenge=np.sqrt(sprungrichtung[1]**2+sprungrichtung[2]**2)
 
-    fig.add_trace(go.Cone(x=[x_absprung],y=[y_absprung],z=[0],u=[richtung[0]],v=[richtung[1]],w=[0],sizemode="absolute",sizeref=0.5,anchor="tail",colorscale=[[0, "black"], [1, "black"]],showscale=False,name="Sprungrichtung"))
+    
+    sprungrichtung = np.array(landung[0]-absprung[0], landung[1]-absprung[1])
+    laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
+
+    fig.add_trace(go.Cone(x=[absprung[0]],y=[absprung[1]],z=[0],u=[sprungrichtung[0]],v=[sprungrichtung[1]],w=[0],sizemode="absolute",sizeref=0.5,anchor="tail",colorscale=[[0, "black"], [1, "black"]],showscale=False,name="Sprungrichtung"))
     
 
 col1, col2 = st.columns([10, 1])
