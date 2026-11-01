@@ -106,9 +106,9 @@ def interpolation(dateiname, glattung=0.01):
 
     beschleunigung_green = np.sqrt(ax_green**2 + ay_green**2)
 
-    fig.add_trace(go.Scatter3d(x=x_neu_red,y=y_neu_red,z=z_neu_red,mode="lines",name="Rote Gerade",line=dict(color="schwarz", width=5)))
+    fig.add_trace(go.Scatter3d(x=x_neu_red,y=y_neu_red,z=z_neu_red,mode="lines",name="Rote Gerade",line=dict(color="black", width=5)))
 
-    fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="schwarz", width=5)))
+    fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="black", width=5)))
     
     return geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
