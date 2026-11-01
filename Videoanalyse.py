@@ -10,8 +10,8 @@ import csv
 import gdown
 
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?")
-st.slider(start_frame1)#Startframe hinauszögern
-st.slider(start_frame2)
+start_frame1=st.slider(start_frame1)#Startframe hinauszögern
+start_frame2=st.slider(start_frame2)
 start_segmentation2=None
 stopp_segmentation2=None
 
