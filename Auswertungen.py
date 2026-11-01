@@ -117,9 +117,9 @@ def sprungrichtung(dateiname):
     daten = pd.read_csv(dateiname, sep=";")
     absprung = np.array(ast.literal_eval(daten["Take-off Position"].iloc[0]))
     landung = np.array(ast.literal_eval(daten["Landungs Position"].iloc[0]))
-    landung_xy=landung[:2]
+    absprung_xy=absprung[:2]
     
-    sprungrichtung=landung_xy-absprung
+    sprungrichtung=landung-absprung_xy
 
     laenge = np.linalg.norm(sprungrichtung)
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
