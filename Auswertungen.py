@@ -43,7 +43,7 @@ def dreidim_plotten(dateiname):
     st.plotly_chart(fig, use_container_width=True)
 
 def interpolation(dateiname, glattung=0.01):
-    fig=go.Figure()
+
     daten = pd.read_csv(dateiname, sep=";")
     red = daten[daten["Farbe"] == "Red"].copy()
     green = daten[daten["Farbe"] == "Green"].copy()
@@ -104,7 +104,7 @@ def interpolation(dateiname, glattung=0.01):
 
     fig.add_trace(go.Scatter3d(x=x_neu_red,y=y_neu_red,z=z_neu_red,mode="lines",name="Rote Gerade",line=dict(color="schwarz", width=5)))
 
-    fig.add_trace(go.Scatter3d(x=green["X"],y=green["Y"],z=green["Z"],mode="markers",name="Grüne Punkte",marker=dict(size=3, color="green"),text=green["Frame"],hovertemplate="Frame: %{text}<br>X: %{x}<br>Y: %{y}<br>Z: %{z}<extra></extra>"))
+    fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="schwarz", width=5))
     
     return geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
