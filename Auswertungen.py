@@ -114,16 +114,15 @@ def interpolation(dateiname, glattung=0.01):
 
 def sprungrichtung(dateiname):
     daten = pd.read_csv(dateiname, sep=";")
-    absprung = pd.to_numeric(daten["Take-off Position"], errors="coerce")
-    landung = pd.to_numeric(daten["Landungs Position"], errors="coerce")
+    absprung = np.array([float(daten["Take-off X"].ilox[0]),float(daten["Take-off Y"].iloc[0])])
+    landung = np.array([float(daten["Landing X"].ilox[0]),float(daten["Landing Y"].iloc[0])])
+    
+    sprungrichtung=landung-absprung
 
-    absprung=absprung.to_numpy()
-    landung=landung.to_numpy()
-
-    sprungrichtung = np.array(landung[0]-absprung[0], landung[1]-absprung[1])
+    laenge = np.linalg.norm(sprungrichtung)
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
-    fig.add_trace(go.Cone(x=[absprung[0]],y=[absprung[1]],z=[0],u=[sprungrichtung[0]],v=[sprungrichtung[1]],w=[0],sizemode="absolute",sizeref=0.5,anchor="tail",colorscale=[[0, "black"], [1, "black"]],showscale=False,name="Sprungrichtung"))
+    fig.add_trace(go.Cone(x=[absprung[0]],y=[absprung[1]],z=[0],u=[sprungrichtung[0]],v=[sprungrichtung[1]],w=[0],sizemode="absolute",sizeref=0.5,anchor="tail",colorscale=[[0, "violet"], [1, "violet"]],showscale=False,name="Sprungrichtung"))
     
 
 col1, col2 = st.columns([10, 1])
