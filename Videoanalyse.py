@@ -7,6 +7,7 @@ import sympy as sp
 from PIL import Image
 #import pyvista as pv
 import csv
+import gdown
 
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?")
 start_segmentation2=None
