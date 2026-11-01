@@ -46,7 +46,7 @@ def interpolation(dateiname, glattung=0.01):
     fig=go.Figure()
     t_red=red["Frame"].to_numpy()/fps
 
-    x_red=red["X").to_numpy()
+    x_red=red["X"].to_numpy()
     y_red = red["Y"].to_numpy()
     z_red = red["Z"].to_numpy()
     
@@ -73,7 +73,7 @@ def interpolation(dateiname, glattung=0.01):
 
     t_green=green["Frame"].to_numpy()/fps
 
-    x_green=green["X").to_numpy()
+    x_green=green["X"].to_numpy()
     y_green = green["Y"].to_numpy()
     z_green = green["Z"].to_numpy()
     
