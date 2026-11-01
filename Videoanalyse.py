@@ -8,7 +8,7 @@ from PIL import Image
 #import pyvista as pv
 import csv
 
-video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?"))
+video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?")
 start_segmentation2=None
 stopp_segmentation2=None
 
