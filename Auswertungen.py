@@ -112,6 +112,17 @@ def interpolation(dateiname, glattung=0.01):
     
     return fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
+def sprungrichtung(dateiname):
+    daten = pd.read_csv(dateiname, sep=";")
+    absprung = daten["Take-off Position", errors="coerce"].to_numpy()
+    landung = daten["Landungs Position", errors="coerce"].to_numpy()
+    
+    sprungrichtung = landung-absprung
+    laenge=np.sqrt(sprungrichtung[1]**2+sprungrichtung[2]**2)
+
+    fig.add_trace(go.Cone(x=[x_absprung],y=[y_absprung],z=[0],u=[richtung[0]],v=[richtung[1]],w=[0],sizemode="absolute",sizeref=0.5,anchor="tail",colorscale=[[0, "black"], [1, "black"]],showscale=False,name="Sprungrichtung"))
+    
+
 col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Einfacher Axel")
@@ -123,6 +134,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem"):
         dreidim_plotten("Video 4 Koordinaten.csv")
         interpolation("Video 4 Koordinaten.csv")
+        sprungrichtung("Video 4 Ergebnisse.csv")
         st.plotly_chart(fig, use_container_width=True)
     #if st.checkbox("Sprungparameter"):
 
