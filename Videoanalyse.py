@@ -616,8 +616,13 @@ while True:
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
         colored_blue1 = np.zeros_like(frame1)
         colored_blue1[mask_blue1 > 0] = [255, 0, 0]
-        mask_blue1_ = Image.fromarray(mask_blue1)
-        bboxblue1=mask_blue1_.getbbox()
+        coords = cv2.findNonZero(mask_blue1)
+
+        if coords is not None:
+            x, y, w, h = cv2.boundingRect(coords)
+            bboxblue1 = (x, y, x+w, y+h)
+        else:
+            bboxblue1 = None
         print("Blue Bonding Box A:", bboxblue1)
         bild1_segmentiert.image(colored_blue1, channels="BGR")#cv2.imshow ersetzt
         bild1.image(frame1, channels="BGR")
@@ -636,8 +641,13 @@ while True:
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
         colored_blue2 = np.zeros_like(frame1)
         colored_blue2[mask_blue2 > 0] = [255, 0, 0]
-        mask_blue2_ = Image.fromarray(mask_blue2)
-        bboxblue2=mask_blue2_.getbbox()
+        coords = cv2.findNonZero(mask_blue2)
+
+        if coords is not None:
+            x, y, w, h = cv2.boundingRect(coords)
+            bboxblue2 = (x, y, x+w, y+h)
+        else:
+            bboxblue2 = None
         print("Blue Bonding Box B:", bboxblue2)
         bild2_segmentiert.image(colored_blue2, channels="BGR")
         bild2.image(frame2, channels="BGR")
