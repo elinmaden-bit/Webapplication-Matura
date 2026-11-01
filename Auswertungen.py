@@ -34,6 +34,9 @@ def dreidim_plotten(dateiname):
     red = daten[daten["Farbe"] == "Red"].copy()
     green = daten[daten["Farbe"] == "Green"].copy()
 
+    red["Frame"] = pd.to_numeric(red["Frame"], errors="coerce")
+    green["Frame"] = pd.to_numeric(green["Frame"], errors="coerce")
+
     fig.add_trace(go.Scatter3d(x=red["X"],y=red["Y"],z=red["Z"],mode="markers",name="Rote Punkte",marker=dict(size=3, color="red"),text=red["Frame"],hovertemplate="Frame: %{text}<br>X: %{x}<br>Y: %{y}<br>Z: %{z}<extra></extra>"))
 
     fig.add_trace(go.Scatter3d(x=green["X"],y=green["Y"],z=green["Z"],mode="markers",name="Grüne Punkte",marker=dict(size=3, color="green"),text=green["Frame"],hovertemplate="Frame: %{text}<br>X: %{x}<br>Y: %{y}<br>Z: %{z}<extra></extra>"))
