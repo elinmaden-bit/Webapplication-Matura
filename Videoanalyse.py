@@ -9,7 +9,7 @@ from PIL import Image
 import csv
 import gdown
 
-video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?")
+video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", default=4)
 start_frame1=st.slider("Wähle ein Startframe für Video 1:", min_value=0, max_value=100, value=0)#Startframe hinauszögern
 start_frame2=st.slider("Wähle ein Startframe für Video 2:", min_value=0, max_value=100, value=0)
 start_segmentation2=None
