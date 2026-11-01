@@ -117,7 +117,9 @@ def sprungrichtung(dateiname):
     absprung = pd.to_numeric(daten["Take-off Position"], errors="coerce")
     landung = pd.to_numeric(daten["Landungs Position"], errors="coerce")
 
-    
+    absprung=absprung.to_numpy()
+    landung=landung.to_numpy()
+
     sprungrichtung = np.array(landung[0]-absprung[0], landung[1]-absprung[1])
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
