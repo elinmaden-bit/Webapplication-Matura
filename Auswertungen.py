@@ -4,7 +4,7 @@ import plotly.graph_objects as go
 from PIL import Image
 import plotly.express as px
 import gdown
-
+from scipy.interpolate import CubicSpline
 
 
 
