@@ -5,6 +5,7 @@ from PIL import Image
 import plotly.express as px
 import gdown
 from scipy.interpolate import CubicSpline
+import numpy as np
 
 
 
