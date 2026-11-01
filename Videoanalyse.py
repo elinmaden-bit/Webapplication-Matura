@@ -18,8 +18,8 @@ if video_nummer==4:
     url2="https://drive.google.com/file/d/1Neae1Sc5-wCV-W9VN78X-Y9srm80QtJn/view?usp=drive_link"
     video1=gdown.download(url1, "A Axel normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Axel normalspeed.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -54,8 +54,8 @@ elif video_nummer==5:
     url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
     video1=gdown.download(url1, "A Axel slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Axel slowmotion 1.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -90,8 +90,8 @@ elif video_nummer==6:
     url2="https://drive.google.com/file/d/1IIPPaAremVEh_QuEfkQ7aMbf6kSK_TX3/view?usp=drive_link"
     video1=gdown.download(url1, "A Axel slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Axel slowmotion 2.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -127,8 +127,8 @@ elif video_nummer==7:
     url2="https://drive.google.com/file/d/1UBVQxoZNyKT227yXiq1Bya5HzTrUuOU7/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow normalspeed.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -162,8 +162,8 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     url2="https://drive.google.com/file/d/138CL2K2JqPQME5nhYWvFiJopBteVVeLt/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow slowmotion 1.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -198,8 +198,8 @@ elif video_nummer==9:
     url2="https://drive.google.com/file/d/1SyVeKq6DPRC3Mx6uz3LsyMkb-o91wajI/view?usp=drive_link"
     video1=gdown.download(url1, "A Salchow slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Salchow slowmotion 2.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -234,8 +234,8 @@ elif video_nummer==10:
     url2="https://drive.google.com/file/d/1RS84ENZtY34UCNnr7KOhU39FLMwM74RS/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop normalspeed.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -269,8 +269,8 @@ elif video_nummer==11:
     url2="https://drive.google.com/file/d/1yER3MJyAmZIhVRm6cJtPN1Mjko6VxTrZ/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop slowmotion 1.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -305,8 +305,8 @@ elif video_nummer==12:
     url2="https://drive.google.com/file/d/1aOCFxcflr2IZ0SImmKhX5Wu4hFife3U3/view?usp=drive_link"
     video1=gdown.download(url1, "A Toeloop slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Toeloop slowmotion 2.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -341,8 +341,8 @@ elif video_nummer==13:
     url2="https://drive.google.com/file/d/1FieweKFFcJvva8rUmPxTkr2Wn7h70Bhv/view?usp=drive_link"
     video1=gdown.download(url1, "A Loop normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Loop normalspeed.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -376,8 +376,8 @@ elif video_nummer==14:
     url2="https://drive.google.com/file/d/13q0tonpxMpHVZLzM9C4D8PP33FIOm4k7/view?usp=drive_link"
     video1=gdown.download(url1, "A Loop slowmotion.mp4", quiet=False)
     video2=gdown.download(url2, "B Loop slowmotion.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -412,8 +412,8 @@ elif video_nummer==15:
     url2="https://drive.google.com/file/d/1_mjvKFBzpzEqvd3IfJXLGx6WmPE-Icni/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz normalspeed.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz normalspeed.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -446,8 +446,8 @@ elif video_nummer==16:
     url2="https://drive.google.com/file/d/1YkPucZJPSFw3cf02jpxzNqjoyecac8NQ/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz slowmotion 1.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz slowmotion 1.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -482,8 +482,8 @@ elif video_nummer==17:
     url2="https://drive.google.com/file/d/1pFrxpMGDurdWYlfUVCqvAUFwsimzWIru/view?usp=drive_link"
     video1=gdown.download(url1, "A Lutz slowmotion 2.mp4", quiet=False)
     video2=gdown.download(url2, "B Lutz slowmotion 2.mp4", quiet=False)
-    st.video(video1, width=400)
-    st.video(video2, width=400)
+    #st.video(video1, width=400)
+    #st.video(video2, width=400)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -517,14 +517,14 @@ else:
 
 
 
-cv2.namedWindow("Blue Mask A", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Blue Mask A", 640, 360)
-cv2.namedWindow("Blue Mask B", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Blue Mask B", 640, 360)
-cv2.namedWindow("Blue Real A", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Blue Real A", 640, 360)
-cv2.namedWindow("Blue Real B", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Blue Real B", 640, 360)
+#cv2.namedWindow("Blue Mask A", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Blue Mask A", 640, 360)
+#cv2.namedWindow("Blue Mask B", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Blue Mask B", 640, 360)
+#cv2.namedWindow("Blue Real A", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Blue Real A", 640, 360)
+#cv2.namedWindow("Blue Real B", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Blue Real B", 640, 360)
 
 blue_found1=0
 blue_found2=0
@@ -575,8 +575,8 @@ def get_linear_function_focalpoint2_normal(position_on_screenB):
     return function2, direction_vector2
 
 
-cap1 = cv2.VideoCapture(video_path1)
-cap2 = cv2.VideoCapture(video_path2)
+cap1 = cv2.VideoCapture(video1)
+cap2 = cv2.VideoCapture(video2)
 
 if not cap1.isOpened():
     print("Video konnte nicht geöffnet werden.")
@@ -585,7 +585,15 @@ if not cap1.isOpened():
 if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
-
+    
+col1, col2 = st.columns(2)
+with col1:
+    bild1 = st.empty()
+    bild1_segmentiert = st.empty()
+with col2:
+    bild2 = st.empty()
+    bild2_segmentiert = st.empty()
+    
 while True:
     ret1, frame1 = cap1.read()
     ret2, frame2 = cap2.read()
@@ -605,8 +613,9 @@ while True:
         mask_blue1_ = Image.fromarray(mask_blue1)
         bboxblue1=mask_blue1_.getbbox()
         print("Blue Bonding Box A:", bboxblue1)
-        cv2.imshow("Blue Mask A", colored_blue1)
-        cv2.imshow("Blue Real A", frame1)
+        bild1_segmentiert.image(colored_blue1, channels="BGR")#cv2.imshow ersetzt
+        bild1.image(frame1, channels="BGR")
+
 
         if bboxblue1 is not None:
             frame_number1 = int(cap1.get(cv2.CAP_PROP_POS_FRAMES)) - 1
@@ -624,8 +633,9 @@ while True:
         mask_blue2_ = Image.fromarray(mask_blue2)
         bboxblue2=mask_blue2_.getbbox()
         print("Blue Bonding Box B:", bboxblue2)
-        cv2.imshow("Blue Mask B", colored_blue2)
-        cv2.imshow("Blue Real B", frame2)
+        bild2_segmentiert.image(colored_blue2, channels="BGR")
+        bild2.image(frame2, channels="BGR")
+
 
         if bboxblue2 is not None:
             frame_number2 = int(cap2.get(cv2.CAP_PROP_POS_FRAMES)) - 1
@@ -636,24 +646,17 @@ while True:
     if blue_found1 and blue_found2:
         cap1.release()
         cap2.release()
-        cv2.destroyAllWindows()
         break
+        #cv2.destroyAllWindows()->verwendet keine OpenCV Fenster mehr
+        
 
-
-
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-             break
-
-
-
-
-
+    #if cv2.waitKey(1) & 0xFF == ord('q'):
+             #break
 
 
 #2. Teil des Programms->Videos werden vom Frame in dem Blue erkannt wurde abgespielt, hier wird Rot und Grün erkannt
-cap1=cv2.VideoCapture(video_path1)
-cap2=cv2.VideoCapture(video_path2)
+cap1=cv2.VideoCapture(video1)
+cap2=cv2.VideoCapture(video2)
 
 if not cap1.isOpened():
     print("Video konnte nicht geöffnet werden.")
@@ -663,13 +666,20 @@ if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
 
-cv2.namedWindow("Real1", cv2.WINDOW_NORMAL)
-cv2.namedWindow("Mask1", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Real1", 640, 360)
-cv2.resizeWindow("Mask1", 640, 360)
+#cv2.namedWindow("Real1", cv2.WINDOW_NORMAL)
+#cv2.namedWindow("Mask1", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Real1", 640, 360)
+#cv2.resizeWindow("Mask1", 640, 360)
 
+col1, col2 = st.columns(2)
 
+with col1:
+    bild1 = st.empty()
+    bild1_segmentiert = st.empty()
 
+with col2:
+    bild2 = st.empty()
+    bild2_segmentiert = st.empty()
 
 cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1)
 cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2)
@@ -786,7 +796,7 @@ while True:
    
     frame_count1+=1
 
-    cv2.putText(frame1,f"Frame: {frame_count1}",(20, 40),cv2.FONT_HERSHEY_SIMPLEX,1,(0, 255, 0),2)
+    #cv2.putText(frame1,f"Frame: {frame_count1}",(20, 40),cv2.FONT_HERSHEY_SIMPLEX,1,(0, 255, 0),2)
 
     colored1 = np.zeros_like(frame1)
 
@@ -798,24 +808,22 @@ while True:
     # Grün einfärben
     colored1[mask_green_full1 > 0] = [0, 255, 0]
 
-
-    cv2.imshow("Mask1", colored1)
-
-    cv2.imshow("Real1", frame1)
+    bild1_segmentiert.image(colored1, channels="BGR")
+    bild1.image(frame1, channels="BGR")
 
 
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+    #if cv2.waitKey(1) & 0xFF == ord('q'):
+        #break
 
 
 
 cap1.release()
-cv2.destroyAllWindows()
+#cv2.destroyAllWindows()
 
-cv2.namedWindow("Real2", cv2.WINDOW_NORMAL)
-cv2.namedWindow("Mask2", cv2.WINDOW_NORMAL)
-cv2.resizeWindow("Real2", 640, 360)
-cv2.resizeWindow("Mask2", 640, 360)
+#cv2.namedWindow("Real2", cv2.WINDOW_NORMAL)
+#cv2.namedWindow("Mask2", cv2.WINDOW_NORMAL)
+#cv2.resizeWindow("Real2", 640, 360)
+#cv2.resizeWindow("Mask2", 640, 360)
 
 
 
@@ -830,7 +838,6 @@ while True:
 
     roigreen2=frame2[round((2/3)*pixel_width):pixel_width, 0:round((4/5)*pixel_length)]#Region of interest angepasst wegen grüner Bande:)
     hsvgreen2 = cv2.cvtColor(roigreen2, cv2.COLOR_BGR2HSV)
-
 
     mask_green2 = cv2.inRange(hsvgreen2, lower_green2, upper_green2)
 
@@ -945,14 +952,13 @@ while True:
     colored2[mask_green_full2 > 0] = [0, 255, 0]
 
 
-    cv2.imshow("Mask2", colored2)
+    bild2_segmentiert.image(colored2)
+    bild2.image(frame2)
 
-    cv2.imshow("Real2", frame2)
 
-
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
-
+    #if cv2.waitKey(1) & 0xFF == ord('q'):
+        #break
+cap2.release()
 
 print("List of green functions 1:", list_of_functions1_green)
 print("List of red functions 1:", list_of_functions1_red)
@@ -988,6 +994,8 @@ if video_nummer in (4,7,10,13,15):
                     position_greenpoint.append([list(mean_point),frame1])
 
     print("Green Point at certain frame:",position_greenpoint)
+    st.subheader("3D-Position Grünepunkte:")
+    st.write(position_greenpoint)
 
     #Position für Rot
     for frame1, function1, direction1 in list_of_functions1_red:
@@ -1011,7 +1019,8 @@ if video_nummer in (4,7,10,13,15):
 
 
     print("Red Point at certain frame:",position_redpoint)
-
+    st.subheader("3D-Position Rotepunkte:")
+    st.write(position_redpoint)
 
 if video_nummer in (5,6,8,9,11,12,14,16,17):
     for frame1, function1, direction1 in list_of_functions1_green:
@@ -1035,6 +1044,8 @@ if video_nummer in (5,6,8,9,11,12,14,16,17):
                     position_greenpoint.append([list(mean_point),frame1])
 
     print("Green Point at certain frame:",position_greenpoint)
+    st.subheader("3D-Position Grünepunkte:")
+    st.write(position_greenpoint)
 
     #Position für Rot
     for frame1, function1, direction1 in list_of_functions1_red:
@@ -1058,6 +1069,8 @@ if video_nummer in (5,6,8,9,11,12,14,16,17):
 
 
     print("Red Point at certain frame:",position_redpoint)
+    st.subheader("3D-Position Rotepunkte:")
+    st.write(position_redpoint)
 #Test Framepaare Slowmotion
 
 #frames_green1 = {frame for frame, function, direction in list_of_functions1_green}
@@ -1083,6 +1096,8 @@ for position_red, frame1 in position_redpoint:
             function_redgreen_projected=function_redgreen[:2,:]
             list_redgreen.append((function_redgreen_projected,frame1))
 print("List Red to Green Points:", list_redgreen)
+st.subheader("Fuktionen durch Rote und Grüne Punkte:")
+st.write(list_redgreen)
 
 
 
@@ -1624,46 +1639,46 @@ for position, frame in position_greenpoint:
 
 
 #CSV-Datei erstellen:
-with open("Video 4 Ergebnisse.csv", "w", newline="", encoding="utf-8-sig") as datei:
-    writer = csv.writer(datei, delimiter=";")
+#with open("Video 4 Ergebnisse.csv", "w", newline="", encoding="utf-8-sig") as datei:
+    #writer = csv.writer(datei, delimiter=";")
 
-    writer.writerow(["Take-off Frame", "Take-off Position", "Landungs Frame", "Landungs Position", "Sprungrichtung", "Luftzeit", "Max. Höhe", "Weite","Rotation"])
+    #writer.writerow(["Take-off Frame", "Take-off Position", "Landungs Frame", "Landungs Position", "Sprungrichtung", "Luftzeit", "Max. Höhe", "Weite","Rotation"])
 
-    writer.writerow([mean_take_off, mean_take_off_position, mean_landing, mean_landing_position, jumpdirection, airtime, max_height, jump_distance, avg_total_angle])
+    #writer.writerow([mean_take_off, mean_take_off_position, mean_landing, mean_landing_position, jumpdirection, airtime, max_height, jump_distance, avg_total_angle])
 
 
 
-with open("Video 4 Koordinaten.csv", "w", newline="", encoding="utf-8-sig") as datei:
-    writer = csv.writer(datei, delimiter=";")
+#with open("Video 4 Koordinaten.csv", "w", newline="", encoding="utf-8-sig") as datei:
+    #writer = csv.writer(datei, delimiter=";")
 
-    writer.writerow(["Farbe","Frame", "X", "Y", "Z"])
+    #writer.writerow(["Farbe","Frame", "X", "Y", "Z"])
 
-    for position, frame in position_redpoint_seg:
-        writer.writerow(["Red", frame, position[0], position[1], position[2]])
+    #for position, frame in position_redpoint_seg:
+        #writer.writerow(["Red", frame, position[0], position[1], position[2]])
 
-    writer.writerow(["Farbe","Frame", "X", "Y", "Z"])
+    #writer.writerow(["Farbe","Frame", "X", "Y", "Z"])
 
-    for position, frame in position_greenpoint_seg:
-        writer.writerow(["Green", frame, position[0], position[1], position[2]])
+    #for position, frame in position_greenpoint_seg:
+        #writer.writerow(["Green", frame, position[0], position[1], position[2]])
 
 
 
 #Punkte in einem Koordinatensystem plotten
-green_points = np.array([position for position, frame in position_greenpoint_seg], dtype=float)
+#green_points = np.array([position for position, frame in position_greenpoint_seg], dtype=float)
 
-red_points = np.array([position for position, frame in position_redpoint_seg], dtype=float)
+#red_points = np.array([position for position, frame in position_redpoint_seg], dtype=float)
 
-if take_off_plane_green is not None:
-    green_points[:, 2] -= take_off_plane_green
+#if take_off_plane_green is not None:
+    #green_points[:, 2] -= take_off_plane_green
 
-elif landingplane_green is not None:
-    green_points[:, 2] -= landingplane_green
+#elif landingplane_green is not None:
+    #green_points[:, 2] -= landingplane_green
 
-if take_off_plane_red is not None:
-    red_points[:, 2] -= take_off_plane_red
+#if take_off_plane_red is not None:
+    #red_points[:, 2] -= take_off_plane_red
 
-elif landingplane_red is not None:
-    red_points[:, 2] -= landingplane_red
+#elif landingplane_red is not None:
+    #red_points[:, 2] -= landingplane_red
 
 #green_cloud = pv.PolyData(green_points)
 #red_cloud = pv.PolyData(red_points)
@@ -1697,8 +1712,7 @@ elif landingplane_red is not None:
 
 #plotter.add_points(red_cloud,color="red",point_size=8,render_points_as_spheres=True,label="Red points")
 
-cap2.release()
-cv2.destroyAllWindows()
+
 
 
 
