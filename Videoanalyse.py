@@ -586,7 +586,8 @@ if not cap1.isOpened():
 if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
-    
+
+st.subheader("1. Blausegmentierung zur Synchronisierung der Videos")
 col1, col2 = st.columns(2)
 with col1:
     bild1 = st.empty()
@@ -647,6 +648,10 @@ while True:
     if blue_found1 and blue_found2:
         cap1.release()
         cap2.release()
+        bild1.empty()
+        bild1_segmentiert.empty()
+        bild2.empty()
+        bild2_segmentiert.empty()
         break
         #cv2.destroyAllWindows()->verwendet keine OpenCV Fenster mehr
         
@@ -672,6 +677,7 @@ if not cap2.isOpened():
 #cv2.resizeWindow("Real1", 640, 360)
 #cv2.resizeWindow("Mask1", 640, 360)
 
+st.subheader("2. Rot-/Grünsegmentierung des 1. Videos")
 col1, col2 = st.columns(2)
 
 with col1:
@@ -819,6 +825,9 @@ while True:
 
 
 cap1.release()
+bild1.empty()
+bild1_segmentiert.empty()
+
 #cv2.destroyAllWindows()
 
 #cv2.namedWindow("Real2", cv2.WINDOW_NORMAL)
@@ -827,7 +836,7 @@ cap1.release()
 #cv2.resizeWindow("Mask2", 640, 360)
 
 
-
+st.subheader("2. Rot-/Grünsegmentierung des 1. Videos")
 
 
 #2. Video
@@ -960,6 +969,9 @@ while True:
     #if cv2.waitKey(1) & 0xFF == ord('q'):
         #break
 cap2.release()
+
+bild2.empty()
+bild2_segmentiert.empty()
 
 print("List of green functions 1:", list_of_functions1_green)
 print("List of red functions 1:", list_of_functions1_red)
