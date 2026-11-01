@@ -8,3 +8,4 @@ opencv-python-headless
 gdown
 sympy
 scipy
+ast
