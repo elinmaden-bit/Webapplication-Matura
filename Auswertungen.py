@@ -48,6 +48,7 @@ def dreidim_plotten(dateiname):
     return fig
 
 def interpolation(dateiname, glattung=0.01):
+    fig = go.Figure()
 
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     red = daten[daten["Farbe"] == "Red"].copy()
@@ -117,6 +118,7 @@ def interpolation(dateiname, glattung=0.01):
     return fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
 def sprungrichtung(dateiname):
+    fig = go.Figure()
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     absprung = np.array(ast.literal_eval(daten["Take-off Position"].iloc[0]))
     landung = np.array(ast.literal_eval(daten["Landungs Position"].iloc[0]))
