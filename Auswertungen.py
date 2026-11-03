@@ -121,13 +121,14 @@ def sprungrichtung(dateiname):
     absprung = np.array(ast.literal_eval(daten["Take-off Position"].iloc[0]))
     landung = np.array(ast.literal_eval(daten["Landungs Position"].iloc[0]))
     absprung_xy=absprung[:2]
+    landung_xy = landung[:2]
     
     sprungrichtung=landung-absprung_xy
 
     laenge = np.linalg.norm(sprungrichtung)
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
-    fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung[0]],y=[absprung_xy[1], landung[1]],z=[absprung[2],absprung[2]],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
+    fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung_xy[0]],y=[absprung_xy[1], landung_xy[1]],z=[absprung[2],absprung[2]],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
     
 
 col1, col2 = st.columns([10, 1])
