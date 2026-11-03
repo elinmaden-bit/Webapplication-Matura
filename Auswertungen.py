@@ -20,9 +20,6 @@ st.header("Zusammenfassung der Resultate und Analysen")
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
 
-st.write("Aktuelles Arbeitsverzeichnis:", os.getcwd())
-st.write("Data-Ordner vorhanden:", os.path.exists("data"))
-st.write("Datei vorhanden:", os.path.exists("data/Video 4 Koordinaten.csv"))
 
 
 einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
@@ -143,9 +140,6 @@ daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo4"):
         dreidim_plotten(DATA_DIR/"Video 4 Koordinaten.csv")
-        print(daten[["X", "Y", "Z"]].shape)
-        print(daten[["X", "Y", "Z"]].head())
-        print(daten[["X", "Y", "Z"]].isna().sum())
         interpolation(DATA_DIR/"Video 4 Koordinaten.csv")
         sprungrichtung(DATA_DIR/"Video 4 Ergebnisse.csv")
         st.plotly_chart(fig, use_container_width=True)
