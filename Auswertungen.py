@@ -136,9 +136,9 @@ with col2:
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem"):
-        dreidim_plotten("Video 4 Koordinaten.csv")
-        interpolation("Video 4 Koordinaten.csv")
-        sprungrichtung("Video 4 Ergebnisse.csv")
+        dreidim_plotten("/data/Video 4 Koordinaten.csv")
+        interpolation("/data/Video 4 Koordinaten.csv")
+        sprungrichtung("/data/Video 4 Ergebnisse.csv")
         st.plotly_chart(fig, use_container_width=True)
     #if st.checkbox("Sprungparameter"):
 
