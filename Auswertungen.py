@@ -47,7 +47,7 @@ def dreidim_plotten(dateiname):
 
     return fig
 
-def interpolation(dateiname, glattung=0.01, fig):
+def interpolation(dateiname, glattung=0.01):
 
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     red = daten[daten["Farbe"] == "Red"].copy()
@@ -116,7 +116,7 @@ def interpolation(dateiname, glattung=0.01, fig):
     
     return fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
 
-def sprungrichtung(dateiname,fig):
+def sprungrichtung(dateiname):
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     absprung = np.array(ast.literal_eval(daten["Take-off Position"].iloc[0]))
     landung = np.array(ast.literal_eval(daten["Landungs Position"].iloc[0]))
@@ -141,8 +141,8 @@ daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo4"):
         dreidim_plotten("Video 4 Koordinaten.csv")
-        interpolation("Video 4 Koordinaten.csv", fig)
-        sprungrichtung("Video 4 Ergebnisse.csv", fig)
+        interpolation("Video 4 Koordinaten.csv")
+        sprungrichtung("Video 4 Ergebnisse.csv")
         st.plotly_chart(fig, use_container_width=True)
     #if st.checkbox("Sprungparameter"):
 
