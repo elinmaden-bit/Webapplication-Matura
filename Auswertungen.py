@@ -7,6 +7,7 @@ import gdown
 from scipy.interpolate import UnivariateSpline
 import numpy as np
 import ast
+import os
 
 
 
@@ -17,6 +18,9 @@ st.header("Zusammenfassung der Resultate und Analysen")
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
 
+st.write("Aktuelles Arbeitsverzeichnis:", os.getcwd())
+st.write("Data-Ordner vorhanden:", os.path.exists("data"))
+st.write("Datei vorhanden:", os.path.exists("data/Video 4 Koordinaten.csv"))
 
 
 einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
