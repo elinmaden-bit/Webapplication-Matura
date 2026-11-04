@@ -229,8 +229,8 @@ def rotation(dateiname1, dateiname2):
 
     if len(verbindungen) < 3:
         st.write("Framepaare auf Differenz 5 erweitert")
-        red_daten = daten[(daten["Farbe"] == "Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~daten.index.isin(verwendete_red))]
-        green_daten = daten[(daten["Farbe"] == "Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~daten.index.isin(verwendete_green))]
+        red_daten = xy_daten[(daten["Farbe"] == "Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_red))]
+        green_daten = xy_daten[(daten["Farbe"] == "Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_green))]
 
         for red_index, red in red_daten.iterrows():
 
