@@ -266,7 +266,7 @@ def rotation(dateiname1, dateiname2):
 
     fig_xy.add_trace(go.Scatter(x=red_original["X"],y=red_original["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
     fig_xy.add_trace(go.Scatter(x=green_original["X"],y=green_original["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
-    fig_xy.add_trace(go.Scatter(x=[take_off_position_x,take_off_position_y],y=[landing_position_x,landing_position_y], mode="lines", name="Sprungrichtung von Absprung bis Landung", line=dict(color="violet")))
+    fig_xy.add_trace(go.Scatter(x=[take_off_position_x,landing_position_x],y=[take_off_position_y,landing_position_y], mode="lines", name="Sprungrichtung von Absprung bis Landung", line=dict(color="violet")))
     fig_xy.update_layout(title="XY-Positionsverlauf während des Sprungs",xaxis_title="X-Position[m]",yaxis_title="Y-Position [m]",legend_title="Punktfarbe")
     st.plotly_chart(fig_xy, use_container_width=True)
 
