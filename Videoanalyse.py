@@ -1203,6 +1203,15 @@ elif take_off_green is not None and take_off_red is None:
     mean_take_off=take_off_green
     print("Mean Take Off:", mean_take_off)
 
+mean_landing=(landing_green+landing_red)/2
+
+take_off_red_position, take_off_red = min(position_redpoint,key=lambda eintrag: abs(eintrag[1] - mean_take_off))
+
+landing_position_red, landing_red = min(position_redpoint,key=lambda eintrag: abs(eintrag[1] - mean_landing))
+
+take_off_green_position, take_off_green = min(position_greenpoint,key=lambda eintrag: abs(eintrag[1] - mean_take_off))
+
+landing_position_green, landing_green = min(position_greenpoint,key=lambda eintrag: abs(eintrag[1] - mean_landing))
 
 if video_nummer in (4,7,8,10,11,12,13,14,15,16):
 
@@ -1222,19 +1231,6 @@ if video_nummer in (4,7,8,10,11,12,13,14,15,16):
         mean_take_off_position=take_off_green_position
         print("Mean Take Off Position:", mean_take_off_position)
 
-
-#Landungsframe in 3 verschiedenen Fällen
-    if len(landing_frames_red)!=0 and len(landing_frames_green)!=0:
-        mean_landing=(landing_frames_red[0]+landing_frames_green[0])/2
-        print("Mean Landing Frame:", mean_landing)
-
-    elif len(landing_frames_red)!=0 and len(landing_frames_green)==0:
-        mean_landing=landing_frames_red[0]
-        print("Mean Landing Frame:", mean_landing)
-
-    elif len(landing_frames_green)!=0 and len(landing_frames_red)==0:
-        mean_landing=landing_frames_green[0]
-        print("Mean Landing Frame:", mean_landing)
 
 
 #Landungsort in 3 verschiedenen Fällen->mean_landing_position enthält x-Position dann y-Position
