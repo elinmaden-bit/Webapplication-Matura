@@ -209,8 +209,8 @@ def rotation(dateiname1, dateiname2):
     take_off_position=ast.literal_eval(daten2["Take-off Position"].iloc[0])
     landing_position=ast.literal_eval(daten2["Landungs Position"].iloc[0])
     take_off_position_x=take_off_position[0]
-    landing_position_x=landing_position[0]
-    take_off_position_y=take_off_position[1]
+    landing_position_x=landing_position[1]
+    take_off_position_y=take_off_position[0]
     landing_position_y=landing_position[1]
 	
     xy_daten=daten[["Farbe", "Frame", "X", "Y"]].copy()
