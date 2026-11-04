@@ -173,8 +173,8 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
         analyse("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     if st.checkbox("Sprungparameter", key="checkbox4"):
         tabelle("Video 4 Ergebnisse.csv")
-    if st.checkbox("Funktion Höhe-Zeit"):
-        graphik_höhe(Video 4 Koordinaten.csv)
+    if st.checkbox("Funktion Höhe-Zeit", key="2checkbox4"):
+        graphik_höhe("Video 4 Koordinaten.csv")
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
