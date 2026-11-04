@@ -123,7 +123,7 @@ def interpolation(dateiname, fig, glattung=0.01):
 
     fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="black", width=5)))
     
-    return fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red
+    return fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
 
 def sprungrichtung(dateiname, fig):
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
@@ -144,10 +144,11 @@ def analyse(dateiname1, dateiname2):
     fig = go.Figure()
 
     fig = dreidim_plotten(dateiname1, fig)
-    fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red = interpolation(dateiname1, fig)
+    fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red = interpolation(dateiname1, fig)
     fig = sprungrichtung(dateiname2, fig)
 
     st.plotly_chart(fig, use_container_width=True)
+	return t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
     
 def tabelle(dateiname):
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
@@ -176,8 +177,18 @@ def graphik_höhe(dateiname1, dateiname2):
     fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Zeit[s]",yaxis_title="Höhe [m]",legend_title="Punktfarbe")
 
     st.plotly_chart(fig_hoehe, use_container_width=True)
-    
 
+def geschleunigung_xy(t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red):
+    fig_v=go.Figure()
+    fig_a=go.Figure()
+
+    fig_v.add_trace(go.Scatter(x=t_neu_red,y=geschwindigkeit_red,mode="lines",name="Roter Punkt",line=dict(color="red")))
+    fig_v.add_trace(go.Scatter(x=t_neu_green,y=geschwindigkeit_green,mode="lines",name="Grüner Punkt",line=dict(color="green")))
+    fig_v.update_layout(title="Geschwindigkeitsverlauf während des Sprungs in xy-Richtung",xaxis_title="Zeit[s]",yaxis_title="v [m/s]",legend_title="Punktfarbe")
+
+    fig_a.add_trace(go.Scatter(x=t_neu_red,y=beschleunigung_red,mode="lines",name="Roter Punkt",line=dict(color="red")))
+    fig_a.add_trace(go.Scatter(x=t_neu_green,y=beschleunigung_green,mode="lines",name="Grüner Punkt",line=dict(color="green")))
+    fig_a.update_layout(title="Beschleunigungsverlauf während des Sprungs",xaxis_title="Zeit[s]",yaxis_title="a [m/s^2]",legend_title="Punktfarbe")
 
 col1, col2 = st.columns([10, 1])
 with col1:
