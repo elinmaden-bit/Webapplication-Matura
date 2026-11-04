@@ -150,7 +150,8 @@ def graphik_höhe(dateiname):
     hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
     red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
     green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
-    hoehen_daten["Zeit"] = int(hoehen_daten["Frame"]) / 30
+	hoehen_daten["Frame"] = pd.to_numeric(hoehen_daten["Frame"],errors="coerce")
+    hoehen_daten["Zeit"] = hoehen_daten["Frame"] / 30
     fig_hoehe.add_trace(go.Scatter(x=red["Zeit"],y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
 
     fig_hoehe.add_trace(go.Scatter(x=green["Zeit"],y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
