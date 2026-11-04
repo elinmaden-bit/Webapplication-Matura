@@ -129,6 +129,15 @@ def sprungrichtung(dateiname):
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
     fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung_xy[0]],y=[absprung_xy[1], landung_xy[1]],z=[-0.8,-0.8],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
+
+def analyse(dateiname1, dateiname2):
+    fig = go.Figure()
+
+    fig = dreidim_plotten(dateiname1, fig)
+    fig = interpolation(dateiname1, fig)
+    fig = sprungrichtung(dateiname2, fig)
+
+    st.plotly_chart(fig, use_container_width=True)
     
 
 col1, col2 = st.columns([10, 1])
@@ -140,26 +149,18 @@ with col2:
 daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed")
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo4"):
-        dreidim_plotten("Video 4 Koordinaten.csv")
-        interpolation("Video 4 Koordinaten.csv")
-        sprungrichtung("Video 4 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     #if st.checkbox("Sprungparameter"):
 
     #if st.checkbox("
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
-        dreidim_plotten("Video 5 Koordinaten.csv")
-        interpolation("Video 5 Koordinaten.csv")
-        sprungrichtung("Video 5 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 5 Koordinaten.csv","Video 5 Ergebnisse.csv")
+        
 elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo6"):
-        dreidim_plotten("Video 6 Koordinaten.csv")
-        interpolation("Video 6 Koordinaten.csv")
-        sprungrichtung("Video 6 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 6 Koordinaten.csv","Video 6 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -171,17 +172,11 @@ daten2=st.selectbox(label="2",options=doppelter_salchow,label_visibility="collap
 
 if daten2=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo7"):
-        dreidim_plotten("Video 7 Koordinaten.csv")
-        interpolation("Video 7 Koordinaten.csv")
-        sprungrichtung("Video 7 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True) 
+        analyse("Video 7 Koordinaten.csv","Video 7 Ergebnisse.csv")
 
 elif daten2=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo9"):
-        dreidim_plotten("Video 9 Koordinaten.csv")
-        interpolation("Video 9 Koordinaten.csv")
-        sprungrichtung("Video 9 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 9 Koordinaten.csv","Video 9 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -195,24 +190,15 @@ daten3=st.selectbox(label="3",options=doppelter_toeloop,label_visibility="collap
 
 if daten3=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo10"):
-        dreidim_plotten("Video 10 Koordinaten.csv")
-        interpolation("Video 10 Koordinaten.csv")
-        sprungrichtung("Video 10 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 10 Koordinaten.csv","Video 10 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo11"):
-        dreidim_plotten("Video 11 Koordinaten.csv")
-        interpolation("Video 11 Koordinaten.csv")
-        sprungrichtung("Video 11 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 11 Koordinaten.csv","Video 11 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo12"):
-        dreidim_plotten("Video 12 Koordinaten.csv")
-        interpolation("Video 12 Koordinaten.csv")
-        sprungrichtung("Video 12 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 12 Koordinaten.csv","Video 12 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -227,16 +213,10 @@ daten4=st.selectbox(label="4",options=doppelter_loop,label_visibility="collapsed
 
 if daten4=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo13"):
-        dreidim_plotten("Video 13 Koordinaten.csv")
-        interpolation("Video 13 Koordinaten.csv")
-        sprungrichtung("Video 13 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 13 Koordinaten.csv","Video 13 Ergebnisse.csv")
 elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo14"):
-        dreidim_plotten("Video 14 Koordinaten.csv")
-        interpolation("Video 14 Koordinaten.csv")
-        sprungrichtung("Video 14 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 14 Koordinaten.csv","Video 14 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -248,24 +228,15 @@ daten5=st.selectbox(label="5",options=doppelter_lutz,label_visibility="collapsed
 
 if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo15"):
-        dreidim_plotten("Video 15 Koordinaten.csv")
-        interpolation("Video 15 Koordinaten.csv")
-        sprungrichtung("Video 15 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 15 Koordinaten.csv","Video 15 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo16"):
-        dreidim_plotten("Video 16 Koordinaten.csv")
-        interpolation("Video 16 Koordinaten.csv")
-        sprungrichtung("Video 16 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 16 Koordinaten.csv","Video 16 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo17"):
-        dreidim_plotten("Video 17 Koordinaten.csv")
-        interpolation("Video 17 Koordinaten.csv")
-        sprungrichtung("Video 17 Ergebnisse.csv")
-        st.plotly_chart(fig, use_container_width=True)
+        analyse("Video 17 Koordinaten.csv","Video 17 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
