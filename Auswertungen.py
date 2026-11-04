@@ -150,11 +150,11 @@ def graphik_höhe(dateiname):
     hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
     red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
     green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
-    hoehen_daten["Frame"] = pd.to_numeric(hoehen_daten["Frame"],errors="coerce")
-    hoehen_daten["Zeit"] = hoehen_daten["Frame"] / 30
-    fig_hoehe.add_trace(go.Scatter(x=red["Zeit"],y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
+    red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
+    green["Frame"] = pd.to_numeric(green["Frame"],errors="coerce")	
+    fig_hoehe.add_trace(go.Scatter(x=red["Frame"]/30,y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
 
-    fig_hoehe.add_trace(go.Scatter(x=green["Zeit"],y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
+    fig_hoehe.add_trace(go.Scatter(x=green["Frame"]/30,y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
 
     fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Frame",yaxis_title="Höhe (Z-Koordinate)",legend_title="Punktfarbe")
 
