@@ -1235,22 +1235,22 @@ if video_nummer in (4,7,8,10,11,12,13,14,15,16):
 
 #Landungsort in 3 verschiedenen Fällen->mean_landing_position enthält x-Position dann y-Position
     if len(landing_position_red)!=0 and len(landing_position_green)!=0:
-        mean_xdir=(landing_position_green[0][0]+landing_position_red[0][0])/2
-        mean_ydir=(landing_position_green[0][1]+landing_position_red[0][1])/2
+        mean_xdir=(landing_position_green[0]+landing_position_red[0])/2
+        mean_ydir=(landing_position_green[1]+landing_position_red[1])/2
         mean_landing_position.append(mean_xdir)
         mean_landing_position.append(mean_ydir)
         print("Mean Landing Place on xy-Plane:", mean_landing_position)
 
     elif len(landing_position_red)!=0 and len(landing_position_green)==0:
-        mean_xdir=landing_position_red[0][0]
-        mean_ydir=landing_position_red[0][1]
+        mean_xdir=landing_position_red[0]
+        mean_ydir=landing_position_red[1]
         mean_landing_position.append(mean_xdir)
         mean_landing_position.append(mean_ydir)
         print("Mean Landing Place on xy-Plane:", mean_landing_position)
 
     elif len(landing_position_green)!=0 and len(landing_position_red)==0:
-        mean_xdir=landing_position_green[0][0]
-        mean_ydir=landing_position_green[0][1]
+        mean_xdir=landing_position_green[0]
+        mean_ydir=landing_position_green[1]
         mean_landing_position.append(mean_xdir)
         mean_landing_position.append(mean_ydir)
         print("Mean Landing Place on xy-Plane:", mean_landing_position)
