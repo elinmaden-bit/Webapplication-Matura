@@ -159,7 +159,7 @@ def graphik_höhe(dateiname1, dateiname2):
     daten=pd.read_csv(DATA_DIR/dateiname1, sep=";")
 	
     daten2=pd.read_csv(DATA_DIR/dateiname2, sep=";")
-    take_off_frame=pd.to_numeric(daten["Take-off Frame"], errors="coerce")
+    take_off_frame=pd.to_numeric(daten2["Take-off Frame"], errors="coerce")
 
     daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
     tiefster_punkt= daten["Z"].min()
