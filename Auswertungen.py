@@ -249,9 +249,10 @@ def rotation(dateiname1, dateiname2):
                 green_daten = green_daten.drop(green.name)
 
     for red, green in verbindungen:
-        fig_xy.add_trace(go.Scatter(x=[red["X"], green["X"]],y=[red["Y"], green["Y"]],mode="lines",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
+        fig_xy.add_trace(go.Scatter(x=[red["X"], green["X"]],y=[red["Y"], green["Y"]],mode="lines",name="Verbindung Rot-Grün bei gleicher Zeit",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
 
-		
+    fig_xy.add_trace(go.Scatter(x=red["X"],y=red["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
+    fig_xy.add_trace(go.Scatter(x=green["X"],y=green["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
     fig_xy.update_layout(title="XY-Positionsverlauf während des Sprungs",xaxis_title="X-Position[m]",yaxis_title="Y-Position [m]",legend_title="Punktfarbe")
     st.plotly_chart(fig_xy, use_container_width=True)
 
