@@ -137,7 +137,7 @@ def sprungrichtung(dateiname, fig):
     laenge = np.linalg.norm(sprungrichtung)
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
-    fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung_xy[0]],y=[absprung_xy[1], landung_xy[1]],z=[-0.8,-0.8],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
+    fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung_xy[0]],y=[absprung_xy[1], landung_xy[1]],z=[0,0],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
     return fig
 
 def analyse(dateiname1, dateiname2):
