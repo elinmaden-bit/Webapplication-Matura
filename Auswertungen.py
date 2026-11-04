@@ -35,6 +35,11 @@ fps=30
 def dreidim_plotten(dateiname,fig):
     
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
+	#Auf Ebene 0 bringen
+	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=daten["Z"]-tiefster_punkt
+	
     red = daten[daten["Farbe"] == "Red"].copy()
     green = daten[daten["Farbe"] == "Green"].copy()
 
@@ -49,6 +54,11 @@ def dreidim_plotten(dateiname,fig):
 def interpolation(dateiname, fig, glattung=0.01):
 
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
+    #Daten auf höhe 0 bringen
+	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=daten["Z"]-tiefster_punkt
+
     red = daten[daten["Farbe"] == "Red"].copy()
     green = daten[daten["Farbe"] == "Green"].copy()
 
@@ -147,6 +157,9 @@ def tabelle(dateiname):
 def graphik_höhe(dateiname):
     fig_hoehe=go.Figure()
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
+	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=daten["Z"]-tiefster_punkt
     hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
     red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
     green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
@@ -156,7 +169,7 @@ def graphik_höhe(dateiname):
 
     fig_hoehe.add_trace(go.Scatter(x=green["Frame"]/30,y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
 
-    fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Frame",yaxis_title="Höhe (Z-Koordinate)",legend_title="Punktfarbe")
+    fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Zeit[s]",yaxis_title="Höhe [m]",legend_title="Punktfarbe")
 
     st.plotly_chart(fig_hoehe, use_container_width=True)
     
