@@ -149,8 +149,6 @@ def analyse(dateiname1, dateiname2):
 
     st.plotly_chart(fig, use_container_width=True)
 
-    if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox4"):
-        geschleunigung_xy(t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
 		
     return (t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
     
@@ -182,7 +180,9 @@ def graphik_höhe(dateiname1, dateiname2):
 
     st.plotly_chart(fig_hoehe, use_container_width=True)
 
-def geschleunigung_xy(t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red):
+def geschleunigung_xy(dateiname1):
+    fig1=go.Figure()
+    (fig, t_neu_green, geschwindigkeit_green, beschleunigung_green,t_neu_red, geschwindigkeit_red, beschleunigung_red) = interpolation(dateiname1, fig1)
     fig_v=go.Figure()
     fig_a=go.Figure()
 
@@ -208,7 +208,8 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
         tabelle("Video 4 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox4"):
         graphik_höhe("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
-
+    if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox4"):
+        geschleunigung_xy("Video 4 Koordinaten.csv")
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
