@@ -123,7 +123,7 @@ def interpolation(dateiname, fig, glattung=0.01):
 
     fig.add_trace(go.Scatter3d(x=x_neu_green,y=y_neu_green,z=z_neu_green,mode="lines", name="Grüne Gerade", line=dict(color="black", width=5)))
     
-    return fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
+    return (fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
 
 def sprungrichtung(dateiname, fig):
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
@@ -144,11 +144,15 @@ def analyse(dateiname1, dateiname2):
     fig = go.Figure()
 
     fig = dreidim_plotten(dateiname1, fig)
-    fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red = interpolation(dateiname1, fig)
+    (fig, t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red) = interpolation(dateiname1, fig)
     fig = sprungrichtung(dateiname2, fig)
 
     st.plotly_chart(fig, use_container_width=True)
-    return t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
+
+    if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox4"):
+        geschleunigung_xy(t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
+		
+    return (t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
     
 def tabelle(dateiname):
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
@@ -204,8 +208,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
         tabelle("Video 4 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox4"):
         graphik_höhe("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
-    if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox4"):
-        geschleunigung_xy(t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red)
+
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
