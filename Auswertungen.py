@@ -230,7 +230,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox4"):
         geschleunigung_xy("Video 4 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox4"):
-        geschleunigung_xy("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
+        rotation("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
@@ -242,7 +242,7 @@ elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox5"):
         geschleunigung_xy("Video 5 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox5"):
-        geschleunigung_xy("Video 5 Koordinaten.csv","Video 5 Ergebnisse.csv")
+        rotation("Video 5 Koordinaten.csv","Video 5 Ergebnisse.csv")
         
 elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo6"):
@@ -254,7 +254,7 @@ elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox6"):
         geschleunigung_xy("Video 6 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox6"):
-        geschleunigung_xy("Video 6 Koordinaten.csv","Video 6 Ergebnisse.csv")
+        rotation("Video 6 Koordinaten.csv","Video 6 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -274,7 +274,7 @@ if daten2=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox7"):
         geschleunigung_xy("Video 7 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox7"):
-        geschleunigung_xy("Video 7 Koordinaten.csv","Video 7 Ergebnisse.csv")
+        rotation("Video 7 Koordinaten.csv","Video 7 Ergebnisse.csv")
 
 elif daten2=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo9"):
@@ -286,7 +286,7 @@ elif daten2=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox9"):
         geschleunigung_xy("Video 9 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox9"):
-        geschleunigung_xy("Video 9 Koordinaten.csv","Video 9 Ergebnisse.csv")
+        rotation("Video 9 Koordinaten.csv","Video 9 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -308,7 +308,7 @@ if daten3=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox10"):
         geschleunigung_xy("Video 10 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox10"):
-        geschleunigung_xy("Video 10 Koordinaten.csv","Video 10 Ergebnisse.csv")
+        rotation("Video 10 Koordinaten.csv","Video 10 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo11"):
@@ -320,7 +320,7 @@ elif daten3=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox11"):
         geschleunigung_xy("Video 11 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox11"):
-        geschleunigung_xy("Video 11 Koordinaten.csv","Video 11 Ergebnisse.csv")
+        rotation("Video 11 Koordinaten.csv","Video 11 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo12"):
@@ -332,7 +332,7 @@ elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox12"):
         geschleunigung_xy("Video 12 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox12"):
-        geschleunigung_xy("Video 12 Koordinaten.csv","Video 12 Ergebnisse.csv")
+        rotation("Video 12 Koordinaten.csv","Video 12 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -354,7 +354,7 @@ if daten4=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox13"):
         geschleunigung_xy("Video 13 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox13"):
-        geschleunigung_xy("Video 13 Koordinaten.csv","Video 13 Ergebnisse.csv")
+        rotation("Video 13 Koordinaten.csv","Video 13 Ergebnisse.csv")
 
 
 elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
@@ -367,7 +367,7 @@ elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox14"):
         geschleunigung_xy("Video 14 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox14"):
-        geschleunigung_xy("Video 14 Koordinaten.csv","Video 14 Ergebnisse.csv")
+        rotation("Video 14 Koordinaten.csv","Video 14 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -387,7 +387,7 @@ if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox15"):
         geschleunigung_xy("Video 15 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox15"):
-        geschleunigung_xy("Video 15 Koordinaten.csv","Video 15 Ergebnisse.csv")
+        rotation("Video 15 Koordinaten.csv","Video 15 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo16"):
@@ -399,7 +399,7 @@ elif daten5=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox16"):
         geschleunigung_xy("Video 16 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox16"):
-        geschleunigung_xy("Video 16 Koordinaten.csv","Video 16 Ergebnisse.csv")
+        rotation("Video 16 Koordinaten.csv","Video 16 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo17"):
@@ -411,7 +411,7 @@ elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Funktion Geschwindigkeit und Beschleunigung (xy-Richtung)", key="3checkbox17"):
         geschleunigung_xy("Video 17 Koordinaten.csv")
     if st.checkbox("Funktion X Position-Y Position", key="4checkbox17"):
-        geschleunigung_xy("Video 17 Koordinaten.csv","Video 17 Ergebnisse.csv")
+        rotation("Video 17 Koordinaten.csv","Video 17 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
