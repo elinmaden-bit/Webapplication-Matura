@@ -203,11 +203,11 @@ def rotation(dateiname1, dateiname2):
     daten2=pd.read_csv(DATA_DIR/dateiname2, sep=";")
     fig_xy=go.Figure()
 
-    take_off_frame=pd.to_numeric(daten2["Take-off Position"], errors="coerce").iloc[0]
-    landing_frame=pd.to_numeric(daten2["Landungs Position"], errors="coerce").iloc[0]
+    take_off_frame=pd.to_numeric(daten2["Take-off Frame"], errors="coerce").iloc[0]
+    landing_frame=pd.to_numeric(daten2["Landungs Frame"], errors="coerce").iloc[0]
 	
-    take_off_position=ast.literal_eval(daten2["Take-off Frame"].iloc[0])
-    landing_position=ast.literal_eval(daten2["Landungs Frame"].iloc[0])
+    take_off_position=ast.literal_eval(daten2["Take-off Position"].iloc[0])
+    landing_position=ast.literal_eval(daten2["Landungs Position"].iloc[0])
     take_off_position_x=take_off_position[0]
     landing_position_x=landing_position[0]
     take_off_position_y=take_off_position[1]
