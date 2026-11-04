@@ -142,7 +142,7 @@ def analyse(dateiname1, dateiname2):
 def tabelle(dateiname):
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
     st.subheader("Berechnete Werte des Sprungs")
-    st.table(daten, use_container_width=True, hide_index=True)
+    st.table(daten)
 
 
 
