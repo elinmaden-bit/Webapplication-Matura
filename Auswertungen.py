@@ -140,9 +140,9 @@ def analyse(dateiname1, dateiname2):
     st.plotly_chart(fig, use_container_width=True)
     
 def tabelle(dateiname):
-	daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
-	st.subheader("Berechnete Werte des Sprungs")
-	st.table(daten, use_container_width=True, hide_index=True)
+    daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
+    st.subheader("Berechnete Werte des Sprungs")
+    st.table(daten, use_container_width=True, hide_index=True)
 
 
 
@@ -157,7 +157,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo4"):
         analyse("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     if st.checkbox("Sprungparameter"):
-		tabelle("Video 4 Ergebnisse.csv")
+        tabelle("Video 4 Ergebnisse.csv")
     #if st.checkbox("
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
