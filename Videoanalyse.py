@@ -10,8 +10,8 @@ import csv
 import gdown
 
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
-start_frame1=st.slider("Wähle ein Startframe für Video 1:", min_value=0, max_value=100, value=0)#Startframe hinauszögern
-start_frame2=st.slider("Wähle ein Startframe für Video 2:", min_value=0, max_value=100, value=0)
+start_frame1=st.slider("Wähle ein Startframe für Video 1 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)#Startframe hinauszögern
+start_frame2=st.slider("Wähle ein Startframe für Video 2 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)
 start_segmentation2=None
 stopp_segmentation2=None
 
@@ -591,15 +591,6 @@ else:
 
 
 
-#cv2.namedWindow("Blue Mask A", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Blue Mask A", 640, 360)
-#cv2.namedWindow("Blue Mask B", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Blue Mask B", 640, 360)
-#cv2.namedWindow("Blue Real A", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Blue Real A", 640, 360)
-#cv2.namedWindow("Blue Real B", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Blue Real B", 640, 360)
-
 blue_found1=0
 blue_found2=0
 angle30 = math.radians(30)
@@ -738,11 +729,6 @@ while True:
         bild2.empty()
         bild2_segmentiert.empty()
         break
-        #cv2.destroyAllWindows()->verwendet keine OpenCV Fenster mehr
-        
-
-    #if cv2.waitKey(1) & 0xFF == ord('q'):
-             #break
 
 
 #2. Teil des Programms->Videos werden vom Frame in dem Blue erkannt wurde abgespielt, hier wird Rot und Grün erkannt
@@ -756,11 +742,6 @@ if not cap1.isOpened():
 if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
-
-#cv2.namedWindow("Real1", cv2.WINDOW_NORMAL)
-#cv2.namedWindow("Mask1", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Real1", 640, 360)
-#cv2.resizeWindow("Mask1", 640, 360)
 
 st.subheader("2. Rot-/Grünsegmentierung des 1. Videos")
 col1, col2 = st.columns(2)
@@ -888,8 +869,6 @@ while True:
    
     frame_count1+=1
 
-    #cv2.putText(frame1,f"Frame: {frame_count1}",(20, 40),cv2.FONT_HERSHEY_SIMPLEX,1,(0, 255, 0),2)
-
     colored1 = np.zeros_like(frame1)
 
     if bboxred1 is not None:
@@ -913,15 +892,10 @@ cap1.release()
 bild1.empty()
 bild1_segmentiert.empty()
 
-#cv2.destroyAllWindows()
-
-#cv2.namedWindow("Real2", cv2.WINDOW_NORMAL)
-#cv2.namedWindow("Mask2", cv2.WINDOW_NORMAL)
-#cv2.resizeWindow("Real2", 640, 360)
-#cv2.resizeWindow("Mask2", 640, 360)
 
 
-st.subheader("2. Rot-/Grünsegmentierung des 1. Videos")
+
+st.subheader("3. Rot-/Grünsegmentierung des 1. Videos")
 
 
 #2. Video
@@ -1029,7 +1003,6 @@ while True:
                 list_of_functions2_red.append((frame_count2,function2,direction_vector2))
         
         
-
     else:
 
         print("No red detected in Video B")
@@ -1050,9 +1023,6 @@ while True:
     bild2_segmentiert.image(colored2)
     bild2.image(frame2)
 
-
-    #if cv2.waitKey(1) & 0xFF == ord('q'):
-        #break
 cap2.release()
 
 bild2.empty()
