@@ -52,7 +52,7 @@ if video_nummer==4:
     take_off_red=577
     take_off_green=577
     landing_red=590
-    landing_red=590
+    landing_green=590
     landingplane_green=None
     landingplane_red=-0.45
     take_off_plane_green=-0.24
@@ -94,7 +94,7 @@ elif video_nummer==5:
     take_off_red=2230
     take_off_green=2230
     landing_red=2285
-    landing_red=2285
+    landing_green=2285
     landingplane_green=None
     landingplane_red=-0.543
     take_off_plane_green=None
@@ -136,7 +136,7 @@ elif video_nummer==6:
     take_off_red=2327
     take_off_green=2327
     landing_red=2383
-    landing_red=2383
+    landing_green=2383
     landingplane_green=None
     landingplane_red=-0.541
     take_off_plane_green=None
@@ -176,7 +176,7 @@ elif video_nummer==7:
     take_off_red=658
     take_off_green=658
     landing_red=669
-    landing_red=669
+    landing_green=669
     landingplane_green=-0.41
     landingplane_red=None
     take_off_plane_green=-0.264
@@ -217,7 +217,7 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     take_off_red=2600
     take_off_green=2600
     landing_red=None
-    landing_red=None
+    landing_green=None
     landingplane_green=None
     landingplane_red=None
     take_off_plane_green=None
@@ -258,7 +258,7 @@ elif video_nummer==9:
     take_off_red=2206
     take_off_green=2206
     landing_red=2245
-    landing_red=2245
+    landing_green=2245
     landingplane_green=-0.382
     landingplane_red=-0.422
     take_off_plane_green=None
@@ -297,7 +297,7 @@ elif video_nummer==10:
     take_off_red=611
     take_off_green=611
     landing_red=626
-    landing_red=626
+    landing_green=626
     take_off_plane_green=-0.42
     take_off_plane_red=-0.437
     landingplane_green=-0.45
@@ -339,7 +339,7 @@ elif video_nummer==11:
     take_off_red=2489
     take_off_green=2489
     landing_red=2510
-    landing_red=2510
+    landing_green=2510
     landingplane_green=-0.72
     landingplane_red=-0.73
     take_off_plane_green=-0.73
@@ -380,7 +380,7 @@ elif video_nummer==12:
     take_off_red=2752
     take_off_green=2752
     landing_red=2796
-    landing_red=2796
+    landing_green=2796
     landingplane_green=-0.8
     landingplane_red=-0.84
     take_off_plane_green=-1
@@ -419,7 +419,7 @@ elif video_nummer==13:
     take_off_red=810
     take_off_green=810
     landing_red=822
-    landing_red=822
+    landing_green=822
     landingplane_green=None
     landingplane_red=-0.356
     take_off_plane_green=-0.4
@@ -461,7 +461,7 @@ elif video_nummer==14:
     take_off_red=2372
     take_off_green=2372
     landing_red=2425
-    landing_red=2425
+    landing_green=2425
     landingplane_green=None
     landingplane_red=-0.766
     take_off_plane_green=None
@@ -500,7 +500,7 @@ elif video_nummer==15:
     take_off_red=562
     take_off_green=562
     landing_red=575
-    landing_red=575
+    landing_green=575
     landingplane_green=-0.34
     landingplane_red=-0.373
     take_off_plane_green=-0.38
@@ -541,7 +541,7 @@ elif video_nummer==16:
     take_off_red=2334
     take_off_green=2334
     landing_red=2388
-    landing_red=2388
+    landing_green=2388
     landingplane_green=None
     landingplane_red=-0.812
     take_off_plane_green=-0.93
@@ -582,7 +582,7 @@ elif video_nummer==17:
     take_off_red=4055
     take_off_green=4055
     landing_red=4107
-    landing_red=4107
+    landing_green=4107
     landingplane_green=-0.595
     landingplane_red=-0.618
     take_off_plane_green=None
