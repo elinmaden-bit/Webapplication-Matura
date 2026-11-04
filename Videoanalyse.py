@@ -9,6 +9,7 @@ from PIL import Image
 import csv
 import gdown
 
+st.header("Segmentierungsverfahren")
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
 start_frame1=st.slider("Wähle ein Startframe für Video 1 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)#Startframe hinauszögern
 start_frame2=st.slider("Wähle ein Startframe für Video 2 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)
@@ -591,15 +592,12 @@ else:
 
 
 
-blue_found1=0
-blue_found2=0
 angle30 = math.radians(30)
 handyA_eckpunkte=[[0,0,0.0628001],[0.117837,0.0068034,0.0628001],[0,0,0],[0.117837,0.0068034,0]] #obenlinks,obenrechts,untenlinks, untenrechts
 handyB_eckpunkte=[[-5.1278224,0.073799,0.0681221],[-5,0,0.0681221],[-5.1278224,0.073799,0],[-5,0,0]]
 focal_position1=[0.117837/2+math.sin(angle30)*focal_length1,0.068034/2-math.cos(angle30)*focal_length1,0.0628001/2]#Position des Brennpunktes berechnet im Koordinatensystem Kamera A
 focal_position2=[-5-(0.127824/2)-math.sin(angle30)*focal_length2,0.073799-math.cos(angle30)*focal_length2,0.0681221/2]#Kamera B
-frame_count1=take_off_red
-frame_count2=take_off_red
+
 
 @st.cache_data
 def get_position_in_space1_normal(position_on_screen):
@@ -639,11 +637,21 @@ def get_linear_function_focalpoint2_normal(position_on_screenB):
     print("FunctionB:", function2)
     return function2, direction_vector2
 
+st.subheader("1. Blausegmentierung zur Synchronisierung der Videos (Bemerkung: Streamlit ist langsam im Bilder laden, deswegen enpfiehlt es sich das Startframe weiter nach vorne zu setzen")
+col1, col2 = st.columns(2)
+with col1:
+    bild1 = st.empty()
+    bild1_segmentiert = st.empty()
+with col2:
+    bild2 = st.empty()
+    bild2_segmentiert = st.empty()
 
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
 cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
 cap2.set(cv2.CAP_PROP_POS_FRAMES, start_frame2)
+blue_found1=0
+blue_found2=0
 
 if not cap1.isOpened():
     print("Video konnte nicht geöffnet werden.")
@@ -653,18 +661,11 @@ if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
 
-st.subheader("1. Blausegmentierung zur Synchronisierung der Videos")
-col1, col2 = st.columns(2)
-with col1:
-    bild1 = st.empty()
-    bild1_segmentiert = st.empty()
-with col2:
-    bild2 = st.empty()
-    bild2_segmentiert = st.empty()
     
 while True:
     ret1, frame1 = cap1.read()
     ret2, frame2 = cap2.read()
+    
     if not ret1:
        print("Video beendet oder Fehler beim Lesen")
        break
@@ -676,17 +677,16 @@ while True:
     if not blue_found1:
         hsv_blue1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
-        colored_blue1 = np.zeros_like(frame1)
-        colored_blue1[mask_blue1 > 0] = [255, 0, 0]
         coords = cv2.findNonZero(mask_blue1)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
             bboxblue1 = (x, y, x+w, y+h)
+            cv2.rectangle(frame1,(x, y),(x+w, y+h),(255, 0, 0),3)
+
         else:
             bboxblue1 = None
         print("Blue Bonding Box A:", bboxblue1)
-        bild1_segmentiert.image(colored_blue1, channels="BGR")#cv2.imshow ersetzt
         bild1.image(frame1, channels="BGR")
 
 
@@ -697,21 +697,19 @@ while True:
             print("Frame1:", frame_number1)
 
 
-
     if not blue_found2:
         hsv_blue2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2HSV)
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
-        colored_blue2 = np.zeros_like(frame1)
-        colored_blue2[mask_blue2 > 0] = [255, 0, 0]
         coords = cv2.findNonZero(mask_blue2)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
             bboxblue2 = (x, y, x+w, y+h)
+            cv2.rectangle(frame2,(x, y),(x+w, y+h),(255, 0, 0),3)
+            
         else:
             bboxblue2 = None
         print("Blue Bonding Box B:", bboxblue2)
-        bild2_segmentiert.image(colored_blue2, channels="BGR")
         bild2.image(frame2, channels="BGR")
 
 
@@ -725,9 +723,7 @@ while True:
         cap1.release()
         cap2.release()
         bild1.empty()
-        bild1_segmentiert.empty()
         bild2.empty()
-        bild2_segmentiert.empty()
         break
 
 
@@ -756,13 +752,17 @@ with col2:
 
 cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+take_off_red) #Rot Grün Segmentierung erst beim Sprung starten
 cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+take_off_red)
-previous_bboxred1=None #Variabel speichert rote Bounding Box, falls kein Grün im nächsten Frame segmentiert wird, zur Referenz für die Weiterführung der Rotsegmentierung
+
+previous_bboxred1=None
 previous_bboxred2=None
 
 list_of_functions1_green=[] #Liste für Frame-Funktionspaare
 list_of_functions1_red=[] #Liste für Frame-Funktionspaare
 list_of_functions2_green=[] #Liste für Frame-Funktionspaare
 list_of_functions2_red=[] #Liste für Frame-Funktionspaare
+
+frame_count1=take_off_red
+frame_count2=take_off_red
 
 roired1=None
 roired2=None
@@ -883,16 +883,9 @@ while True:
     bild1.image(frame1, channels="BGR")
 
 
-    #if cv2.waitKey(1) & 0xFF == ord('q'):
-        #break
-
-
-
 cap1.release()
 bild1.empty()
 bild1_segmentiert.empty()
-
-
 
 
 st.subheader("3. Rot-/Grünsegmentierung des 1. Videos")
@@ -1002,7 +995,6 @@ while True:
                 function2, direction_vector2=get_linear_function_focalpoint2_normal(position_red2)
                 list_of_functions2_red.append((frame_count2,function2,direction_vector2))
         
-        
     else:
 
         print("No red detected in Video B")
@@ -1028,17 +1020,18 @@ cap2.release()
 bild2.empty()
 bild2_segmentiert.empty()
 
-print("List of green functions 1:", list_of_functions1_green)
-print("List of red functions 1:", list_of_functions1_red)
 
-print("List of green functions 2:", list_of_functions2_green)
-print("List of red functions 2:", list_of_functions2_red)
+#print("List of green functions 1:", list_of_functions1_green)
+#print("List of red functions 1:", list_of_functions1_red)
+
+#print("List of green functions 2:", list_of_functions2_green)
+#print("List of red functions 2:", list_of_functions2_red)
+
+
 s = sp.symbols('s')
 t = sp.symbols('t')
-
 position_greenpoint=[]
 position_redpoint=[]
-
 
 if video_nummer in (4,7,10,13,15):
     for frame1, function1, direction1 in list_of_functions1_green:
@@ -1173,220 +1166,11 @@ for position_red, frame1 in position_redpoint:
 print("List Red to Green Points:", list_redgreen)
 st.subheader("Fuktionen durch Rote und Grüne Punkte:")
 st.write(list_redgreen)
-
-
-
-landing_position_red=[]
-landing_position_green=[]
-landing_frames_red=[]
-landing_frames_green=[] 
-take_off_red=None
-take_off_green=None
-take_off_red_position=None
-take_off_green_position=None
-previous_frame_red=None
-previous_frame_green=None
-
-if video_nummer==9: #hier sind die Daten komisch, musste so definieren
-    mean_take_off=2206
-    mean_landing=2245
-    mean_take_off_position=None
-    mean_landing_position=None
-
-    
-
-if video_nummer==5: #5 und 6 haben kein Grün?
-    mean_take_off=2230
-    mean_landing=2285
-    mean_take_off_position=None
-    mean_landing_position=None
-
-
-if video_nummer==6: 
-    mean_take_off=2327
-    mean_landing=2383
-    mean_take_off_position=None
-    mean_landing_position=None
-
-if video_nummer==17: #hier sind die Daten komisch, musste so definieren
-    mean_take_off=4055
-    mean_landing=4107
-    mean_take_off_position=[-2.56825698414779, 4.29143374659764, -0.235555347809738]
-    mean_landing_position=[-1.86838620717137, 5.15627808311981, -0.595836305321066]
-    
-
-
-#Axel, Salchow, Toeloop-->Absprung anders definieren!!!
-if video_nummer in(4,5,6,7,8,10,11,12):
-    if take_off_plane_red is not None:
-        for position, frame in position_redpoint:
-            if previous_frame_red is not None:
-                if position[2]<previous_position_red[2]:
-                    previous_frame_red=frame
-                    previous_position_red=position
-                else:
-                    take_off_red=frame
-                    take_off_red_position=position
-                    break
-            previous_frame_red=frame
-            previous_position_red=position
-
-    if take_off_plane_green is not None:
-
-        for position, frame in position_greenpoint:
-            if previous_frame_green is not None:
-                if position[2]<previous_position_green[2]:
-                    previous_frame_green=frame
-                    previous_position_green=position
-                else:
-                    take_off_green=frame
-                    take_off_green_position=position
-                    break
-            previous_frame_green=frame
-            previous_position_green=position
-     
-
-        print("Take-off frame red:", take_off_red)
-        print("Take-off frame green:",take_off_green)
-        print("Take-off position red:", take_off_red_position)
-        print("Take-off position green:",take_off_green_position)
-
-    max_z_green = -float("inf")
-    apex_frame_green = None
-    if take_off_green is not None:
-        for position, frame in position_greenpoint:
-            if frame > take_off_green and position[2] > max_z_green:
-                max_z_green = position[2]
-                apex_frame_green = frame
-        print("Apex green:", apex_frame_green, max_z_green)
-
-    max_z_red = -float("inf")
-    apex_frame_red = None
-    if take_off_red is not None:
-        for position, frame in position_redpoint:
-            if frame > take_off_red and position[2] > max_z_red:
-                max_z_red = position[2]
-                apex_frame_red = frame
-        print("Apex red:", apex_frame_red, max_z_red)
  
-#Landung definieren (Wiedereintreten der Markierung in die Ebene) 
-    if take_off_red is not None and landingplane_red is not None:
-        for position, frame in position_redpoint: 
-            if frame>apex_frame_red: 
-                if position[2]<=landingplane_red: 
-                    landing_frames_red.append(frame) 
-                    landing_position_red.append(position)
-        print("Landingframes for red:", landing_frames_red) 
-
-    if take_off_green is not None and landingplane_green is not None:
-        for position, frame in position_greenpoint: 
-            if frame>apex_frame_green: 
-                if position[2]<=landingplane_green: 
-                    landing_frames_green.append(frame) 
-                    landing_position_green.append(position)
-        print("Landingframes for green:", landing_frames_green)
-
-#Alternative Landung, wenn absprung in der gleichen Farbe nicht vorhanden
-        
-    elif take_off_red is None and landingplane_red is not None and take_off_green is not None:
-        for position, frame in position_redpoint: 
-            if frame>apex_frame_green: 
-                if position[2]<=landingplane_red: 
-                    landing_frames_red.append(frame) 
-                    landing_position_red.append(position)
-        print("Landingframes for red:", landing_frames_red) 
-
-    if take_off_green is None and landingplane_green is not None and take_off_red is not None:
-        for position, frame in position_greenpoint: 
-            if frame>apex_frame_red: 
-                if position[2]<=landingplane_green: 
-                    landing_frames_green.append(frame) 
-                    landing_position_green.append(position)
-        print("Landingframes for green:", landing_frames_green)
-
-
-
-
-
-#Rittberger
-
-if video_nummer in (13,14,15,16): #Absprung definieren (Verlassen der Markierungen der Ebenen), Video 15 und 16 wird hier besser erkannt
-    if take_off_plane_red is not None:
-        for position, frame in position_redpoint: 
-            if position[2]>take_off_plane_red: 
-                take_off_red=frame
-                take_off_red_position=position
-                break
-    if take_off_plane_green is not None:
-        for position, frame in position_greenpoint: 
-            if position[2]>take_off_plane_green: 
-                take_off_green=frame 
-                take_off_green_position=position
-                break 
-        print("Take-off frame red:", take_off_red) 
-        print("Take-off frame green:",take_off_green) 
-
-#Scheitelpunkt bestimmen
-    max_z_green = -float("inf")
-    apex_frame_green = None
-    if take_off_green is not None:
-        for position, frame in position_greenpoint:
-            if frame > take_off_green and position[2] > max_z_green:
-                max_z_green = position[2]
-                apex_frame_green = frame
-        print("Apex green:", apex_frame_green, max_z_green)
-
-    max_z_red = -float("inf")
-    apex_frame_red = None
-    if take_off_red is not None:
-        for position, frame in position_redpoint:
-            if frame > take_off_red and position[2] > max_z_red:
-                max_z_red = position[2]
-                apex_frame_red = frame
-        print("Apex red:", apex_frame_red, max_z_red)
-
-
-#Landung definieren (Wiedereintreten der Markierung in die Ebene) 
-    if landingplane_red is not None and apex_frame_red is not None:
-        for position, frame in position_redpoint: 
-            if frame > apex_frame_red and position[2] <= landingplane_red:
-                landing_frames_red.append(frame)
-                landing_position_red.append(position)
-                break
-        print("Landingframes for red:", landing_frames_red) 
-
-
-
-    if landingplane_green is not None and apex_frame_green is not None:
-        for position, frame in position_greenpoint: 
-            if frame > apex_frame_green and position[2] <= landingplane_green:
-                landing_frames_green.append(frame)
-                landing_position_green.append(position)
-                break
-        print("Landingframes for green:", landing_frames_green)
-
-    if landingplane_red is not None and apex_frame_green is not None:
-        for position, frame in position_redpoint: 
-            if frame > apex_frame_green and position[2] <= landingplane_red:
-                landing_frames_red.append(frame)
-                landing_position_red.append(position)
-                break
-        print("Landingframes for red:", landing_frames_red) 
-
-    if landingplane_green is not None and apex_frame_red is not None:
-        for position, frame in position_greenpoint: 
-            if frame > apex_frame_red and position[2] <= landingplane_green:
-                landing_frames_green.append(frame)
-                landing_position_green.append(position)
-                break
-        print("Landingframes for green:", landing_frames_green)
-
-
-
 
 #Konstanten zuerst auf None setzten
-mean_take_off=None
-mean_landing=None
+#mean_take_off=None
+#mean_landing=None
 mean_landing_position=[]
 mean_take_off_position=[]
 total_angle=0
@@ -1469,11 +1253,15 @@ if video_nummer in (4,7,8,10,11,12,13,14,15,16):
         airtime=(mean_landing-mean_take_off)/30 #durch FPS teilen
         print("Time in the air:", airtime)
 
-#test
+st.subheader("Absprung-/ und Landekoordinaten:")
 print("Absprungframe", mean_take_off)
+st.write("Absprungframe", mean_take_off)
 print("Absprungposition", mean_take_off_position)
+st.write("Absprungposition", mean_take_off_position)
 print("Landungsframe", mean_landing)
+st.write("Landungsframe", mean_landing)
 print("Landungsposition", mean_landing_position)
+st.write("Landungsposition", mean_landing_position)
 
 
 #Winkeländerungsfunktion
