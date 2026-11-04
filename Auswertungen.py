@@ -20,7 +20,7 @@ st.header("Zusammenfassung der Resultate und Analysen")
 image1=Image.open("Titel Bild final.webp")
 st.image(image1, width=400)
 
-
+	
 
 einfacher_axel=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion","Beispieldaten 3, Videomodus: Slowmotion"]
 doppelter_salchow=["Beispieldaten 1, Videomodus: Normalgeschwindigkeit","Beispieldaten 2, Videomodus: Slowmotion"]
@@ -139,6 +139,12 @@ def analyse(dateiname1, dateiname2):
 
     st.plotly_chart(fig, use_container_width=True)
     
+def tabelle(dateiname):
+	daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
+	st.subheader("Berechnete Werte des Sprungs")
+	st.table(daten, use_container_width=True, hide_index=True)
+
+
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -150,8 +156,8 @@ daten1=st.selectbox(label="1",options=einfacher_axel,label_visibility="collapsed
 if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo4"):
         analyse("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
-    #if st.checkbox("Sprungparameter"):
-
+    if st.checkbox("Sprungparameter"):
+		tabelle("Video 4 Ergebnisse.csv")
     #if st.checkbox("
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
