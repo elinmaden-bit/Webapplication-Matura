@@ -128,12 +128,13 @@ def sprungrichtung(dateiname, fig):
     laenge=np.sqrt(sprungrichtung[0]**2+sprungrichtung[1]**2)
 
     fig.add_trace(go.Scatter3d(x=[absprung_xy[0],landung_xy[0]],y=[absprung_xy[1], landung_xy[1]],z=[-0.8,-0.8],mode="lines+markers",line=dict(color="pink", width=15),marker=dict(size=[0,5],symbol="circle"),name="Sprungrichtung (von Absprung bis Landung)"))
+    return fig
 
 def analyse(dateiname1, dateiname2):
     fig = go.Figure()
 
     fig = dreidim_plotten(dateiname1, fig)
-    fig = interpolation(dateiname1, fig)
+    fig, geschwindigkeit_green, beschleunigung_green, geschwindigkeit_red, beschleunigung_red = interpolation(dateiname1, fig)
     fig = sprungrichtung(dateiname2, fig)
 
     st.plotly_chart(fig, use_container_width=True)
