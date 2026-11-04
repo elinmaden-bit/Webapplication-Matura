@@ -31,22 +31,27 @@ if video_nummer==4:
     upper_blue1 = np.array([130, 255, 140])
     lower_blue2 = np.array([90, 240, 130])
     upper_blue2 = np.array([130, 255, 150])
+    
     lower_green1 = np.array([40, 60, 50])#V60->50, S100->60
     upper_green1 = np.array([70, 255, 255])
     lower_red1_1 = np.array([0, 90, 100])#S100->90
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 90, 50])#V100->50, S100->90
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 90, 50])#V100->50, S100->90, H170->160
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 80, 50])#V60->50, S90->80
-    upper_green2 = np.array([85, 255, 255])
-    lower_red1_2 = np.array([0, 180, 30])#V40->30, S190->180
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 180, 30])#V40->30, S190->80
-    upper_red2_2 = np.array([179, 255, 255])
 
+    lower_green2 = np.array([35, 60, 40])#V60->40, S90->60
+    upper_green2 = np.array([85, 255, 255])
+    lower_red1_2 = np.array([0, 150, 30])#V40->30, S190->150
+    upper_red1_2 = np.array([25, 255, 255])
+    lower_red2_2 = np.array([170, 150, 30])#V40->30, S190->150
+    upper_red2_2 = np.array([179, 255, 255])
 
     start_segmentation=550
     stopp_segmentation=630
+    take_off_red=577
+    take_off_green=577
+    landing_red=590
+    landing_red=590
     landingplane_green=None
     landingplane_red=-0.45
     take_off_plane_green=-0.24
@@ -67,22 +72,28 @@ elif video_nummer==5:
     upper_blue1 = np.array([130, 255, 170])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
+    
     lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2200
     stopp_segmentation=2300
     start_segmentation2=4400
     stopp_segmentation2=4600
+    take_off_red=2230
+    take_off_green=2230
+    landing_red=2285
+    landing_red=2285
     landingplane_green=None
     landingplane_red=-0.543
     take_off_plane_green=None
@@ -103,22 +114,28 @@ elif video_nummer==6:
     upper_blue1 = np.array([130, 255, 190])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
+    
     lower_green1 = np.array([40, 75, 75])
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 50])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2300
     stopp_segmentation=2450
     start_segmentation2=4600
     stopp_segmentation2=4900
+    take_off_red=2327
+    take_off_green=2327
+    landing_red=2383
+    landing_red=2383
     landingplane_green=None
     landingplane_red=-0.541
     take_off_plane_green=None
@@ -142,18 +159,23 @@ elif video_nummer==7:
     upper_blue2 = np.array([130, 255, 150])
     lower_green1 = np.array([40, 100, 60])
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 100])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 50])
+    lower_red1_1 = np.array([0, 95, 50])#S100->95, V100->50
+    upper_red1_1 = np.array([30, 255, 255])#H10->30
+    lower_red2_1 = np.array([160, 95, 50])#H170->160, S100->95
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 140, 30])#S190->140
+    upper_red1_2 = np.array([45, 255, 255])#H25->45
+    lower_red2_2 = np.array([150, 140, 30])#S190->140, H170->150
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=630
     stopp_segmentation=710
+    take_off_red=658
+    take_off_green=658
+    landing_red=669
+    landing_red=669
     landingplane_green=-0.41
     landingplane_red=None
     take_off_plane_green=-0.264
@@ -191,6 +213,10 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     stopp_segmentation=2700
     start_segmentation2=4800
     stopp_segmentation2=5400
+    take_off_red=2600
+    take_off_green=2600
+    landing_red=None
+    landing_red=None
     landingplane_green=None
     landingplane_red=None
     take_off_plane_green=None
@@ -211,22 +237,27 @@ elif video_nummer==9:
     upper_blue1 = np.array([130, 255, 255])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2150
     stopp_segmentation=2300
     start_segmentation2=4300
     stopp_segmentation2=4600
+    take_off_red=2206
+    take_off_green=2206
+    landing_red=2245
+    landing_red=2245
     landingplane_green=-0.382
     landingplane_red=-0.422
     take_off_plane_green=None
@@ -249,18 +280,23 @@ elif video_nummer==10:
     upper_blue2 = np.array([130, 255, 150])
     lower_green1 = np.array([40, 100, 60])
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 100])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 100])
+    lower_red1_1 = np.array([0, 100, 50])#V100->50
+    upper_red1_1 = np.array([30, 255, 255])#H10->30
+    lower_red2_1 = np.array([160, 100, 50])#V100->50, H170->160
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 140, 30])#S190->140
+    upper_red1_2 = np.array([45, 255, 255])#H25->45
+    lower_red2_2 = np.array([150, 140, 30])#S190->140, H170->150
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=600
     stopp_segmentation=690
+    take_off_red=611
+    take_off_green=611
+    landing_red=626
+    landing_red=626
     take_off_plane_green=-0.42
     take_off_plane_red=-0.437
     landingplane_green=-0.45
@@ -282,22 +318,27 @@ elif video_nummer==11:
     upper_blue1 = np.array([130, 255, 170])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2350
     stopp_segmentation=2500
     start_segmentation2=4700
     stopp_segmentation2=5000
+    take_off_red=2489
+    take_off_green=2489
+    landing_red=2510
+    landing_red=2510
     landingplane_green=-0.72
     landingplane_red=-0.73
     take_off_plane_green=-0.73
@@ -318,22 +359,27 @@ elif video_nummer==12:
     upper_blue1 = np.array([130, 255, 255])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 175, 30])#S190->175
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 175, 30])#S190->175
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2700
     stopp_segmentation=2850
     start_segmentation2=5400
     stopp_segmentation2=5700
+    take_off_red=2752
+    take_off_green=2752
+    landing_red=2796
+    landing_red=2796
     landingplane_green=-0.8
     landingplane_red=-0.84
     take_off_plane_green=-1
@@ -354,20 +400,25 @@ elif video_nummer==13:
     upper_blue1 = np.array([130, 255, 150])
     lower_blue2 = np.array([90, 240, 130])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 60])
+    lower_green1 = np.array([40, 80, 60])#S100->80
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 100])
+    lower_red1_1 = np.array([0, 100, 50])#V100->50
     upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 100])
+    lower_red2_1 = np.array([170, 100, 50])#V100->50
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 140, 30])#S190->140
+    upper_red1_2 = np.array([45, 255, 255])#H25->45
+    lower_red2_2 = np.array([150, 140, 30])#S190->140, H170->150
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=800
     stopp_segmentation=895
+    take_off_red=810
+    take_off_green=810
+    landing_red=822
+    landing_red=822
     landingplane_green=None
     landingplane_red=-0.356
     take_off_plane_green=-0.4
@@ -389,22 +440,27 @@ elif video_nummer==14:
     upper_blue1 = np.array([130, 255, 255])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2357
     stopp_segmentation=2550
     start_segmentation2=4714
     stopp_segmentation2=5100
+    take_off_red=2372
+    take_off_green=2372
+    landing_red=2425
+    landing_red=2425
     landingplane_green=None
     landingplane_red=-0.766
     take_off_plane_green=None
@@ -427,18 +483,23 @@ elif video_nummer==15:
     upper_blue2 = np.array([130, 255, 150])
     lower_green1 = np.array([40, 100, 60])
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 100])
+    lower_red1_1 = np.array([0, 100, 50])#V100->50
     upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 100])
+    lower_red2_1 = np.array([160, 100, 50])#V100->50, H170->160
     upper_red2_1 = np.array([179, 255, 255])
+
     lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 140, 30])#S190->140
+    upper_red1_2 = np.array([45, 255, 255])#H25->45
+    lower_red2_2 = np.array([150, 140, 30])#S190->140,H170->150
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=550
     stopp_segmentation=630
+    take_off_red=562
+    take_off_green=562
+    landing_red=575
+    landing_red=575
     landingplane_green=-0.34
     landingplane_red=-0.373
     take_off_plane_green=-0.38
@@ -459,22 +520,27 @@ elif video_nummer==16:
     upper_blue1 = np.array([130, 255, 180])
     lower_blue2 = np.array([90, 240, 140])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=2200
     stopp_segmentation=2600
     start_segmentation2=4400
     stopp_segmentation2=5400
+    take_off_red=2334
+    take_off_green=2334
+    landing_red=2388
+    landing_red=2388
     landingplane_green=None
     landingplane_red=-0.812
     take_off_plane_green=-0.93
@@ -495,22 +561,27 @@ elif video_nummer==17:
     upper_blue1 = np.array([130, 255, 180])
     lower_blue2 = np.array([90, 240, 130])
     upper_blue2 = np.array([130, 255, 150])
-    lower_green1 = np.array([40, 100, 100])
+    lower_green1 = np.array([40, 75, 75])#V100->75, S100->75
     upper_green1 = np.array([70, 255, 255])
-    lower_red1_1 = np.array([0, 100, 90])
-    upper_red1_1 = np.array([10, 255, 255])
-    lower_red2_1 = np.array([170, 100, 90])
+    lower_red1_1 = np.array([0, 100, 70])#V90->70
+    upper_red1_1 = np.array([20, 255, 255])#H10->20
+    lower_red2_1 = np.array([160, 100, 70])#H170->160, V90->70
     upper_red2_1 = np.array([179, 255, 255])
-    lower_green2 = np.array([35, 90, 50])
+
+    lower_green2 = np.array([35, 90, 60])
     upper_green2 = np.array([85, 255, 200])
-    lower_red1_2 = np.array([0, 190, 30])
-    upper_red1_2 = np.array([25, 255, 255])
-    lower_red2_2 = np.array([170, 190, 30])
+    lower_red1_2 = np.array([0, 170, 30])#190->170
+    upper_red1_2 = np.array([30, 255, 255])#H25->30
+    lower_red2_2 = np.array([165, 170, 30])#H170->165, S190->170
     upper_red2_2 = np.array([179, 255, 255])
     start_segmentation=3900
     stopp_segmentation=4200
     start_segmentation2=7800
     stopp_segmentation2=8400
+    take_off_red=4055
+    take_off_green=4055
+    landing_red=4107
+    landing_red=4107
     landingplane_green=-0.595
     landingplane_red=-0.618
     take_off_plane_green=None
@@ -702,8 +773,8 @@ with col2:
     bild2 = st.empty()
     bild2_segmentiert = st.empty()
 
-cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1)
-cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2)
+cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+take_off_red) #Rot Grün Segmentierung erst beim Sprung starten
+cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+take_off_red)
 previous_bboxred1=None #Variabel speichert rote Bounding Box, falls kein Grün im nächsten Frame segmentiert wird, zur Referenz für die Weiterführung der Rotsegmentierung
 previous_bboxred2=None
 
@@ -1049,11 +1120,18 @@ if video_nummer in (4,7,10,13,15):
     st.subheader("3D-Position Rotepunkte:")
     st.write(position_redpoint)
 
+if video_nummer in (5,6,8,11,16,17):
+    factor=1.877
+if video_nummer in (9,12,14):
+    factor=1.92
+if video_nummer==9:
+    factor=1.9
+
 if video_nummer in (5,6,8,9,11,12,14,16,17):
     for frame1, function1, direction1 in list_of_functions1_green:
         for frame2, function2, direction2 in list_of_functions2_green:
 
-            if frame1 == frame2/2:
+            if frame1 == frame2/factor:
 
                 difference_functions=function1-function2 #Differenz der Funktionen
                 eqn1=difference_functions.dot(direction1)#Gleichungssystem aufstellen
@@ -1078,7 +1156,7 @@ if video_nummer in (5,6,8,9,11,12,14,16,17):
     for frame1, function1, direction1 in list_of_functions1_red:
         for frame2, function2, direction2 in list_of_functions2_red:
 
-            if frame1 == frame2/2:
+            if frame1 == frame2/factor:
                 difference_functions=function1-function2
                 eqn1=difference_functions.dot(direction1)
                 eqn2=difference_functions.dot(direction2)
