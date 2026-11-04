@@ -36,8 +36,8 @@ def dreidim_plotten(dateiname,fig):
     
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
 	#Auf Ebene 0 bringen
-	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
-	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+    tiefster_punkt= daten["Z"].min()
     daten["Z"]=daten["Z"]-tiefster_punkt
 	
     red = daten[daten["Farbe"] == "Red"].copy()
@@ -55,8 +55,8 @@ def interpolation(dateiname, fig, glattung=0.01):
 
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     #Daten auf höhe 0 bringen
-	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
-	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+    tiefster_punkt= daten["Z"].min()
     daten["Z"]=daten["Z"]-tiefster_punkt
 
     red = daten[daten["Farbe"] == "Red"].copy()
@@ -157,8 +157,8 @@ def tabelle(dateiname):
 def graphik_höhe(dateiname):
     fig_hoehe=go.Figure()
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
-	daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
-	tiefster_punkt= daten["Z"].min()
+    daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
+    tiefster_punkt= daten["Z"].min()
     daten["Z"]=daten["Z"]-tiefster_punkt
     hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
     red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
