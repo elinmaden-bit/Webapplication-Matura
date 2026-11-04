@@ -147,7 +147,7 @@ def tabelle(dateiname):
 def graphik_höhe(dateiname):
 	fig_hoehe=go.Figure()
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
-	hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
+    hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
     red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
     green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
     hoehen_daten["Zeit"] = hoehen_daten["Frame"] / 30
