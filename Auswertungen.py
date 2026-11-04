@@ -208,13 +208,49 @@ def rotation(dateiname1, dateiname2):
     green=xy_daten[xy_daten["Farbe"]=="Green"]
     red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
 
+	verwendete_red = set()
+    verwendete_green = set()
+    verbindungen = []
+
     for frame, gruppe in daten.groupby("Frame"):
 
         red = gruppe[gruppe["Farbe"] == "Red"]
         green = gruppe[gruppe["Farbe"] == "Green"]
 	
         if not red.empty and not green.empty:
-            fig_xy.add_trace(go.Scatter(x=[red["X"].iloc[0], green["X"].iloc[0]],y=[red["Y"].iloc[0], green["Y"].iloc[0]],mode="lines",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
+            verbindungen.append((red.iloc[0], green.iloc[0]))
+			
+            verwendete_red.add(red.index[0])
+		    verwendete_green.add(green.index[0])
+
+    if len(verbindungen) < 3:
+		st.write("Framepaare auf Differenz 5 erweitert")
+        red_daten = daten[(daten["Farbe"] == "Red") &(~daten.index.isin(verwendete_red))]
+        green_daten = daten[(daten["Farbe"] == "Green") &(~daten.index.isin(verwendete_green))]
+
+        for red_index, red in red_daten.iterrows():
+
+            if len(verbindungen) >= 3:
+                break
+
+            kandidaten = green_daten[abs(green_daten["Frame"] - red["Frame"]) <= 5].copy()
+
+            if not kandidaten.empty:
+
+                kandidaten["Differenz"] = abs(kandidaten["Frame"] - red["Frame"])
+
+                green = kandidaten.sort_values("Differenz").iloc[0]
+
+                verbindungen.append((red, green))
+
+                verwendete_red.add(red_index)
+                verwendete_green.add(green.name)
+
+                green_daten = green_daten.drop(green.name)
+
+    for red, green in verbindungen:
+        fig.add_trace(go.Scatter(x=[red["X"], green["X"]],y=[red["Y"], green["Y"]],mode="lines",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
+
 		
     fig_xy.add_trace(go.Scatter(x=red["X"],y=red["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
     fig_xy.add_trace(go.Scatter(x=green["X"],y=green["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
