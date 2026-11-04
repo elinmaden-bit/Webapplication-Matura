@@ -46,7 +46,7 @@ def dreidim_plotten(dateiname,fig):
 
     return fig
 
-def interpolation(dateiname, glattung=0.01,fig):
+def interpolation(dateiname, fig, glattung=0.01):
 
     daten = pd.read_csv(DATA_DIR/dateiname, sep=";")
     red = daten[daten["Farbe"] == "Red"].copy()
