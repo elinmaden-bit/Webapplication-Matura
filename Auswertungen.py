@@ -144,6 +144,21 @@ def tabelle(dateiname):
     st.subheader("Berechnete Werte des Sprungs")
     st.table(daten)
 
+def graphik_höhe(dateiname):
+	fig_hoehe=go.Figure()
+    daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
+	hoehen_daten= daten[["Farbe", "Frame", "Z"]].copy()
+    red = hoehen_daten[hoehen_daten["Farbe"] == "Red"]
+    green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
+    hoehen_daten["Zeit"] = hoehen_daten["Frame"] / 30
+    fig_hoehe.add_trace(go.Scatter(x=red["Zeit"],y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
+
+    fig_hoehe.add_trace(go.Scatter(x=green["Zeit"],y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
+
+    fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Frame",yaxis_title="Höhe (Z-Koordinate)",legend_title="Punktfarbe")
+
+    st.plotly_chart(fig_hoehe, use_container_width=True)
+    
 
 
 col1, col2 = st.columns([10, 1])
@@ -158,7 +173,8 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
         analyse("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     if st.checkbox("Sprungparameter", key="checkbox4"):
         tabelle("Video 4 Ergebnisse.csv")
-    #if st.checkbox("
+    if st.checkbox("Funktion Höhe-Zeit"):
+		graphik_höhe(Video 4 Koordinaten.csv)
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
