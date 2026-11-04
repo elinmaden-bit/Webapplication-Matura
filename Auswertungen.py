@@ -154,9 +154,12 @@ def tabelle(dateiname):
     st.subheader("Berechnete Werte des Sprungs")
     st.table(daten)
 
-def graphik_höhe(dateiname):
+def graphik_höhe(dateiname1, dateiname2):
     fig_hoehe=go.Figure()
-    daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
+    daten=pd.read_csv(DATA_DIR/dateiname1, sep=";")
+    daten2=pd.read_csv(DATA_DIR/dateiname2, sep=";")
+	take_off_frame=pd.to_numeric(daten["Take-off frame"], errors="coerce")
+    landing_frame=pd.to_numeric(daten["Landing frame"], errors="coerce")
     daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
     tiefster_punkt= daten["Z"].min()
     daten["Z"]=daten["Z"]-tiefster_punkt
