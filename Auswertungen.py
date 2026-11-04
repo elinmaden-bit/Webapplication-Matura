@@ -207,7 +207,7 @@ def rotation(dateiname1, dateiname2):
     landing_frame=pd.to_numeric(daten2["Landungs Frame"], errors="coerce").iloc[0]
 	
     take_off_position=pd.to_numeric(daten2["Take-off Frame"], errors="coerce").iloc[0]
-	landing_position=pd.to_numeric(daten2["Landungs Frame"], errors="coerce").iloc[0]
+    landing_position=pd.to_numeric(daten2["Landungs Frame"], errors="coerce").iloc[0]
     take_off_position_x=take_off_position[0]
     landing_position_x=landing_position[0]
     take_off_position_y=take_off_position[1]
