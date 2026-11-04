@@ -210,13 +210,13 @@ def rotation(dateiname1, dateiname2):
     xy_daten["Frame"] = pd.to_numeric(xy_daten["Frame"], errors="coerce")
     daten["Frame"] = pd.to_numeric(daten["Frame"], errors="coerce")
     red_daten=xy_daten[(xy_daten["Farbe"]=="Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)].copy()
-    green_daten=xy_daten[(xy_daten["Farbe"]=="Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)].copy
+    green_daten=xy_daten[(xy_daten["Farbe"]=="Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)].copy()
 
     verwendete_red = set()
     verwendete_green = set()
     verbindungen = []
 
-    for frame, gruppe in daten.groupby("Frame"):
+    for frame, gruppe in xy_daten.groupby("Frame"):
 
         red = gruppe[gruppe["Farbe"] == "Red"]
         green = gruppe[gruppe["Farbe"] == "Green"]
@@ -229,8 +229,8 @@ def rotation(dateiname1, dateiname2):
 
     if len(verbindungen) < 3:
         st.write("Framepaare auf Differenz 5 erweitert")
-        red_daten = xy_daten[(daten["Farbe"] == "Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_red))]
-        green_daten = xy_daten[(daten["Farbe"] == "Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_green))]
+        red_daten = xy_daten[(xy_daten["Farbe"] == "Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_red))]
+        green_daten = xy_daten[(xy_daten["Farbe"] == "Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)&(~xy_daten.index.isin(verwendete_green))]
 
         for red_index, red in red_daten.iterrows():
 
