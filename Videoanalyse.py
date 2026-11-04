@@ -598,8 +598,8 @@ handyA_eckpunkte=[[0,0,0.0628001],[0.117837,0.0068034,0.0628001],[0,0,0],[0.1178
 handyB_eckpunkte=[[-5.1278224,0.073799,0.0681221],[-5,0,0.0681221],[-5.1278224,0.073799,0],[-5,0,0]]
 focal_position1=[0.117837/2+math.sin(angle30)*focal_length1,0.068034/2-math.cos(angle30)*focal_length1,0.0628001/2]#Position des Brennpunktes berechnet im Koordinatensystem Kamera A
 focal_position2=[-5-(0.127824/2)-math.sin(angle30)*focal_length2,0.073799-math.cos(angle30)*focal_length2,0.0681221/2]#Kamera B
-frame_count1=0
-frame_count2=0
+frame_count1=take_off_red
+frame_count2=take_off_red
 
 @st.cache_data
 def get_position_in_space1_normal(position_on_screen):
