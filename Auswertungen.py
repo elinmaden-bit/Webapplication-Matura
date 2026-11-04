@@ -206,8 +206,7 @@ def rotation(dateiname1, dateiname2):
     xy_daten=daten[["Farbe", "Frame", "X", "Y"]].copy()
     red=xy_daten[xy_daten["Farbe"]=="Red"]
     green=xy_daten[xy_daten["Farbe"]=="Green"]
-    red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
-    green["Frame"] = pd.to_numeric(green["Frame"],errors="coerce")
+    daten["Frame"] = pd.to_numeric(daten["Frame"], errors="coerce")
 
     verwendete_red = set()
     verwendete_green = set()
