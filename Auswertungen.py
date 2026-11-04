@@ -148,7 +148,7 @@ def analyse(dateiname1, dateiname2):
     fig = sprungrichtung(dateiname2, fig)
 
     st.plotly_chart(fig, use_container_width=True)
-	return t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
+    return t_neu_green, geschwindigkeit_green, beschleunigung_green, t_neu_red, geschwindigkeit_red, beschleunigung_red
     
 def tabelle(dateiname):
     daten=pd.read_csv(DATA_DIR/dateiname, sep=";")
