@@ -204,8 +204,8 @@ def rotation(dateiname1, dateiname2):
     fig_xy=go.Figure()
 
     xy_daten=daten[["Farbe", "Frame", "X", "Y"]].copy()
-	red=xy_daten[xy_daten["Farbe"]=="Red"]
-	green=xy_daten[xy_daten["Farbe"]=="Green"]
+    red=xy_daten[xy_daten["Farbe"]=="Red"]
+    green=xy_daten[xy_daten["Farbe"]=="Green"]
     red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
 
     fig_xy.add_trace(go.Scatter(x=red["X"],y=red["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
