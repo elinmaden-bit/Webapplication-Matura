@@ -208,7 +208,7 @@ def rotation(dateiname1, dateiname2):
     green=xy_daten[xy_daten["Farbe"]=="Green"]
     red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
 
-	verwendete_red = set()
+    verwendete_red = set()
     verwendete_green = set()
     verbindungen = []
 
