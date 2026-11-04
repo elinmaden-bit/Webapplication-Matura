@@ -816,6 +816,7 @@ while True:
         previous_bboxgreen1=bboxgreen1
 
         x1green1, y1green1, x2green1, y2green1 = bboxgreen1
+        cv2.rectangle(frame1,(x1green1, y1green1),(x2green1, y2green1),(0, 255, 0),3)
 
         x1red1 = max(0, x1green1 - 45)
         y1red1 = max(0, y1green1 - 45)
@@ -848,6 +849,7 @@ while True:
     if bboxred1 is not None:
 
         rx1, ry1, rx2, ry2 = bboxred1
+        cv2.rectangle(frame1,(rx1, ry1),(rx2, ry2),(0, 0, 255),3)
 
         rx1 = rx1 + x1red1
         ry1 = ry1 + y1red1
@@ -868,6 +870,9 @@ while True:
         print("No red detected in Video A")
    
     frame_count1+=1
+    
+    if frame_count1>landing_red:
+        break
 
     colored1 = np.zeros_like(frame1)
 
@@ -941,6 +946,7 @@ while True:
         
 
         x1green2, y1green2, x2green2, y2green2 = bboxgreen2
+        cv2.rectangle(frame2,(x1green2, y1green2),(x2green2, y2green2),(0, 255, 0),3)
 
         x1red2 = max(0, x1green2 - 45)
         y1red2 = max(0, y1green2 - 45)
@@ -975,6 +981,7 @@ while True:
     if bboxred2 is not None:
 
         r2x1, r2y1, r2x2, r2y2 = bboxred2
+        cv2.rectangle(frame2,(r2x1, r2y1),(r2x2, r2y2),(0, 0, 255),3)
 
         r2x1 = r2x1 + x1red2
         r2y1 = r2y1 + y1red2
@@ -1001,6 +1008,9 @@ while True:
     
    
     frame_count2+=1
+
+    if frame_count2>landing_red:
+        break
 
     colored2 = np.zeros_like(frame2)
 
