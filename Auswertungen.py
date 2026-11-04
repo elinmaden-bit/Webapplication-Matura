@@ -157,9 +157,10 @@ def tabelle(dateiname):
 def graphik_höhe(dateiname1, dateiname2):
     fig_hoehe=go.Figure()
     daten=pd.read_csv(DATA_DIR/dateiname1, sep=";")
+	
     daten2=pd.read_csv(DATA_DIR/dateiname2, sep=";")
-	take_off_frame=pd.to_numeric(daten["Take-off frame"], errors="coerce")
-    landing_frame=pd.to_numeric(daten["Landing frame"], errors="coerce")
+	take_off_frame=pd.to_numeric(daten["Take-off Frame"], errors="coerce")
+
     daten["Z"]=pd.to_numeric(daten["Z"], errors="coerce")
     tiefster_punkt= daten["Z"].min()
     daten["Z"]=daten["Z"]-tiefster_punkt
@@ -168,9 +169,9 @@ def graphik_höhe(dateiname1, dateiname2):
     green = hoehen_daten[hoehen_daten["Farbe"] == "Green"]
     red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
     green["Frame"] = pd.to_numeric(green["Frame"],errors="coerce")	
-    fig_hoehe.add_trace(go.Scatter(x=red["Frame"]/30,y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
+    fig_hoehe.add_trace(go.Scatter(x=(red["Frame"]-take_off_frame)/30,y=red["Z"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
 
-    fig_hoehe.add_trace(go.Scatter(x=green["Frame"]/30,y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
+    fig_hoehe.add_trace(go.Scatter(x=(green["Frame"]-take_off_frame)/30,y=green["Z"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
 
     fig_hoehe.update_layout(title="Höhenverlauf während des Sprungs",xaxis_title="Zeit[s]",yaxis_title="Höhe [m]",legend_title="Punktfarbe")
 
