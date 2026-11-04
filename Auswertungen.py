@@ -221,10 +221,10 @@ def rotation(dateiname1, dateiname2):
             verbindungen.append((red.iloc[0], green.iloc[0]))
 			
             verwendete_red.add(red.index[0])
-		    verwendete_green.add(green.index[0])
+            verwendete_green.add(green.index[0])
 
     if len(verbindungen) < 3:
-		st.write("Framepaare auf Differenz 5 erweitert")
+        st.write("Framepaare auf Differenz 5 erweitert")
         red_daten = daten[(daten["Farbe"] == "Red") &(~daten.index.isin(verwendete_red))]
         green_daten = daten[(daten["Farbe"] == "Green") &(~daten.index.isin(verwendete_green))]
 
