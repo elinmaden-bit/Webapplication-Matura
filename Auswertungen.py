@@ -194,6 +194,9 @@ def geschleunigung_xy(dateiname1):
     fig_a.add_trace(go.Scatter(x=t_neu_green,y=beschleunigung_green,mode="lines",name="Grüner Punkt",line=dict(color="green")))
     fig_a.update_layout(title="Beschleunigungsverlauf während des Sprungs",xaxis_title="Zeit[s]",yaxis_title="a [m/s^2]",legend_title="Punktfarbe")
 
+    st.plotly_chart(fig_v, use_container_width=True)
+    st.plotly_chart(fig_a, use_container_width=True)
+
 col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Einfacher Axel")
