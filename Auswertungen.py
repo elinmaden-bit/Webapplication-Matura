@@ -208,10 +208,18 @@ def rotation(dateiname1, dateiname2):
     green=xy_daten[xy_daten["Farbe"]=="Green"]
     red["Frame"] = pd.to_numeric(red["Frame"],errors="coerce")
 
+    for frame, gruppe in daten.groupby("Frame"):
+
+        red = gruppe[gruppe["Farbe"] == "Red"]
+        green = gruppe[gruppe["Farbe"] == "Green"]
+	
+        if not red.empty and not green.empty:
+            fig_xy.add_trace(go.Scatter(x=[red["X"].iloc[0], green["X"].iloc[0]],y=[red["Y"].iloc[0], green["Y"].iloc[0]],mode="lines",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
+		
     fig_xy.add_trace(go.Scatter(x=red["X"],y=red["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
     fig_xy.add_trace(go.Scatter(x=green["X"],y=green["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
     fig_xy.update_layout(title="XY-Positionsverlauf während des Sprungs",xaxis_title="X-Position[m]",yaxis_title="Y-Position [m]",legend_title="Punktfarbe")
-
+    st.plotly_chart(fig_xy, use_container_width=True)
 
 col1, col2 = st.columns([10, 1])
 with col1:
