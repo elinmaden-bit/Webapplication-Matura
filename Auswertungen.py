@@ -192,7 +192,7 @@ if daten1=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Sprungparameter", key="checkbox4"):
         tabelle("Video 4 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox4"):
-        graphik_höhe("Video 4 Koordinaten.csv")
+        graphik_höhe("Video 4 Koordinaten.csv","Video 4 Ergebnisse.csv")
     
 elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo5"):
@@ -200,7 +200,7 @@ elif daten1=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox5"):
         tabelle("Video 5 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox5"):
-        graphik_höhe("Video 5 Koordinaten.csv")
+        graphik_höhe("Video 5 Koordinaten.csv","Video 5 Ergebnisse.csv")
         
 elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo6"):
@@ -208,7 +208,7 @@ elif daten1=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox6"):
         tabelle("Video 6 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox6"):
-        graphik_höhe("Video 6 Koordinaten.csv")
+        graphik_höhe("Video 6 Koordinaten.csv","Video 6 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -224,7 +224,7 @@ if daten2=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Sprungparameter", key="checkbox7"):
         tabelle("Video 7 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox7"):
-        graphik_höhe("Video 7 Koordinaten.csv")
+        graphik_höhe("Video 7 Koordinaten.csv","Video 7 Ergebnisse.csv")
 
 elif daten2=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo9"):
@@ -232,7 +232,7 @@ elif daten2=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox9"):
         tabelle("Video 9 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox9"):
-        graphik_höhe("Video 9 Koordinaten.csv")
+        graphik_höhe("Video 9 Koordinaten.csv","Video 9 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -250,7 +250,7 @@ if daten3=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Sprungparameter", key="checkbox10"):
         tabelle("Video 10 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox10"):
-        graphik_höhe("Video 10 Koordinaten.csv")
+        graphik_höhe("Video 10 Koordinaten.csv","Video 10 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo11"):
@@ -258,7 +258,7 @@ elif daten3=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox11"):
         tabelle("Video 11 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox11"):
-        graphik_höhe("Video 11 Koordinaten.csv")
+        graphik_höhe("Video 11 Koordinaten.csv","Video 11 Ergebnisse.csv")
         
 elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo12"):
@@ -266,7 +266,7 @@ elif daten3=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox12"):
         tabelle("Video 12 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox12"):
-        graphik_höhe("Video 12 Koordinaten.csv")
+        graphik_höhe("Video 12 Koordinaten.csv","Video 12 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
@@ -284,14 +284,14 @@ if daten4=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Sprungparameter", key="checkbox13"):
         tabelle("Video 13 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox13"):
-        graphik_höhe("Video 13 Koordinaten.csv")
+        graphik_höhe("Video 13 Koordinaten.csv","Video 13 Ergebnisse.csv")
 elif daten4=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo14"):
         analyse("Video 14 Koordinaten.csv","Video 14 Ergebnisse.csv")
     if st.checkbox("Sprungparameter", key="checkbox14"):
         tabelle("Video 14 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox14"):
-        graphik_höhe("Video 14 Koordinaten.csv")
+        graphik_höhe("Video 14 Koordinaten.csv","Video 14 Ergebnisse.csv")
 
 
 col1, col2 = st.columns([10, 1])
@@ -307,7 +307,7 @@ if daten5=="Beispieldaten 1, Videomodus: Normalgeschwindigkeit":
     if st.checkbox("Sprungparameter", key="checkbox15"):
         tabelle("Video 15 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox15"):
-        graphik_höhe("Video 15 Koordinaten.csv")
+        graphik_höhe("Video 15 Koordinaten.csv","Video 15 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo16"):
@@ -315,7 +315,7 @@ elif daten5=="Beispieldaten 2, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox16"):
         tabelle("Video 16 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox16"):
-        graphik_höhe("Video 16 Koordinaten.csv")
+        graphik_höhe("Video 16 Koordinaten.csv","Video 16 Ergebnisse.csv")
         
 elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("3D-Koordinatensystem", key="checkboxvideo17"):
@@ -323,7 +323,7 @@ elif daten5=="Beispieldaten 3, Videomodus: Slowmotion":
     if st.checkbox("Sprungparameter", key="checkbox17"):
         tabelle("Video 17 Ergebnisse.csv")
     if st.checkbox("Funktion Höhe-Zeit", key="2checkbox17"):
-        graphik_höhe("Video 17 Koordinaten.csv")
+        graphik_höhe("Video 17 Koordinaten.csv","Video 17 Ergebnisse.csv")
 
 col1, col2 = st.columns([10, 1])
 with col1:
