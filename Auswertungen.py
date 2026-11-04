@@ -208,7 +208,9 @@ def rotation(dateiname1, dateiname2):
 	
     xy_daten=daten[["Farbe", "Frame", "X", "Y"]].copy()
     xy_daten["Frame"] = pd.to_numeric(xy_daten["Frame"], errors="coerce")
-    daten["Frame"] = pd.to_numeric(daten["Frame"], errors="coerce")
+    red_original=xy_daten[xy_daten["Farbe"]=="Red"]
+    green_original=xy_daten[xy_daten["Farbe"]=="Red"]
+	
     red_daten=xy_daten[(xy_daten["Farbe"]=="Red")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)].copy()
     green_daten=xy_daten[(xy_daten["Farbe"]=="Green")&(xy_daten["Frame"]>take_off_frame)&(xy_daten["Frame"]<landing_frame)].copy()
 
@@ -255,8 +257,8 @@ def rotation(dateiname1, dateiname2):
     for red, green in verbindungen:
         fig_xy.add_trace(go.Scatter(x=[red["X"], green["X"]],y=[red["Y"], green["Y"]],mode="lines",name="Verbindung Rot-Grün bei gleicher Zeit",line=dict(color="grey", width=1),showlegend=False,hoverinfo="skip"))
 
-    fig_xy.add_trace(go.Scatter(x=red_daten["X"],y=red_daten["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
-    fig_xy.add_trace(go.Scatter(x=green_daten["X"],y=green_daten["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
+    fig_xy.add_trace(go.Scatter(x=red_original["X"],y=red_original["Y"],mode="lines+markers",name="Roter Punkt",line=dict(color="red")))
+    fig_xy.add_trace(go.Scatter(x=green_original["X"],y=green_original["Y"],mode="lines+markers",name="Grüner Punkt",line=dict(color="green")))
     fig_xy.update_layout(title="XY-Positionsverlauf während des Sprungs",xaxis_title="X-Position[m]",yaxis_title="Y-Position [m]",legend_title="Punktfarbe")
     st.plotly_chart(fig_xy, use_container_width=True)
 
