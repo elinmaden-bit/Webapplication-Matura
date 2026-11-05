@@ -1026,10 +1026,13 @@ while True:
 
         r2x1, r2y1, r2x2, r2y2 = bboxred2
 
+        print("bboxred2 lokal:", bboxred2)
+        print("ROI-Offset:", x1red2, y1red2)
         r2x1 = r2x1 + x1red2
         r2y1 = r2y1 + y1red2
         r2x2 = r2x2 + x1red2
         r2y2 = r2y2 + y1red2
+        print("bboxred2 global:", (r2x1, r2y1, r2x2, r2y2))
 
         cv2.rectangle(frame2,(r2x1, r2y1),(r2x2, r2y2),(0, 0, 255),3)
 
