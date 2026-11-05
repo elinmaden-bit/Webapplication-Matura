@@ -932,7 +932,7 @@ else:
 #2. Video
 while True:
     ret2, frame2 = cap2.read()
-    if not ret2 or frame2 :
+    if not ret2 or frame2 is None:
        print("Video beendet oder Fehler beim Lesen")
        break
 
