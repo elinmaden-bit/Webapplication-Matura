@@ -770,9 +770,17 @@ while True:
     if not ret1:
        print("Video beendet oder Fehler beim Lesen")
        break
+    h, w = frame1.shape[:2]
+
+    pixel = frame1[h//2, w//2]
+
+    print("BGR-Wert Mittelpunkt:", pixel)
+    print("HSV-Wert Mittelpunkt:",cv2.cvtColor(np.uint8([[pixel]]),cv2.COLOR_BGR2HSV)[0][0])
 
 
     roigreen1=frame1[round(pixel_width/2):pixel_width, round(pixel_length/4):pixel_length] #Breite angepasst, wegen Störsegmentation
+    print("Frame leer:", frame1 is None)
+    print("Frame Shape:", frame1.shape if frame1 is not None else None)
     hsvgreen1 = cv2.cvtColor(roigreen1, cv2.COLOR_BGR2HSV)
 
     mask_green1 = cv2.inRange(hsvgreen1, lower_green1, upper_green1)
@@ -780,8 +788,7 @@ while True:
 
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
-    print("Green mask Pixel:", cv2.countNonZero(mask_green_full1))
-    print("Green Boundingbox:", bboxgreen1)
+
 
     masken1_green.append(mask_green_full1.copy())
 
@@ -840,8 +847,6 @@ while True:
 
         mask_red_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
         mask_red_full1[y1red1:y2red1, x1red1:x2red1] = maskred1
-        print("Red mask Pixel:", cv2.countNonZero(mask_red_full1))
-        print("Red Boundingbox:", bboxred1)
 
         masken1_red.append(mask_red_full1.copy())
         
