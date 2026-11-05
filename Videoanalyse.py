@@ -932,7 +932,7 @@ progress2 = st.progress(0)
 #2. Video
 while True:
     ret2, frame2 = cap2.read()
-    if not ret2:
+    if not ret2 or frame2:
        print("Video beendet oder Fehler beim Lesen")
        break
 
