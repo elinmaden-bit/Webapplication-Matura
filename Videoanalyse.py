@@ -897,7 +897,7 @@ fps = cap1.get(cv2.CAP_PROP_FPS)
 cap1.release()
 bild1.empty()
 status.empty()
-progress2.progress(1.0)
+progress1.progress(1.0)
 
 st.subheader("Segmentierte Maske")
 
