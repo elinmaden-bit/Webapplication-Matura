@@ -732,11 +732,6 @@ bild2 = st.empty()
 
 cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) #Rot Grün Segmentierung erst beim Sprung starten
 
-if start_segmentation2 is not None:
-    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
-else:
-    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
-
 previous_bboxred1=None
 previous_bboxred2=None
 
@@ -929,10 +924,15 @@ masken2_red=[]
 gesamt_frames2 = int(cap2.get(cv2.CAP_PROP_FRAME_COUNT))
 progress2 = st.progress(0)
 
+if start_segmentation2 is not None:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
+else:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
+
 #2. Video
 while True:
     ret2, frame2 = cap2.read()
-    if not ret2 or frame2:
+    if not ret2 or frame2 :
        print("Video beendet oder Fehler beim Lesen")
        break
 
