@@ -882,7 +882,7 @@ while True:
     if frame_count1>landing_red:
         break
 
-fps = cap1.get(cv2.CAP_PROP_FPS)
+
 cap1.release()
 bild1.empty()
 status.empty()
@@ -906,7 +906,7 @@ for i, maske_green in enumerate(masken1_green):
 
         progress_wiedergabe.progress((i + 1) / len(masken1_green))
 
-        time.sleep(1 / fps)
+        time.sleep(1 / 30)
 progress_wiedergabe.progress(1.0)
         
 
@@ -1062,7 +1062,7 @@ while True:
     else:
         if frame_count2>stopp_segmentation:
             break
-fps = cap1.get(cv2.CAP_PROP_FPS)
+
 cap2.release()
 progress1.progress(1.0)
 
@@ -1082,7 +1082,7 @@ for i, maske_green in enumerate(masken2_green):
         bild_maske.image(colored2, clamp=True)
 
         progress_wiedergabe.progress((i + 1) / len(masken2_green))
-        time.sleep(1/fps)
+        time.sleep(1/30)
 progress_wiedergabe.progress(1.0)
 
 #print("List of green functions 1:", list_of_functions1_green)
