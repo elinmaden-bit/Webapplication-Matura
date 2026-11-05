@@ -780,6 +780,8 @@ while True:
 
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
+    print("Green mask Pixel:", cv2.countNonZero(mask_green_full1))
+    print("Green Boundingbox:", bboxgreen1)
 
     masken1_green.append(mask_green_full1.copy())
 
@@ -838,6 +840,8 @@ while True:
 
         mask_red_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
         mask_red_full1[y1red1:y2red1, x1red1:x2red1] = maskred1
+        print("Red mask Pixel:", cv2.countNonZero(mask_red_full1))
+        print("Red Boundingbox:", bboxred1)
 
         masken1_red.append(mask_red_full1.copy())
         
