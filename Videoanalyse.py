@@ -581,7 +581,7 @@ focal_position1=[0.117837/2+math.sin(angle30)*focal_length1,0.068034/2-math.cos(
 focal_position2=[-5-(0.127824/2)-math.sin(angle30)*focal_length2,0.073799-math.cos(angle30)*focal_length2,0.0681221/2]#Kamera B
 
 
-@st.cache_data
+
 def get_position_in_space1_normal(position_on_screen):
     left,upper,right,lower=position_on_screen
     midpoint_position_pixel=[(left+right)/2,pixel_width-((upper+lower)/2)] #Mittelpunkt von der segmentierten Stelle nehmen
@@ -590,7 +590,7 @@ def get_position_in_space1_normal(position_on_screen):
     angle = math.radians(30)
     position_in_space=[math.cos(angle)*distance_from_left_side_m,math.sin(angle)*distance_from_left_side_m,height_on_screen_m]
     return(position_in_space)
-@st.cache_data
+
 def get_position_in_space2_normal(position_on_screen): 
     left,upper,right,lower=position_on_screen
     midpoint_position_pixel=[(left+right)/2,pixel_width-((upper+lower)/2)] #Mittelpunkt von der segmentierten Stelle nehmen
@@ -599,7 +599,7 @@ def get_position_in_space2_normal(position_on_screen):
     angle = math.radians(30)
     position_in_space=[-5-math.cos(angle)*distance_from_right_side_m,math.sin(angle)*distance_from_right_side_m,height_on_screen_m]
     return(position_in_space)
-@st.cache_data
+
 def get_linear_function_focalpoint1_normal(position_on_screenA):#define function, that goes through the Points, Returns that function with variablename function1
     position_on_screenA_vector=sp.Matrix(position_on_screenA)
     s = sp.symbols('s')
@@ -609,7 +609,7 @@ def get_linear_function_focalpoint1_normal(position_on_screenA):#define function
     print("FunctionA:", function1)
     return function1, direction_vector1
 
-@st.cache_data
+
 def get_linear_function_focalpoint2_normal(position_on_screenB):
     position_on_screenB_vector=sp.Matrix(position_on_screenB)
     t = sp.symbols('t')
@@ -629,7 +629,7 @@ with col2:
     bild2 = st.empty()
     bild2_segmentiert = st.empty()
 
-status=st.empty
+status=st.empty()
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
 cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
@@ -644,6 +644,7 @@ if not cap1.isOpened():
 if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
+
 
     
 while True:
@@ -724,16 +725,11 @@ if not cap2.isOpened():
     print("Video konnte nicht geöffnet werden.")
     exit()
 
-st.subheader("2. Rot-/Grünsegmentierung des 1. Videos")
-col1, col2 = st.columns(2)
+st.subheader("2. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundigbox")
 
-with col1:
-    bild1 = st.empty()
-    bild1_segmentiert = st.empty()
+bild1 = st.empty()
 
-with col2:
-    bild2 = st.empty()
-    bild2_segmentiert = st.empty()
+bild2 = st.empty()
 
 cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) #Rot Grün Segmentierung erst beim Sprung starten
 
@@ -750,13 +746,23 @@ list_of_functions1_red=[] #Liste für Frame-Funktionspaare
 list_of_functions2_green=[] #Liste für Frame-Funktionspaare
 list_of_functions2_red=[] #Liste für Frame-Funktionspaare
 
-frame_count1=take_off_red
-frame_count2=take_off_red
+frame_count1=start_segmentation
+
+if start_segmentation2 is not None:
+    frame_count2=start_segmentation2
+else:
+    frame_count2=start_segmentation
 
 roired1=None
 roired2=None
 bboxred1=None
 bboxred2=None
+
+masken1_green=[]
+masken1_red=[]
+
+gesamt_frames1 = int(cap1.get(cv2.CAP_PROP_FRAME_COUNT))
+progress1 = st.progress(0)
 
 #1. Video
 while True:
@@ -774,6 +780,8 @@ while True:
 
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
+
+    masken1_green.append(mask1_green.copy())
 
     coords = cv2.findNonZero(mask_green_full1)
 
@@ -830,6 +838,8 @@ while True:
 
         mask_red_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
         mask_red_full1[y1red1:y2red1, x1red1:x2red1] = maskred1
+
+        masken1_red.append(mask1_red.copy())
         
         coords = cv2.findNonZero(mask_red_full1)
 
@@ -867,21 +877,15 @@ while True:
         print("No red detected in Video A")
    
     frame_count1+=1
-    
 
-    colored1 = np.zeros_like(frame1)
+    if gesamt_frames1 > 0:
+        fortschritt1 = min(frame_count1 / gesamt_frames1, 1.0)
+        progress1.progress(fortschritt1)    
 
-    if bboxred1 is not None:
-
-        # Rot einfärben
-        colored1[mask_red_full1 > 0] = [0, 0, 255]
-
-    # Grün einfärben
-    colored1[mask_green_full1 > 0] = [0, 255, 0]
 
     if frame_count1 % 2 == 0:
         bild1.image(frame1, channels="BGR")
-        bild1_segmentiert.image(colored1, channels="BGR")
+
     status.text("Video A wird analysiert ...")
 
     
@@ -889,14 +893,40 @@ while True:
     if frame_count1>landing_red:
         break
 
-
+fps = cap1.get(cv2.CAP_PROP_FPS)
 cap1.release()
 bild1.empty()
-bild1_segmentiert.empty()
 status.empty()
+progress2.progress(1.0)
 
-st.subheader("3. Rot-/Grünsegmentierung des 1. Videos")
+st.subheader("Segmentierte Maske")
 
+bild_maske = st.empty()
+
+for i, maske_green in enumerate(masken1_green):
+    for i, maske_red in enumerate(masken1_red):
+
+        colored1 = np.zeros_like(frame1)
+
+        colored1[maske_red > 0] = [0, 0, 255]
+
+        colored1[maske_green > 0] = [0, 255, 0]
+        
+        bild_maske.image(colored1, clamp=True)
+
+        progress_wiedergabe.progress((i + 1) / len(masken1_green))
+
+        time.sleep(1 / fps)
+        
+
+
+st.subheader("3. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundigbox")
+
+masken2_green=[]
+masken2_red=[]
+
+gesamt_frames2 = int(cap2.get(cv2.CAP_PROP_FRAME_COUNT))
+progress2 = st.progress(0)
 
 #2. Video
 while True:
@@ -912,6 +942,8 @@ while True:
 
     mask_green_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
     mask_green_full2[round((2/3)*pixel_width):pixel_width,0:round((4/5)*pixel_length)]=mask_green2
+
+    masken2_green.append(mask2_green.copy())
 
     coords = cv2.findNonZero(mask_green_full2)
 
@@ -976,6 +1008,8 @@ while True:
         mask_red_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
         mask_red_full2[y1red2:y2red2, x1red2:x2red2] = maskred2
 
+        masken2_red.append(mask2_red.copy())
+
         coords = cv2.findNonZero(mask_red_full2)
 
         if coords is not None:
@@ -1018,20 +1052,13 @@ while True:
    
     frame_count2+=1
 
-
-    colored2 = np.zeros_like(frame2)
-
-    if bboxred2 is not None:
-        # Rot einfärben
-        colored2[mask_red_full2 > 0] = [0, 0, 255]
-
-    # Grün einfärben
-    colored2[mask_green_full2 > 0] = [0, 255, 0]
+    if gesamt_frames2 > 0:
+        fortschritt2 = min(frame_count2 / gesamt_frames2, 1.0)
+        progress2.progress(fortschritt2)   
 
 
     if frame_count2 % 2 == 0:
         bild2.image(frame2, channels="BGR")
-        bild2_segmentiert.image(colored2, channels="BGR")
     
     status.text("Video B wird analysiert ...")
     
@@ -1043,12 +1070,26 @@ while True:
     else:
         if frame_count2>stopp_segmentation:
             break
-
+fps = cap1.get(cv2.CAP_PROP_FPS)
 cap2.release()
+progress1.progress(1.0)
 
 bild2.empty()
-bild2_segmentiert.empty()
 status.empty()
+
+for i, maske_green in enumerate(masken2_green):
+    for i, maske_red in enumerate(masken2_red):
+
+        colored2 = np.zeros_like(frame2)
+
+        colored2[maske_red > 0] = [0, 0, 255]
+
+        colored2[maske_green > 0] = [0, 255, 0]
+        
+        bild_maske.image(colored2, clamp=True)
+
+        progress_wiedergabe.progress((i + 1) / len(masken2_green))
+        time.sleep(1/fps)
 
 #print("List of green functions 1:", list_of_functions1_green)
 #print("List of red functions 1:", list_of_functions1_red)
