@@ -663,6 +663,7 @@ while True:
         hsv_blue1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
         coords = cv2.findNonZero(mask_blue1)
+        time.sleep(1/30)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
@@ -686,6 +687,7 @@ while True:
         hsv_blue2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2HSV)
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
         coords = cv2.findNonZero(mask_blue2)
+        time.sleep(1/30)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
@@ -751,6 +753,10 @@ roired1=None
 roired2=None
 bboxred1=None
 bboxred2=None
+bboxgreen1=None
+bboxgreen2=None
+roigreen1=None
+roigreen2=None
 
 masken1_green=[]
 masken1_red=[]
@@ -866,6 +872,8 @@ while True:
         print("No red detected in Video A")
    
     frame_count1+=1
+    print("Aktueller Frame:", frame_count2)
+    print("Anzahl gespeicherter Masken:", len(masken2_red))
 
     if gesamt_frames1 > 0:
         fortschritt1 = min(frame_count1 / gesamt_frames1, 1.0)
