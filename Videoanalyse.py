@@ -967,6 +967,8 @@ while True:
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
         print("Verwende vorherige RED Boundingbox als ROI")
 
+        print("Previous Red Boundingbox:", previous_bboxred2)
+
 
     elif bboxgreen2 is not None:
         print("Green Boundingbox2:", bboxgreen2)
@@ -992,6 +994,7 @@ while True:
         y2red2 = min(frame2.shape[0], y2green2 + 45)
 
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
+        print("ROI wird anhand der GREEN Boundingbox erstellt")
 
     else:
         print("Keine Position für ROI vorhanden.")
