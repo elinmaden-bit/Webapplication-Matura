@@ -624,10 +624,12 @@ col1, col2 = st.columns(2)
 with col1:
     bild1 = st.empty()
     bild1_segmentiert = st.empty()
+
 with col2:
     bild2 = st.empty()
     bild2_segmentiert = st.empty()
 
+status=st.empty
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
 cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
