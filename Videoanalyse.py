@@ -993,7 +993,7 @@ while True:
 
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
         print("Frame2:", frame2.shape)
-        print("ROI-Koordinaten:", x1, y1, x2, y2)
+        print("ROI-Koordinaten:", x1red2, y1red2, x2red2, y2red2)
         print("ROI:", roired2.shape if roired2 is not None else None)
 
     else:
