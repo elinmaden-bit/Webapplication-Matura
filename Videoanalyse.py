@@ -967,8 +967,6 @@ while True:
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
         print("Verwende vorherige RED Boundingbox als ROI")
 
-        print("Previous Red Boundingbox:", previous_bboxred2)
-
 
     elif bboxgreen2 is not None:
         print("Green Boundingbox2:", bboxgreen2)
@@ -994,15 +992,12 @@ while True:
         y2red2 = min(frame2.shape[0], y2green2 + 45)
 
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
-        print("ROI wird anhand der GREEN Boundingbox erstellt")
+
 
     else:
         print("Keine Position für ROI vorhanden.")
 
     if roired2 is not None:
-        print("Shape:", roired2.shape)
-        print("Size:", roired2.size)
-        print("Datentyp:", roired2.dtype)
 
         hsvred2 = cv2.cvtColor(roired2, cv2.COLOR_BGR2HSV)
 
@@ -1030,12 +1025,13 @@ while True:
     if bboxred2 is not None:
 
         r2x1, r2y1, r2x2, r2y2 = bboxred2
-        cv2.rectangle(frame2,(r2x1, r2y1),(r2x2, r2y2),(0, 0, 255),3)
 
         r2x1 = r2x1 + x1red2
         r2y1 = r2y1 + y1red2
         r2x2 = r2x2 + x1red2
         r2y2 = r2y2 + y1red2
+
+        cv2.rectangle(frame2,(r2x1, r2y1),(r2x2, r2y2),(0, 0, 255),3)
 
         previous_bboxred2 = (r2x1,r2y1,r2x2,r2y2)
 
