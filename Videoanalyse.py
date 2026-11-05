@@ -728,7 +728,6 @@ if not cap2.isOpened():
 st.subheader("2. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundigbox")
 
 bild1 = st.empty()
-
 bild2 = st.empty()
 
 cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) #Rot Grün Segmentierung erst beim Sprung starten
@@ -902,6 +901,7 @@ progress1.progress(1.0)
 st.subheader("Segmentierte Maske")
 
 bild_maske = st.empty()
+progress_wiedergabe=st.progress(0,text="Anzeige Maske")
 
 for i, maske_green in enumerate(masken1_green):
     for i, maske_red in enumerate(masken1_red):
@@ -917,6 +917,7 @@ for i, maske_green in enumerate(masken1_green):
         progress_wiedergabe.progress((i + 1) / len(masken1_green))
 
         time.sleep(1 / fps)
+progress_wiedergabe.progress(1.0)
         
 
 
@@ -1077,6 +1078,7 @@ progress1.progress(1.0)
 bild2.empty()
 status.empty()
 
+progress_wiedergabe=st.progress(0,text="Anzeige Maske")
 for i, maske_green in enumerate(masken2_green):
     for i, maske_red in enumerate(masken2_red):
 
@@ -1090,6 +1092,7 @@ for i, maske_green in enumerate(masken2_green):
 
         progress_wiedergabe.progress((i + 1) / len(masken2_green))
         time.sleep(1/fps)
+progress_wiedergabe.progress(1.0)
 
 #print("List of green functions 1:", list_of_functions1_green)
 #print("List of red functions 1:", list_of_functions1_red)
