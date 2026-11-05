@@ -9,7 +9,7 @@ from PIL import Image
 import csv
 import gdown
 import time
-from pathlib import PATH
+from pathlib import Path
 
 st.header("Segmentierungsverfahren")
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
