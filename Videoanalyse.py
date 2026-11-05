@@ -781,7 +781,7 @@ while True:
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
 
-    masken1_green.append(mask1_green.copy())
+    masken1_green.append(mask_green_full1.copy())
 
     coords = cv2.findNonZero(mask_green_full1)
 
@@ -839,7 +839,7 @@ while True:
         mask_red_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
         mask_red_full1[y1red1:y2red1, x1red1:x2red1] = maskred1
 
-        masken1_red.append(mask1_red.copy())
+        masken1_red.append(mask_red_full1.copy())
         
         coords = cv2.findNonZero(mask_red_full1)
 
@@ -943,7 +943,7 @@ while True:
     mask_green_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
     mask_green_full2[round((2/3)*pixel_width):pixel_width,0:round((4/5)*pixel_length)]=mask_green2
 
-    masken2_green.append(mask2_green.copy())
+    masken2_green.append(mask_green_full2.copy())
 
     coords = cv2.findNonZero(mask_green_full2)
 
@@ -1008,7 +1008,7 @@ while True:
         mask_red_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
         mask_red_full2[y1red2:y2red2, x1red2:x2red2] = maskred2
 
-        masken2_red.append(mask2_red.copy())
+        masken2_red.append(mask_red_full2.copy())
 
         coords = cv2.findNonZero(mask_red_full2)
 
