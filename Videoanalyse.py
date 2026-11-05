@@ -8,6 +8,8 @@ from PIL import Image
 #import pyvista as pv
 import csv
 import gdown
+import time
+from pathlib import PATH
 
 st.header("Segmentierungsverfahren")
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
@@ -16,14 +18,20 @@ start_frame2=st.slider("Wähle ein Startframe für Video 2 (Achtung: muss vor Bl
 start_segmentation2=None
 stopp_segmentation2=None
 
+def video_download(url, dateiname):
+    pfad = Path(dateiname)
+
+    if not pfad.exists():
+        gdown.download(url, str(pfad), quiet=True)
+
+    return str(pfad)
+
 
 if video_nummer==4:
     url1="https://drive.google.com/file/d/1aOjvR1bF0PNR5lL5oG_PZaA6VmSV4rnt/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1Neae1Sc5-wCV-W9VN78X-Y9srm80QtJn/view?usp=drive_link"
-    video1=gdown.download(url1, "A Axel normalspeed.mp4", quiet=False)
-    video2=gdown.download(url2, "B Axel normalspeed.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Axel normalspeed.mp4")
+    video2=video_download(url2, "B Axel normalspeed.mp4")
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -61,10 +69,8 @@ if video_nummer==4:
 elif video_nummer==5:
     url1="https://drive.google.com/file/d/1eTJMw48dRoMXxCFv5mdxYXIrUWDaFqMs/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
-    video1=gdown.download(url1, "A Axel slowmotion 1.mp4", quiet=False)
-    video2=gdown.download(url2, "B Axel slowmotion 1.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Axel slowmotion 1.mp4")
+    video2=video_download(url2, "B Axel slowmotion 1.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -103,10 +109,8 @@ elif video_nummer==5:
 elif video_nummer==6:
     url1="https://drive.google.com/file/d/1x4LKsktIsWw6jQcmKPtizQE8biV_waW2/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1IIPPaAremVEh_QuEfkQ7aMbf6kSK_TX3/view?usp=drive_link"
-    video1=gdown.download(url1, "A Axel slowmotion 2.mp4", quiet=False)
-    video2=gdown.download(url2, "B Axel slowmotion 2.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Axel slowmotion 2.mp4")
+    video2=video_download(url2, "B Axel slowmotion 2.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -146,10 +150,8 @@ elif video_nummer==6:
 elif video_nummer==7:
     url1="https://drive.google.com/file/d/1yIwtgK2pn3v3QIV-ZBCk45dK6X1bWctr/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1UBVQxoZNyKT227yXiq1Bya5HzTrUuOU7/view?usp=drive_link"
-    video1=gdown.download(url1, "A Salchow normalspeed.mp4", quiet=False)
-    video2=gdown.download(url2, "B Salchow normalspeed.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Salchow normalspeed.mp4")
+    video2=video_download(url2, "B Salchow normalspeed.mp4")
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -186,10 +188,8 @@ elif video_nummer==7:
 elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss noch angepasst werden, dass es das ausgibt
     url1="https://drive.google.com/file/d/1HT-3bK7T-4z6eP0DeOdpETPjBoZiJ35s/view?usp=drive_link"
     url2="https://drive.google.com/file/d/138CL2K2JqPQME5nhYWvFiJopBteVVeLt/view?usp=drive_link"
-    video1=gdown.download(url1, "A Salchow slowmotion 1.mp4", quiet=False)
-    video2=gdown.download(url2, "B Salchow slowmotion 1.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Salchow slowmotion 1.mp4")
+    video2=video_download(url2, "B Salchow slowmotion 1.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -226,10 +226,8 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
 elif video_nummer==9:
     url1="https://drive.google.com/file/d/1yfCuWxciPkKVeD29ufZSb9EdPovEczfV/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1SyVeKq6DPRC3Mx6uz3LsyMkb-o91wajI/view?usp=drive_link"
-    video1=gdown.download(url1, "A Salchow slowmotion 2.mp4", quiet=False)
-    video2=gdown.download(url2, "B Salchow slowmotion 2.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Salchow slowmotion 2.mp4")
+    video2=video_download(url2, "B Salchow slowmotion 2.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -267,10 +265,8 @@ elif video_nummer==9:
 elif video_nummer==10:
     url1="https://drive.google.com/file/d/14JqYIJSUqee-pM--Vo0jOIiu_fefTcmx/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1RS84ENZtY34UCNnr7KOhU39FLMwM74RS/view?usp=drive_link"
-    video1=gdown.download(url1, "A Toeloop normalspeed.mp4", quiet=False)
-    video2=gdown.download(url2, "B Toeloop normalspeed.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Toeloop normalspeed.mp4")
+    video2=video_download(url2, "B Toeloop normalspeed.mp4")
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -307,10 +303,8 @@ elif video_nummer==10:
 elif video_nummer==11:
     url1="https://drive.google.com/file/d/1lY6DRW58_lAJHcpfIJXxZqLzvFm3FCs1/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1yER3MJyAmZIhVRm6cJtPN1Mjko6VxTrZ/view?usp=drive_link"
-    video1=gdown.download(url1, "A Toeloop slowmotion 1.mp4", quiet=False)
-    video2=gdown.download(url2, "B Toeloop slowmotion 1.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Toeloop slowmotion 1.mp4")
+    video2=video_download(url2, "B Toeloop slowmotion 1.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -348,10 +342,8 @@ elif video_nummer==11:
 elif video_nummer==12:
     url1="https://drive.google.com/file/d/1EOG1zCgoANUkaureK2LN5syzjbytcfk-/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1aOCFxcflr2IZ0SImmKhX5Wu4hFife3U3/view?usp=drive_link"
-    video1=gdown.download(url1, "A Toeloop slowmotion 2.mp4", quiet=False)
-    video2=gdown.download(url2, "B Toeloop slowmotion 2.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Toeloop slowmotion 2.mp4")
+    video2=video_download(url2, "B Toeloop slowmotion 2.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -389,10 +381,8 @@ elif video_nummer==12:
 elif video_nummer==13:
     url1="https://drive.google.com/file/d/1Kvxsz7ERA_HbBvetP55aUUw9bxv615Pm/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1FieweKFFcJvva8rUmPxTkr2Wn7h70Bhv/view?usp=drive_link"
-    video1=gdown.download(url1, "A Loop normalspeed.mp4", quiet=False)
-    video2=gdown.download(url2, "B Loop normalspeed.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Loop normalspeed.mp4")
+    video2=video_download(url2, "B Loop normalspeed.mp4")
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -429,10 +419,8 @@ elif video_nummer==13:
 elif video_nummer==14:
     url1="https://drive.google.com/file/d/1bLorzlGqHflEwQfdSK1HCYR5QlLAA6ag/view?usp=drive_link"
     url2="https://drive.google.com/file/d/13q0tonpxMpHVZLzM9C4D8PP33FIOm4k7/view?usp=drive_link"
-    video1=gdown.download(url1, "A Loop slowmotion.mp4", quiet=False)
-    video2=gdown.download(url2, "B Loop slowmotion.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Loop slowmotion.mp4")
+    video2=video_download(url2, "B Loop slowmotion.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -470,10 +458,8 @@ elif video_nummer==14:
 elif video_nummer==15:
     url1="https://drive.google.com/file/d/1tVjhmdRTG6gUgbvrgCX4kU-qa8w40xGZ/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1_mjvKFBzpzEqvd3IfJXLGx6WmPE-Icni/view?usp=drive_link"
-    video1=gdown.download(url1, "A Lutz normalspeed.mp4", quiet=False)
-    video2=gdown.download(url2, "B Lutz normalspeed.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Lutz normalspeed.mp4")
+    video2=video_download(url2, "B Lutz normalspeed.mp4")
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -509,10 +495,8 @@ elif video_nummer==15:
 elif video_nummer==16:
     url1="https://drive.google.com/file/d/1iSmq3-gpwOmSz-eGc8PmwRuHiGspxW2d/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1YkPucZJPSFw3cf02jpxzNqjoyecac8NQ/view?usp=drive_link"
-    video1=gdown.download(url1, "A Lutz slowmotion 1.mp4", quiet=False)
-    video2=gdown.download(url2, "B Lutz slowmotion 1.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Lutz slowmotion 1.mp4")
+    video2=video_download(url2, "B Lutz slowmotion 1.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -550,10 +534,8 @@ elif video_nummer==16:
 elif video_nummer==17:
     url1="https://drive.google.com/file/d/13QbLaVZXj9te37a__26Q3_hO-AihHj4y/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1pFrxpMGDurdWYlfUVCqvAUFwsimzWIru/view?usp=drive_link"
-    video1=gdown.download(url1, "A Lutz slowmotion 2.mp4", quiet=False)
-    video2=gdown.download(url2, "B Lutz slowmotion 2.mp4", quiet=False)
-    #st.video(video1, width=400)
-    #st.video(video2, width=400)
+    video1=video_download(url1, "A Lutz slowmotion 2.mp4")
+    video2=video_download(url2, "B Lutz slowmotion 2.mp4")
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
@@ -709,6 +691,7 @@ while True:
             
         else:
             bboxblue2 = None
+            
         print("Blue Bonding Box B:", bboxblue2)
         bild2.image(frame2, channels="BGR")
 
@@ -750,8 +733,12 @@ with col2:
     bild2 = st.empty()
     bild2_segmentiert = st.empty()
 
-cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+take_off_red) #Rot Grün Segmentierung erst beim Sprung starten
-cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+take_off_red)
+cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) #Rot Grün Segmentierung erst beim Sprung starten
+
+if start_segmentation2 is not None:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
+else:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
 
 previous_bboxred1=None
 previous_bboxred2=None
@@ -786,12 +773,14 @@ while True:
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
 
-    mask_green_full1_=Image.fromarray(mask_green_full1)
+    coords = cv2.findNonZero(mask_green_full1)
 
-
-    bboxgreen1=mask_green_full1_.getbbox()
-    
-            
+    if coords is not None:
+        x, y, w, h = cv2.boundingRect(coords)
+        bboxgreen1 = (x, y, x+w, y+h)
+    else:
+        bboxgreen1 = None
+          
 
     if bboxgreen1 is None and previous_bboxred1 is not None:
         print("No green detected in Video A")
@@ -837,24 +826,30 @@ while True:
 
         maskred1 = cv2.bitwise_or(submask1_red1, submask2_red1)
 
-        maskred1_ = Image.fromarray(maskred1)
-
         mask_red_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
         mask_red_full1[y1red1:y2red1, x1red1:x2red1] = maskred1
+        
+        coords = cv2.findNonZero(mask_red_full1)
 
-        bboxred1=maskred1_.getbbox()
+        if coords is not None:
+            x, y, w, h = cv2.boundingRect(coords)
+            bboxred1 = (x, y, x+w, y+h)
+        else:
+            bboxred1 = None
+
     else:
         bboxred1=None
     
     if bboxred1 is not None:
 
         rx1, ry1, rx2, ry2 = bboxred1
-        cv2.rectangle(frame1,(rx1, ry1),(rx2, ry2),(0, 0, 255),3)
 
         rx1 = rx1 + x1red1
         ry1 = ry1 + y1red1
         rx2 = rx2 + x1red1
         ry2 = ry2 + y1red1
+        
+        cv2.rectangle(frame1,(rx1, ry1),(rx2, ry2),(0, 0, 255),3)
 
         previous_bboxred1 = (rx1,ry1,rx2,ry2)
 
@@ -871,8 +866,6 @@ while True:
    
     frame_count1+=1
     
-    if frame_count1>landing_red:
-        break
 
     colored1 = np.zeros_like(frame1)
 
@@ -884,14 +877,21 @@ while True:
     # Grün einfärben
     colored1[mask_green_full1 > 0] = [0, 255, 0]
 
-    bild1_segmentiert.image(colored1, channels="BGR")
-    bild1.image(frame1, channels="BGR")
+    if frame_count1 % 2 == 0:
+        bild1.image(frame1, channels="BGR")
+        bild1_segmentiert.image(colored1, channels="BGR")
+    status.text("Video A wird analysiert ...")
+
+    
+    time.sleep(1/25)
+    if frame_count1>landing_red:
+        break
 
 
 cap1.release()
 bild1.empty()
 bild1_segmentiert.empty()
-
+status.empty()
 
 st.subheader("3. Rot-/Grünsegmentierung des 1. Videos")
 
@@ -911,10 +911,13 @@ while True:
     mask_green_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
     mask_green_full2[round((2/3)*pixel_width):pixel_width,0:round((4/5)*pixel_length)]=mask_green2
 
+    coords = cv2.findNonZero(mask_green_full2)
 
-    mask_green_full2_=Image.fromarray(mask_green_full2)
-
-    bboxgreen2=mask_green_full2_.getbbox()
+    if coords is not None:
+        x, y, w, h = cv2.boundingRect(coords)
+        bboxgreen2 = (x, y, x+w, y+h)
+    else:
+        bboxgreen2 = None
 
 
     if bboxgreen2 is None and previous_bboxred2 is not None:
@@ -946,12 +949,13 @@ while True:
         
 
         x1green2, y1green2, x2green2, y2green2 = bboxgreen2
-        cv2.rectangle(frame2,(x1green2, y1green2),(x2green2, y2green2),(0, 255, 0),3)
 
         x1red2 = max(0, x1green2 - 45)
         y1red2 = max(0, y1green2 - 45)
         x2red2 = min(frame2.shape[1], x2green2 + 45)
         y2red2 = min(frame2.shape[0], y2green2 + 45)
+
+        cv2.rectangle(frame2,(x1green2, y1green2),(x2green2, y2green2),(0, 255, 0),3)
 
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
 
@@ -967,13 +971,16 @@ while True:
 
         maskred2 = cv2.bitwise_or(submask1_red2, submask2_red2)
 
-        maskred2_ = Image.fromarray(maskred2)
-
         mask_red_full2 = np.zeros(frame2.shape[:2], dtype=np.uint8)
         mask_red_full2[y1red2:y2red2, x1red2:x2red2] = maskred2
 
+        coords = cv2.findNonZero(mask_red_full2)
 
-        bboxred2=maskred2_.getbbox()
+        if coords is not None:
+            x, y, w, h = cv2.boundingRect(coords)
+            bboxred2 = (x, y, x+w, y+h)
+        else:
+            bboxred2 = None
 
     else:
         bboxred2=None
@@ -1009,8 +1016,6 @@ while True:
    
     frame_count2+=1
 
-    if frame_count2>landing_red:
-        break
 
     colored2 = np.zeros_like(frame2)
 
@@ -1022,14 +1027,26 @@ while True:
     colored2[mask_green_full2 > 0] = [0, 255, 0]
 
 
-    bild2_segmentiert.image(colored2)
-    bild2.image(frame2)
+    if frame_count2 % 2 == 0:
+        bild2.image(frame2, channels="BGR")
+        bild2_segmentiert.image(colored2, channels="BGR")
+    
+    status.text("Video B wird analysiert ...")
+    
+    time.sleep(1/25)
+
+    if stopp_segmentation2 is not None:
+        if frame_count2>stopp_segmentation2:
+            break
+    else:
+        if frame_count2>stopp_segmentation:
+            break
 
 cap2.release()
 
 bild2.empty()
 bild2_segmentiert.empty()
-
+status.empty()
 
 #print("List of green functions 1:", list_of_functions1_green)
 #print("List of red functions 1:", list_of_functions1_red)
