@@ -984,15 +984,17 @@ while True:
         
 
         x1green2, y1green2, x2green2, y2green2 = bboxgreen2
+        cv2.rectangle(frame2,(x1green2, y1green2),(x2green2, y2green2),(0, 255, 0),3)
 
         x1red2 = max(0, x1green2 - 45)
         y1red2 = max(0, y1green2 - 45)
         x2red2 = min(frame2.shape[1], x2green2 + 45)
         y2red2 = min(frame2.shape[0], y2green2 + 45)
 
-        cv2.rectangle(frame2,(x1green2, y1green2),(x2green2, y2green2),(0, 255, 0),3)
-
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
+        print("Frame2:", frame2.shape)
+        print("ROI-Koordinaten:", x1, y1, x2, y2)
+        print("ROI:", roired2.shape if roired2 is not None else None)
 
     else:
         print("Keine Position für ROI vorhanden.")
