@@ -992,14 +992,14 @@ while True:
         y2red2 = min(frame2.shape[0], y2green2 + 45)
 
         roired2 = frame2[y1red2:y2red2, x1red2:x2red2]
-        print("Frame2:", frame2.shape)
-        print("ROI-Koordinaten:", x1red2, y1red2, x2red2, y2red2)
-        print("ROI:", roired2.shape if roired2 is not None else None)
 
     else:
         print("Keine Position für ROI vorhanden.")
 
     if roired2 is not None:
+        print("Shape:", roired2.shape)
+        print("Size:", roired2.size)
+        print("Datentyp:", roired2.dtype)
 
         hsvred2 = cv2.cvtColor(roired2, cv2.COLOR_BGR2HSV)
 
