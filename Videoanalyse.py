@@ -849,11 +849,6 @@ while True:
     if bboxred1 is not None:
 
         rx1, ry1, rx2, ry2 = bboxred1
-
-        rx1 = rx1 + x1red1
-        ry1 = ry1 + y1red1
-        rx2 = rx2 + x1red1
-        ry2 = ry2 + y1red1
         
         cv2.rectangle(frame1,(rx1, ry1),(rx2, ry2),(0, 0, 255),3)
 
@@ -1025,14 +1020,6 @@ while True:
     if bboxred2 is not None:
 
         r2x1, r2y1, r2x2, r2y2 = bboxred2
-
-        print("bboxred2 lokal:", bboxred2)
-        print("ROI-Offset:", x1red2, y1red2)
-        r2x1 = r2x1 + x1red2
-        r2y1 = r2y1 + y1red2
-        r2x2 = r2x2 + x1red2
-        r2y2 = r2y2 + y1red2
-        print("bboxred2 global:", (r2x1, r2y1, r2x2, r2y2))
 
         cv2.rectangle(frame2,(r2x1, r2y1),(r2x2, r2y2),(0, 0, 255),3)
 
