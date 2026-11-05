@@ -12,7 +12,7 @@ Auf Grundlage dieser 3D-Daten können verschiedene Eigenschaften des Sprungs unt
 
 Die Ergebnisse werden in dieser Webanwendung dargestellt, sodass die Bewegungsanalyse übersichtlich und nachvollziehbar betrachtet werden kann.
 
-Das übergeordnete Ziel ist es, herauszufinden, inwiefern sich die Bewegung eines Eiskunstlaufsprungs mithilfe von Videoaufnahmen und computergestützter Analyse quantitativ erfassen und auswerten lässt.)
+Das übergeordnete Ziel ist es, herauszufinden, inwiefern sich die Bewegung eines Eiskunstlaufsprungs mithilfe von Videoaufnahmen und computergestützter Analyse quantitativ erfassen und auswerten lässt.")
 
 st.subheader("Videosegmentierung")
 st.write("Der Abschnitt der Videosegmentierung beginnt mit der Basis, dass zwei Videos vorhanden sind, die aus unterschiedlichen Winkeln denselben Sprung aufnehmen. Zur zeitlichen Synchronisierung der Sprünge wird zu Beginn ein blaues T-shirt gezeigt, wessen Farbe segmentiert wird und das aktuelle Frame dabei gespeichert wird.
