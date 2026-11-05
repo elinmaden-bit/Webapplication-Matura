@@ -872,8 +872,8 @@ while True:
         print("No red detected in Video A")
    
     frame_count1+=1
-    print("Aktueller Frame:", frame_count2)
-    print("Anzahl gespeicherter Masken:", len(masken2_red))
+    print("Aktueller Frame:", frame_count1)
+    print("Anzahl gespeicherter Masken:", len(masken1_red))
 
     if gesamt_frames1 > 0:
         fortschritt1 = min(frame_count1 / gesamt_frames1, 1.0)
