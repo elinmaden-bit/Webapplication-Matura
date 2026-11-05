@@ -772,7 +772,7 @@ while True:
     print("Frame-Shape:", frame1.shape)
     print("Frame-Min:", frame1.min())
     print("Frame-Max:", frame1.max())
-    print("BGR-Pixel:", frame[700, 500])
+    print("BGR-Pixel:", frame1[700, 500])
     if not ret1:
        print("Video beendet oder Fehler beim Lesen")
        break
@@ -781,10 +781,10 @@ while True:
     roigreen1=frame1[round(pixel_width/2):pixel_width, round(pixel_length/4):pixel_length] #Breite angepasst, wegen Störsegmentation
 
     hsvgreen1 = cv2.cvtColor(roigreen1, cv2.COLOR_BGR2HSV)
-    print("HSV-Pixel:", hsv[700, 500])
+    print("HSV-Pixel:", hsvgreen1[700, 500])
 
     mask_green1 = cv2.inRange(hsvgreen1, lower_green1, upper_green1)
-    print("Erkannte Pixel:", cv2.countNonZero(maske))
+    print("Erkannte Pixel:", cv2.countNonZero(mask_green1))
 
     mask_green_full1 = np.zeros(frame1.shape[:2], dtype=np.uint8)
     mask_green_full1[round(pixel_width/2):pixel_width,round(pixel_length/4):pixel_length]=mask_green1
