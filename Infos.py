@@ -4,13 +4,7 @@ import streamlit as st
 st.header("Über das Projekt")
 
 st.subheader("Zweck & Ziel")
-st.write("Das Ziel dieses Projekts ist es, einen Eiskunstlaufsprung mithilfe von zwei Videoaufnahmen aus unterschiedlichen Perspektiven dreidimensional zu analysieren.
-
-Dazu wurde ein Python-Programm entwickelt, das ausgewählte farbige Markierungen in den Videos mithilfe von Bildverarbeitung erkennt und ihre Positionen über mehrere Einzelbilder hinweg verfolgt. Durch die Kombination der beiden Kameraperspektiven werden anschliessend die räumlichen Koordinaten der Markierungen rekonstruiert.
-
-Auf Grundlage dieser 3D-Daten können verschiedene Eigenschaften des Sprungs untersucht werden. Dazu gehören beispielsweise die Absprung- und Landeposition, die Sprunghöhe, die Flugzeit, die Sprungweite und die Rotation.
-
-Die Ergebnisse werden in dieser Webanwendung dargestellt, sodass die Bewegungsanalyse übersichtlich und nachvollziehbar betrachtet werden kann.
+st.write("Das Ziel dieses Projekts ist es, einen Eiskunstlaufsprung mithilfe von zwei Videoaufnahmen aus unterschiedlichen Perspektiven dreidimensional zu analysieren.\nDazu wurde ein Python-Programm entwickelt, das ausgewählte farbige Markierungen in den Videos mithilfe von Bildverarbeitung erkennt und ihre Positionen über mehrere Einzelbilder hinweg verfolgt. Durch die Kombination der beiden Kameraperspektiven werden anschliessend die räumlichen Koordinaten der Markierungen rekonstruiert.\nAuf Grundlage dieser 3D-Daten können verschiedene Eigenschaften des Sprungs untersucht werden. Dazu gehören beispielsweise die Absprung- und Landeposition, die Sprunghöhe, die Flugzeit, die Sprungweite und die Rotation.\nDie Ergebnisse werden in dieser Webanwendung dargestellt, sodass die Bewegungsanalyse übersichtlich und nachvollziehbar betrachtet werden kann.
 
 Das übergeordnete Ziel ist es, herauszufinden, inwiefern sich die Bewegung eines Eiskunstlaufsprungs mithilfe von Videoaufnahmen und computergestützter Analyse quantitativ erfassen und auswerten lässt.")
 
