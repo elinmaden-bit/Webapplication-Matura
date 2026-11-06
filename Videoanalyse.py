@@ -630,10 +630,10 @@ with col2:
     bild2_segmentiert = st.empty()
 
 status=st.empty()
-cap1.set(cv2.CAP_PROP_POS_FRAMES, 0)
-cap2.set(cv2.CAP_PROP_POS_FRAMES, 0)
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
+cap1.set(cv2.CAP_PROP_POS_FRAMES, 0)
+cap2.set(cv2.CAP_PROP_POS_FRAMES, 0)
 cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
 cap2.set(cv2.CAP_PROP_POS_FRAMES, start_frame2)
 blue_found1=0
