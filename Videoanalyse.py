@@ -673,7 +673,7 @@ while True:
         else:
             bboxblue1 = None
         print("Blue Bonding Box A:", bboxblue1)
-        bild1.image(frame1, channels="BGR")
+        #bild1.image(frame1, channels="BGR")
 
 
         if bboxblue1 is not None:
@@ -698,7 +698,7 @@ while True:
             bboxblue2 = None
             
         print("Blue Bonding Box B:", bboxblue2)
-        bild2.image(frame2, channels="BGR")
+        #bild2.image(frame2, channels="BGR")
 
 
         if bboxblue2 is not None:
@@ -889,8 +889,8 @@ while True:
         progress1.progress(fortschritt1)    
 
 
-    if frame_count1 % 2 == 0:
-        bild1.image(frame1, channels="BGR")
+    #if frame_count1 % 2 == 0:
+        #bild1.image(frame1, channels="BGR")
 
     status.text("Video A wird analysiert ...")
 
@@ -1066,8 +1066,8 @@ while True:
         progress2.progress(fortschritt2)   
 
 
-    if frame_count2 % 2 == 0:
-        bild2.image(frame2, channels="BGR")
+    #if frame_count2 % 2 == 0:
+        #bild2.image(frame2, channels="BGR")
     
     status.text("Video B wird analysiert ...")
     
