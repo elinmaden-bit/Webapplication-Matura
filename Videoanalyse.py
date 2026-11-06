@@ -1086,6 +1086,7 @@ progress1.progress(1.0)
 bild2.empty()
 status.empty()
 
+st.subheader("Segmentierte Maske")
 progress_wiedergabe=st.progress(0,text="Anzeige Maske")
 for i, maske_green in enumerate(masken2_green):
     for i, maske_red in enumerate(masken2_red):
