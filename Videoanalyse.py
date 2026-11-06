@@ -663,7 +663,7 @@ while True:
         hsv_blue1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
         coords = cv2.findNonZero(mask_blue1)
-        time.sleep(5)#1/30
+        time.sleep(1/30)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
@@ -687,7 +687,7 @@ while True:
         hsv_blue2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2HSV)
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
         coords = cv2.findNonZero(mask_blue2)
-        time.sleep(5)#1/30
+        time.sleep(1/30)
 
         if coords is not None:
             x, y, w, h = cv2.boundingRect(coords)
@@ -895,7 +895,7 @@ while True:
     status.text("Video A wird analysiert ...")
 
     
-    time.sleep(5)#1/25
+    time.sleep(1/25)
     if frame_count1>landing_red:
         break
 
