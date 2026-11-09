@@ -1,2 +1,2 @@
-﻿Take-off Frame;Take-off Position;Landungs Frame;Landungs Position;Sprungrichtung;Luftzeit;Max. Höhe;Weite;Rotation
+﻿Take-off Frame;Take-off Position;Landungs Frame;Landungs Position;Sprungrichtung;Luftzeit[s];Max. Höhe[m];Weite[m];Rotation[°]
 562.0;[-2.572023503521835, 6.345325789495082];575.0;[-2.9647291614120204, 6.3513786369463885];Matrix([[0.392705657890185], [-0.00605284745130685]]);0.43333333333333335;0.0707865607292788;0.392752301968088;0
