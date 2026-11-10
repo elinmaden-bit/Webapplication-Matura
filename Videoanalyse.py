@@ -12,7 +12,15 @@ import time
 from pathlib import Path
 
 st.header("Segmentierungsverfahren")
-video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
+
+col1, col2=st.columns(2)
+
+with col1:
+    video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
+with col2:
+    if st.button("🔄 Seite zurücksetzen"):
+    st.session_state.clear()
+    st.rerun()
 start_segmentation2=None
 stopp_segmentation2=None
 
