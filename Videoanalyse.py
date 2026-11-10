@@ -636,7 +636,7 @@ with col2:
     bild2_segmentiert = st.empty()
 
 status=st.empty()
-statusblau=st.empty()
+#statusblau=st.empty()
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
 
@@ -663,7 +663,7 @@ while True:
     if not ret2:
        print("Video beendet oder Fehler beim Lesen")
        break
-    statusblau.text("Blausegmentierung läuft ...")
+    #statusblau.text("Blausegmentierung läuft ...")
         
 
     if not blue_found1:
@@ -719,7 +719,7 @@ while True:
         cap2.release()
         bild1.empty()
         bild2.empty()
-        statusblau.empty()
+        #statusblau.empty()
         break
 
 
