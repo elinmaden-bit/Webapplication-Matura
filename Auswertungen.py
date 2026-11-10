@@ -270,7 +270,7 @@ def rotation(dateiname1, dateiname2):
     fig_xy.update_layout(title="XY-Positionsverlauf während des Sprungs",xaxis_title="X-Position[m]",yaxis_title="Y-Position [m]",legend_title="Punktfarbe")
     st.plotly_chart(fig_xy, use_container_width=True)
 
-col1, col2 = st.columns([5, 1])
+col1, col2 = st.columns([10, 1])
 with col1:
     st.subheader("Einfacher Axel")
 with col2:
