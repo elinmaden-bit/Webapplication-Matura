@@ -30,7 +30,7 @@ Die rekonstruierten 3D-Daten werden anschliessend ausgewertet und grafisch darge
 Zusätzlich lassen sich die Positionen der Markierungen sowie deren Geschwindigkeit und Beschleunigung während des Sprungs untersuchen. Die Ergebnisse werden in Form von Kennzahlen und Diagrammen dargestellt.
 """)
 
-st.subheader("Voraussetzungen für eigene Videos")
+st.subheader("Voraussetzungen für eine Analyse")
 st.write("""
 Damit eigene Videoaufnahmen mit dem Programm analysiert werden können, müssen einige Voraussetzungen erfüllt sein.
 
