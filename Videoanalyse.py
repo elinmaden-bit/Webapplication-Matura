@@ -743,7 +743,7 @@ st.subheader("2. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundi
 bild1 = st.empty()
 bild2 = st.empty()
 
-cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1) #Rot Grün Segmentierung erst beim Sprung starten
+cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1) 
 
 previous_bboxred1=None
 previous_bboxred2=None
