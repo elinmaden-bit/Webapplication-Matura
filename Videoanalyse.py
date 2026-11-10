@@ -779,11 +779,6 @@ progress1 = st.progress(0)
 while True:
     ret1, frame1 = cap1.read()
 
-    print("Frame-Datentyp:", frame1.dtype)
-    print("Frame-Shape:", frame1.shape)
-    print("Frame-Min:", frame1.min())
-    print("Frame-Max:", frame1.max())
-    print("BGR-Pixel:", frame1[500, 500])
     if not ret1:
        print("Video beendet oder Fehler beim Lesen")
        break
@@ -1075,6 +1070,8 @@ while True:
     
    
     frame_count2+=1
+    print("Aktueller Frame:", frame_count2)
+    print("Anzahl gespeicherter Masken:", len(masken2_red))
 
     if gesamt_frames2 > 0:
         fortschritt2 = min(frame_count2 / gesamt_frames2, 1.0)
