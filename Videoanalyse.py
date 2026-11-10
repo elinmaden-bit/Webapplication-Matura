@@ -688,6 +688,7 @@ while True:
             blue_found1=True #Diese Variable hindert die Segmentation (ganzer Block) nachdem das erste Mal Blau segmentiert wurde
             print("Blue1 detected!")
             print("Frame1:", frame_number1)
+            print("Video:", video_nummer)
 
 
     if not blue_found2:
@@ -713,6 +714,7 @@ while True:
             blue_found2=True
             print("Blue2 detected!")
             print("Frame2:", frame_number2)
+            print("Video:", video_nummer)
     
     if blue_found1 and blue_found2:
         cap1.release()
