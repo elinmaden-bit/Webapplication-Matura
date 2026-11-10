@@ -636,6 +636,7 @@ with col2:
     bild2_segmentiert = st.empty()
 
 status=st.empty()
+statusblau=st.empty()
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
 
