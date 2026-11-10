@@ -670,11 +670,8 @@ while True:
         hsv_blue1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
         anzahl_blau1 = cv2.countNonZero(mask_blue1)
+        coords = cv2.findNonZero(mask_blue1)
 
-        if anzahl_blau1 > 8:
-            coords = cv2.findNonZero(mask_blue1)
-        else:
-            coords = None
 
 
         if coords is not None:
@@ -700,11 +697,8 @@ while True:
         hsv_blue2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2HSV)
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
         anzahl_blau2 = cv2.countNonZero(mask_blue2)
+        coords = cv2.findNonZero(mask_blue2)
 
-        if anzahl_blau2 > 8:
-            coords = cv2.findNonZero(mask_blue2)
-        else:
-            coords = None
 
 
         if coords is not None:
