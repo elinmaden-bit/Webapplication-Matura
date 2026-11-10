@@ -13,8 +13,6 @@ from pathlib import Path
 
 st.header("Segmentierungsverfahren")
 video_nummer=st.number_input("Welches Video möchtest du analysiert haben (Nr. 4-17)?", min_value=4, max_value=17, value=4, step=1)
-start_frame1=st.slider("Wähle ein Startframe für Video 1 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)#Startframe hinauszögern
-start_frame2=st.slider("Wähle ein Startframe für Video 2 (Achtung: muss vor Blausegmentierung sein):", min_value=0, max_value=100, value=0)
 start_segmentation2=None
 stopp_segmentation2=None
 
@@ -632,8 +630,7 @@ with col2:
 status=st.empty()
 cap1 = cv2.VideoCapture(video1)
 cap2 = cv2.VideoCapture(video2)
-cap1.set(cv2.CAP_PROP_POS_FRAMES, start_frame1)
-cap2.set(cv2.CAP_PROP_POS_FRAMES, start_frame2)
+
 blue_found1=0
 blue_found2=0
 
@@ -928,7 +925,7 @@ progress_wiedergabe.progress(1.0)
         
 
 
-st.subheader("3. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundigbox")
+st.subheader("3. Rot-/Grünsegmentierung des 2. Videos Originalbilder mit Boundigbox")
 
 masken2_green=[]
 masken2_red=[]
