@@ -787,7 +787,7 @@ while True:
     roigreen1=frame1[round(pixel_width/2):pixel_width, round(pixel_length/4):pixel_length] #Breite angepasst, wegen Störsegmentation
 
     hsvgreen1 = cv2.cvtColor(roigreen1, cv2.COLOR_BGR2HSV)
-    print("HSV-Pixel:", hsvgreen1[500, 500])
+
 
     mask_green1 = cv2.inRange(hsvgreen1, lower_green1, upper_green1)
     print("Erkannte Pixel:", cv2.countNonZero(mask_green1))
