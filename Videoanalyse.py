@@ -743,7 +743,7 @@ st.subheader("2. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundi
 bild1 = st.empty()
 bild2 = st.empty()
 
-cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1) 
+cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) 
 
 previous_bboxred1=None
 previous_bboxred2=None
@@ -942,12 +942,12 @@ masken2_red=[]
 gesamt_frames2 = int(cap2.get(cv2.CAP_PROP_FRAME_COUNT))
 progress2 = st.progress(0)
 
-#if start_segmentation2 is not None:
-    #cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
-#else:
-    #cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
+if start_segmentation2 is not None:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
+else:
+    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
 
-cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2)
+
 
 
 
