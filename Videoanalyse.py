@@ -31,29 +31,20 @@ def video_download(url, dateiname):
 
     if not pfad.exists():
         gdown.download(url, str(pfad), quiet=True)
+    groesse_mb = pfad.stat().st_size / (1024 * 1024)
 
+    print(f"{dateiname}: {groesse_mb:.2f} MB")
     return str(pfad)
 
-def datei_hash(url1,dateiname):
-    pfad=Path(dateiname)
-    sha = hashlib.sha256()
-
-    with open(pfad, "rb") as datei:
-        for block in iter(lambda: datei.read(4096), b""):
-            sha.update(block)
-
-    return sha.hexdigest()
 
 
 if video_nummer==4:
     url1="https://drive.google.com/file/d/1aOjvR1bF0PNR5lL5oG_PZaA6VmSV4rnt/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1Neae1Sc5-wCV-W9VN78X-Y9srm80QtJn/view?usp=drive_link"
     video1=video_download(url1, "A Axel normalspeed.mp4")
-    hash1=datei_hash(url1,  "A Axel normalspeed.mp4")
-    print("Hash:", hash1)
+
     video2=video_download(url2, "B Axel normalspeed.mp4")
-    hash2=datei_hash(url2, "B Axel normalspeed.mp4")
-    print("Hash:", hash2)
+
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
@@ -92,11 +83,9 @@ elif video_nummer==5:
     url1="https://drive.google.com/file/d/1eTJMw48dRoMXxCFv5mdxYXIrUWDaFqMs/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
     video1=video_download(url1, "A Axel slowmotion 1.mp4")
-    hash1=datei_hash(url1,  "A Axel slowmotion 1.mp4")
-    print("Hash:", hash1)
+
     video2=video_download(url2, "B Axel slowmotion 1.mp4")
-    hash2=datei_hash(url2, "B Axel slowmotion 1.mp4")
-    print("Hash:", hash2)
+
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
