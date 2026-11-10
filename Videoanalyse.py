@@ -671,7 +671,7 @@ while True:
         mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
         anzahl_blau1 = cv2.countNonZero(mask_blue1)
 
-        if anzahl_blau1 > 7:
+        if anzahl_blau1 > 10:
             coords = cv2.findNonZero(mask_blue1)
         else:
             coords = None
@@ -701,7 +701,7 @@ while True:
         mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
         anzahl_blau2 = cv2.countNonZero(mask_blue2)
 
-        if anzahl_blau2 > 7:
+        if anzahl_blau2 > 10:
             coords = cv2.findNonZero(mask_blue2)
         else:
             coords = None
