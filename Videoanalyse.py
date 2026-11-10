@@ -92,7 +92,11 @@ elif video_nummer==5:
     url1="https://drive.google.com/file/d/1eTJMw48dRoMXxCFv5mdxYXIrUWDaFqMs/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1ifB3ByF153VGP5ITew4u_jFcMH-JQBoe/view?usp=drive_link"
     video1=video_download(url1, "A Axel slowmotion 1.mp4")
+    hash1=datei_hash(url1,  "A Axel slowmotion 1.mp4")
+    print("Hash:", hash1)
     video2=video_download(url2, "B Axel slowmotion 1.mp4")
+    hash2=datei_hash(url2, "B Axel slowmotion 1.mp4")
+    print("Hash:", hash2)
     focal_length1=0.201054
     focal_length2=0.221296
     pixel_length=1280
