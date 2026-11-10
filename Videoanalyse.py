@@ -900,9 +900,7 @@ while True:
 
     status.text("Video A wird analysiert ...")
 
-    
-    time.sleep(1/25)
-    if frame_count1>landing_red:
+    if frame_count1>stopp_segmentation:
         break
 
 
@@ -929,7 +927,7 @@ for i, maske_green in enumerate(masken1_green):
 
         #progress_wiedergabe.progress((i + 1) / len(masken1_green))
 
-        time.sleep(1 / 30)
+        #time.sleep(1 / 30)
 #progress_wiedergabe.progress(1.0)
         
 
@@ -1083,7 +1081,7 @@ while True:
     
     status.text("Video B wird analysiert ...")
     
-    time.sleep(1/25)
+    #time.sleep(1/25)
 
     if stopp_segmentation2 is not None:
         if frame_count2>stopp_segmentation2:
@@ -1112,7 +1110,7 @@ for i, maske_green in enumerate(masken2_green):
         #bild_maske.image(colored2, clamp=True)
 
         #progress_wiedergabe.progress((i + 1) / len(masken2_green))
-        time.sleep(1/30)
+        #time.sleep(1/30)
 #progress_wiedergabe.progress(1.0)
 
 st.write("List of green functions 1:", list_of_functions1_green)
