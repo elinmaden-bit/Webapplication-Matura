@@ -1113,11 +1113,11 @@ for i, maske_green in enumerate(masken2_green):
         #time.sleep(1/30)
 #progress_wiedergabe.progress(1.0)
 
-st.write("List of green functions 1:", list_of_functions1_green)
-st.write("List of red functions 1:", list_of_functions1_red)
+#st.write("List of green functions 1:", list_of_functions1_green)
+#st.write("List of red functions 1:", list_of_functions1_red)
 
-st.write("List of green functions 2:", list_of_functions2_green)
-st.write("List of red functions 2:", list_of_functions2_red)
+#st.write("List of green functions 2:", list_of_functions2_green)
+#st.write("List of red functions 2:", list_of_functions2_red)
 
 
 s = sp.symbols('s')
@@ -1145,6 +1145,16 @@ if video_nummer in (4,7,10,13,15):
                     mean_point = (point1 + point2) / 2
 
                     position_greenpoint.append([list(mean_point),frame1])
+   
+    gruppen_green = {}
+
+    for position, frame in position_greenpoint:
+        if frame not in gruppen_green:
+            gruppen_green[frame] = []
+            gruppen_green[frame].append(position)
+
+    position_greenpoint = [[[sum(float(p[i]) for p in positionen) / len(positionen)for i in range(3)],frame]for frame, positionen in gruppen_green.items()]
+    
 
     print("Green Point at certain frame:",position_greenpoint)
     st.subheader("3D-Position Grünepunkte:")
@@ -1169,7 +1179,14 @@ if video_nummer in (4,7,10,13,15):
                     mean_point = (point1 + point2) / 2
 
                     position_redpoint.append([list(mean_point),frame1])
+    gruppen_red = {}
 
+    for position, frame in position_redpoint:
+        if frame not in gruppen_red:
+            gruppen_red[frame] = []
+            gruppen_red[frame].append(position)
+
+    position_redpoint = [[[sum(float(p[i]) for p in positionen) / len(positionen)for i in range(3)],frame]for frame, positionen in gruppen_red.items()]
 
     print("Red Point at certain frame:",position_redpoint)
     st.subheader("3D-Position Rotepunkte:")
@@ -1202,6 +1219,15 @@ if video_nummer in (5,6,8,9,11,12,14,16,17):
                     mean_point = (point1 + point2) / 2
 
                     position_greenpoint.append([list(mean_point),frame1])
+                    
+    gruppen_green = {}
+
+    for position, frame in position_greenpoint:
+        if frame not in gruppen_green:
+            gruppen_green[frame] = []
+            gruppen_green[frame].append(position)
+
+    position_greenpoint = [[[sum(float(p[i]) for p in positionen) / len(positionen)for i in range(3)],frame]for frame, positionen in gruppen_green.items()]
 
     print("Green Point at certain frame:",position_greenpoint)
     st.subheader("3D-Position Grünepunkte:")
@@ -1227,6 +1253,14 @@ if video_nummer in (5,6,8,9,11,12,14,16,17):
 
                     position_redpoint.append([list(mean_point),frame1])
 
+    gruppen_red = {}
+
+    for position, frame in position_redpoint:
+        if frame not in gruppen_red:
+            gruppen_red[frame] = []
+            gruppen_red[frame].append(position)
+
+    position_redpoint = [[[sum(float(p[i]) for p in positionen) / len(positionen)for i in range(3)],frame]for frame, positionen in gruppen_red.items()]
 
     print("Red Point at certain frame:",position_redpoint)
     st.subheader("3D-Position Rotepunkte:")
