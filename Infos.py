@@ -1,12 +1,10 @@
 import streamlit as st
 
 
-col1, col2=st.columns(2)
-with col1:
-    st.header("Über das Projekt")
 
-with col2:
-    st.image("Titelbild Über das Projekt.jpg", width=500)
+st.header("Über das Projekt")
+
+st.image("Titelbild Über das Projekt.jpg", width=500)
 
 st.subheader("Zweck & Ziel")
 st.write("""
