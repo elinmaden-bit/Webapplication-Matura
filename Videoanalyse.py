@@ -122,6 +122,8 @@ elif video_nummer==5:
     landingplane_red=-0.543
     take_off_plane_green=None
     take_off_plane_red=-0.476
+    frame_number1=718
+    frame_number2=1214
 
 elif video_nummer==6:
     url1="https://drive.google.com/file/d/1x4LKsktIsWw6jQcmKPtizQE8biV_waW2/view?usp=drive_link"
@@ -162,6 +164,8 @@ elif video_nummer==6:
     landingplane_red=-0.541
     take_off_plane_green=None
     take_off_plane_red=-0.729
+    frame_number1=796
+    frame_number2=1267
 
 
 elif video_nummer==7:
@@ -239,6 +243,8 @@ elif video_nummer==8: #Hier kein Absprung und keine Landung->das Programm muss n
     landingplane_red=None
     take_off_plane_green=None
     take_off_plane_red=None
+    frame_number1=168
+    frame_number2=160
 
 elif video_nummer==9:
     url1="https://drive.google.com/file/d/1yfCuWxciPkKVeD29ufZSb9EdPovEczfV/view?usp=drive_link"
@@ -278,6 +284,8 @@ elif video_nummer==9:
     landingplane_red=-0.422
     take_off_plane_green=None
     take_off_plane_red=-0.764
+    frame_number1=2005
+    frame_number2=3710
 
 elif video_nummer==10:
     url1="https://drive.google.com/file/d/14JqYIJSUqee-pM--Vo0jOIiu_fefTcmx/view?usp=drive_link"
@@ -315,6 +323,8 @@ elif video_nummer==10:
     take_off_plane_red=-0.437
     landingplane_green=-0.45
     landingplane_red=-0.48
+    frame_number1=287
+    frame_number2=172
 
 
 elif video_nummer==11:
@@ -355,6 +365,8 @@ elif video_nummer==11:
     landingplane_red=-0.73
     take_off_plane_green=-0.73
     take_off_plane_red=None
+    frame_number1=779
+    frame_number2=1228
 
 elif video_nummer==12:
     url1="https://drive.google.com/file/d/1EOG1zCgoANUkaureK2LN5syzjbytcfk-/view?usp=drive_link"
@@ -394,6 +406,8 @@ elif video_nummer==12:
     landingplane_red=-0.84
     take_off_plane_green=-1
     take_off_plane_red=None
+    frame_number1=738
+    frame_number2=1204
 
 elif video_nummer==13:
     url1="https://drive.google.com/file/d/1Kvxsz7ERA_HbBvetP55aUUw9bxv615Pm/view?usp=drive_link"
@@ -431,6 +445,8 @@ elif video_nummer==13:
     landingplane_red=-0.356
     take_off_plane_green=-0.4
     take_off_plane_red=-0.4459
+    frame_number1=166
+    frame_number2=149
 
 
 elif video_nummer==14:
@@ -471,6 +487,8 @@ elif video_nummer==14:
     landingplane_red=-0.766
     take_off_plane_green=None
     take_off_plane_red=-0.675
+    frame_number1=861
+    frame_number2=1365
 
 elif video_nummer==15:
     url1="https://drive.google.com/file/d/1tVjhmdRTG6gUgbvrgCX4kU-qa8w40xGZ/view?usp=drive_link"
@@ -508,6 +526,8 @@ elif video_nummer==15:
     landingplane_red=-0.373
     take_off_plane_green=-0.38
     take_off_plane_red=-0.4
+    frame_number1=171
+    frame_number2=146
 
 elif video_nummer==16:
     url1="https://drive.google.com/file/d/1iSmq3-gpwOmSz-eGc8PmwRuHiGspxW2d/view?usp=drive_link"
@@ -547,6 +567,8 @@ elif video_nummer==16:
     landingplane_red=-0.812
     take_off_plane_green=-0.93
     take_off_plane_red=None
+    frame_number1=872
+    frame_number2=1588
 
 elif video_nummer==17:
     url1="https://drive.google.com/file/d/13QbLaVZXj9te37a__26Q3_hO-AihHj4y/view?usp=drive_link"
@@ -586,6 +608,8 @@ elif video_nummer==17:
     landingplane_red=-0.618
     take_off_plane_green=None
     take_off_plane_red=-0.76
+    frame_number1=666
+    frame_number2=1092
 else:
     print("Dieses Video gibt es nicht!!!")
 
@@ -1029,11 +1053,11 @@ for i, maske_green in enumerate(masken2_green):
         #time.sleep(1/30)
 #progress_wiedergabe.progress(1.0)
 
-st.write("List of green functions 1:", list_of_functions1_green)
-st.write("List of red functions 1:", list_of_functions1_red)
+#st.write("List of green functions 1:", list_of_functions1_green)
+#st.write("List of red functions 1:", list_of_functions1_red)
 
-st.write("List of green functions 2:", list_of_functions2_green)
-st.write("List of red functions 2:", list_of_functions2_red)
+#st.write("List of green functions 2:", list_of_functions2_green)
+#st.write("List of red functions 2:", list_of_functions2_red)
 
 
 s = sp.symbols('s')
