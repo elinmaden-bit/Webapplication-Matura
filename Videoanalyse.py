@@ -78,6 +78,8 @@ if video_nummer==4:
     landingplane_red=-0.45
     take_off_plane_green=-0.24
     take_off_plane_red=None
+    frame_number1=174
+    frame_number2=167
 
 elif video_nummer==5:
     url1="https://drive.google.com/file/d/1eTJMw48dRoMXxCFv5mdxYXIrUWDaFqMs/view?usp=drive_link"
@@ -634,109 +636,10 @@ def get_linear_function_focalpoint2_normal(position_on_screenB):
     print("FunctionB:", function2)
     return function2, direction_vector2
 
-st.subheader("1. Blausegmentierung zur Synchronisierung der Videos (Bemerkung: Streamlit ist langsam im Bilder laden, deswegen enpfiehlt es sich das Startframe weiter nach vorne zu setzen")
-col1, col2 = st.columns(2)
-with col1:
-    bild1 = st.empty()
-    bild1_segmentiert = st.empty()
 
-with col2:
-    bild2 = st.empty()
-    bild2_segmentiert = st.empty()
 
 status=st.empty()
 #statusblau=st.empty()
-cap1 = cv2.VideoCapture(video1)
-cap2 = cv2.VideoCapture(video2)
-
-blue_found1=0
-blue_found2=0
-
-if not cap1.isOpened():
-    print("Video konnte nicht geöffnet werden.")
-    exit()
-
-if not cap2.isOpened():
-    print("Video konnte nicht geöffnet werden.")
-    exit()
-
-
-    
-while True:
-    ret1, frame1 = cap1.read()
-    ret2, frame2 = cap2.read()
-    
-    if not ret1:
-       print("Video beendet oder Fehler beim Lesen")
-       break
-    if not ret2:
-       print("Video beendet oder Fehler beim Lesen")
-       break
-    #statusblau.text("Blausegmentierung läuft ...")
-        
-
-    if not blue_found1:
-        hsv_blue1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2HSV)
-        mask_blue1 = cv2.inRange(hsv_blue1, lower_blue1, upper_blue1)
-        anzahl_blau1 = cv2.countNonZero(mask_blue1)
-        coords = cv2.findNonZero(mask_blue1)
-
-
-
-        if coords is not None:
-            x, y, w, h = cv2.boundingRect(coords)
-            bboxblue1 = (x, y, x+w, y+h)
-            cv2.rectangle(frame1,(x, y),(x+w, y+h),(255, 0, 0),3)
-
-        else:
-            bboxblue1 = None
-        print("Blue Bonding Box A:", bboxblue1)
-        #bild1.image(frame1, channels="BGR")
-
-
-        if bboxblue1 is not None:
-            frame_number1 = int(cap1.get(cv2.CAP_PROP_POS_FRAMES)) - 1
-            blue_found1=True #Diese Variable hindert die Segmentation (ganzer Block) nachdem das erste Mal Blau segmentiert wurde
-            print("Blue1 detected!")
-            print("Frame1:", frame_number1)
-            print("Video:", video_nummer)
-
-
-    if not blue_found2:
-        hsv_blue2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2HSV)
-        mask_blue2 = cv2.inRange(hsv_blue2, lower_blue2, upper_blue2)
-        anzahl_blau2 = cv2.countNonZero(mask_blue2)
-        coords = cv2.findNonZero(mask_blue2)
-
-
-
-        if coords is not None:
-            x, y, w, h = cv2.boundingRect(coords)
-            bboxblue2 = (x, y, x+w, y+h)
-            cv2.rectangle(frame2,(x, y),(x+w, y+h),(255, 0, 0),3)
-            
-        else:
-            bboxblue2 = None
-            
-        print("Blue Bonding Box B:", bboxblue2)
-        #bild2.image(frame2, channels="BGR")
-
-
-        if bboxblue2 is not None:
-            frame_number2 = int(cap2.get(cv2.CAP_PROP_POS_FRAMES)) - 1
-            blue_found2=True
-            print("Blue2 detected!")
-            print("Frame2:", frame_number2)
-            print("Video:", video_nummer)
-    
-    if blue_found1 and blue_found2:
-        cap1.release()
-        cap2.release()
-        bild1.empty()
-        bild2.empty()
-        #statusblau.empty()
-        break
-
 
 
 #2. Teil des Programms->Videos werden vom Frame in dem Blue erkannt wurde abgespielt, hier wird Rot und Grün erkannt
