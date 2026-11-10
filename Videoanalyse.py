@@ -662,6 +662,7 @@ while True:
     if not ret2:
        print("Video beendet oder Fehler beim Lesen")
        break
+    statusblau.text("Blausegmentierung läuft ...")
         
 
     if not blue_found1:
@@ -717,7 +718,9 @@ while True:
         cap2.release()
         bild1.empty()
         bild2.empty()
+        statusblau.empty()
         break
+
 
 
 #2. Teil des Programms->Videos werden vom Frame in dem Blue erkannt wurde abgespielt, hier wird Rot und Grün erkannt
@@ -737,15 +740,15 @@ st.subheader("2. Rot-/Grünsegmentierung des 1. Videos Originalbilder mit Boundi
 bild1 = st.empty()
 bild2 = st.empty()
 
-cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1+start_segmentation) #Rot Grün Segmentierung erst beim Sprung starten
+cap1.set(cv2.CAP_PROP_POS_FRAMES, frame_number1) #Rot Grün Segmentierung erst beim Sprung starten
 
 previous_bboxred1=None
 previous_bboxred2=None
 
-list_of_functions1_green=[] #Liste für Frame-Funktionspaare
-list_of_functions1_red=[] #Liste für Frame-Funktionspaare
-list_of_functions2_green=[] #Liste für Frame-Funktionspaare
-list_of_functions2_red=[] #Liste für Frame-Funktionspaare
+list_of_functions1_green=[]
+list_of_functions1_red=[]
+list_of_functions2_green=[]
+list_of_functions2_red=[]
 
 frame_count1=start_segmentation
 
@@ -941,10 +944,14 @@ masken2_red=[]
 gesamt_frames2 = int(cap2.get(cv2.CAP_PROP_FRAME_COUNT))
 progress2 = st.progress(0)
 
-if start_segmentation2 is not None:
-    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
-else:
-    cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
+#if start_segmentation2 is not None:
+    #cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation2)
+#else:
+    #cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2+start_segmentation)
+
+cap2.set(cv2.CAP_PROP_POS_FRAMES, frame_number2)
+
+
 
 #2. Video
 while True:
