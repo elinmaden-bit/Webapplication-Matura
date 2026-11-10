@@ -10,6 +10,8 @@ import csv
 import gdown
 import time
 from pathlib import Path
+import hashlib
+
 
 st.header("Segmentierungsverfahren")
 
@@ -32,12 +34,26 @@ def video_download(url, dateiname):
 
     return str(pfad)
 
+def datei_hash(url1,dateiname):
+    pfad=Path(dateiname)
+    sha = hashlib.sha256()
+
+    with open(pfad, "rb") as datei:
+        for block in iter(lambda: datei.read(4096), b""):
+            sha.update(block)
+
+    return sha.hexdigest()
+
 
 if video_nummer==4:
     url1="https://drive.google.com/file/d/1aOjvR1bF0PNR5lL5oG_PZaA6VmSV4rnt/view?usp=drive_link"
     url2="https://drive.google.com/file/d/1Neae1Sc5-wCV-W9VN78X-Y9srm80QtJn/view?usp=drive_link"
     video1=video_download(url1, "A Axel normalspeed.mp4")
+    hash1=datei_hash(url1,  "A Axel normalspeed.mp4")
+    print("Hash:", hash1)
     video2=video_download(url2, "B Axel normalspeed.mp4")
+    hash2=datei_hash(url2, "B Axel normalspeed.mp4")
+    print("Hash:", hash2)
     focal_length1=0.228198
     focal_length2=0.254061
     pixel_length=1920
