@@ -4,7 +4,7 @@ import streamlit as st
 st.header("Über das Projekt")
 
 st.subheader("Zweck & Ziel")
-st.write(st.write("""
+st.write("""
 Das Ziel dieses Projekts ist es, einen Eiskunstlaufsprung mithilfe von zwei Videoaufnahmen aus unterschiedlichen Perspektiven dreidimensional zu analysieren.
 
 Dazu wurde ein Python-Programm entwickelt, das farbige Markierungen an den Schlittschuhen mithilfe von Bildverarbeitung erkennt und ihre Positionen in den einzelnen Videoframes verfolgt. Durch die Kombination der Aufnahmen beider Kameras können anschliessend die räumlichen Koordinaten der Markierungen rekonstruiert werden.
@@ -12,7 +12,7 @@ Dazu wurde ein Python-Programm entwickelt, das farbige Markierungen an den Schli
 Auf Grundlage dieser 3D-Daten lassen sich verschiedene Bewegungsparameter untersuchen. Dazu gehören beispielsweise die Absprung- und Landeposition, die Sprunghöhe, die Flugzeit, die horizontale Sprungweite und die Rotation.
 
 Die Webapplikation ermöglicht es, diese Daten auszuwerten und die Bewegung des Sprungs anhand verschiedener Diagramme und berechneter Werte zu veranschaulichen.
-"""))
+""")
 
 st.subheader("Videosegmentierung")
 st.write("""
@@ -28,7 +28,7 @@ st.write("""
 Die rekonstruierten 3D-Daten werden anschliessend ausgewertet und grafisch dargestellt. Dabei können unter anderem die Flugzeit, die Sprunghöhe, die horizontale Sprungweite und die Rotation berechnet werden.
 
 Zusätzlich lassen sich die Positionen der Markierungen sowie deren Geschwindigkeit und Beschleunigung während des Sprungs untersuchen. Die Ergebnisse werden in Form von Kennzahlen und Diagrammen dargestellt.
-"""))
+""")
 
 st.subheader("Voraussetzungen für eigene Videos")
 st.write("""
