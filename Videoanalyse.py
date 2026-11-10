@@ -1341,7 +1341,8 @@ if video_nummer in (4,7,8,10,11,12,13,14,15,16):
         airtime=(mean_landing-mean_take_off)/30 #durch FPS teilen
         print("Time in the air:", airtime)
 
-st.subheader("Absprung-/ und Landekoordinaten:")
+
+st.subheader("Weitere Sprungparameter:")
 print("Absprungframe", mean_take_off)
 st.write("Absprungframe", mean_take_off)
 print("Absprungposition", mean_take_off_position)
@@ -1350,6 +1351,8 @@ print("Landungsframe", mean_landing)
 st.write("Landungsframe", mean_landing)
 print("Landungsposition", mean_landing_position)
 st.write("Landungsposition", mean_landing_position)
+if airtime is not None: 
+    st.write("Luftzeit:", airtime)
 
 
 #Winkeländerungsfunktion
@@ -1451,6 +1454,7 @@ if len(mean_landing_position)!=0:
         if avg_total_angle!=0:
 
             print("Gesamtrotation des Sprungs(Durchschnitt aller Messpunkte:", avg_total_angle)
+            st.write("Winkel[°]:", avg_total_angle)
             
         print("Gesamtrotation des Sprungs(Annahme konstante Rotationsgeschwindigkeit):", total_rotation)
 
@@ -1461,6 +1465,8 @@ if len(mean_landing_position)!=0:
 if mean_take_off_position is not None and len(mean_landing_position)!=0:
     jump_distance=sp.sqrt((mean_landing_position[0]-mean_take_off_position[0])**2+(mean_landing_position[1]-mean_take_off_position[1])**2)
     print("Jumpdistance:", jump_distance)
+
+    st.write("Weite[m]:", jump_distance)
 
 
 
@@ -1499,9 +1505,10 @@ elif take_off_plane_green is None and take_off_plane_red is not None:
 else:
     print("Es wurden nicht für beide Punkte Höhen gefunden.")
 
+if max_height is not None:
+    st.write("Höhe[m]:", max_height)
 
-print("Landingplane green:", landingplane_green)
-print("Landingplane red:", landingplane_red)
+
 
 
 
