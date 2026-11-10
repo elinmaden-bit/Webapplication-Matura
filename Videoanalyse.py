@@ -1543,9 +1543,6 @@ if max_height is not None:
     st.write("Höhe[m]:", max_height)
 
 
-
-
-
 position_redpoint_seg=[]
 position_greenpoint_seg=[]
 
