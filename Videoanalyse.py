@@ -914,7 +914,7 @@ progress1.progress(1.0)
 st.subheader("Segmentierte Maske")
 
 bild_maske = st.empty()
-progress_wiedergabe=st.progress(0,text="Anzeige Maske")
+#progress_wiedergabe=st.progress(0,text="Anzeige Maske")
 
 for i, maske_green in enumerate(masken1_green):
     for i, maske_red in enumerate(masken1_red):
@@ -925,12 +925,12 @@ for i, maske_green in enumerate(masken1_green):
 
         colored1[maske_green > 0] = [0, 255, 0]
         
-        bild_maske.image(colored1, clamp=True)
+        #bild_maske.image(colored1, clamp=True)
 
-        progress_wiedergabe.progress((i + 1) / len(masken1_green))
+        #progress_wiedergabe.progress((i + 1) / len(masken1_green))
 
         time.sleep(1 / 30)
-progress_wiedergabe.progress(1.0)
+#progress_wiedergabe.progress(1.0)
         
 
 
@@ -1099,7 +1099,7 @@ bild2.empty()
 status.empty()
 
 st.subheader("Segmentierte Maske")
-progress_wiedergabe=st.progress(0,text="Anzeige Maske")
+#progress_wiedergabe=st.progress(0,text="Anzeige Maske")
 for i, maske_green in enumerate(masken2_green):
     for i, maske_red in enumerate(masken2_red):
 
@@ -1109,11 +1109,11 @@ for i, maske_green in enumerate(masken2_green):
 
         colored2[maske_green > 0] = [0, 255, 0]
         
-        bild_maske.image(colored2, clamp=True)
+        #bild_maske.image(colored2, clamp=True)
 
-        progress_wiedergabe.progress((i + 1) / len(masken2_green))
+        #progress_wiedergabe.progress((i + 1) / len(masken2_green))
         time.sleep(1/30)
-progress_wiedergabe.progress(1.0)
+#progress_wiedergabe.progress(1.0)
 
 st.write("List of green functions 1:", list_of_functions1_green)
 st.write("List of red functions 1:", list_of_functions1_red)
