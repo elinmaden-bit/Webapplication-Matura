@@ -1117,11 +1117,11 @@ for i, maske_green in enumerate(masken2_green):
         #time.sleep(1/30)
 #progress_wiedergabe.progress(1.0)
 
-#st.write("List of green functions 1:", list_of_functions1_green)
-#st.write("List of red functions 1:", list_of_functions1_red)
+st.write("List of green functions 1:", list_of_functions1_green)
+st.write("List of red functions 1:", list_of_functions1_red)
 
-#st.write("List of green functions 2:", list_of_functions2_green)
-#st.write("List of red functions 2:", list_of_functions2_red)
+st.write("List of green functions 2:", list_of_functions2_green)
+st.write("List of red functions 2:", list_of_functions2_red)
 
 
 s = sp.symbols('s')
